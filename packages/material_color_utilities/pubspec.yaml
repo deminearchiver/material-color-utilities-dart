@@ -5,12 +5,12 @@ repository: https://github.com/deminearchiver/material-color-utilities-dart
 resolution: workspace
 
 environment:
-  sdk: ^3.8.1
+  sdk: ^3.8.0
 
 # Add regular dependencies here.
 dependencies:
-  meta: ^1.16.0
+  meta: ^1.17.0
 
 dev_dependencies:
-  lints: ^5.0.0
+  lints: ^6.0.0
   test: ^1.24.0
