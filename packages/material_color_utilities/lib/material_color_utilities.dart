@@ -1,8 +1,20 @@
-/// Support for doing something awesome.
+/// # Material Color Utilities
 ///
-/// More dartdocs go here.
+/// Algorithms and utilities that power
+/// the Material Design 3 (M3) color system,
+/// including choosing theme colors from images
+/// and creating tones of colors;
+/// all in a new color space.
 library;
 
-export 'src/material_color_utilities_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'blend.dart';
+export 'contrast.dart';
+export 'dislike.dart';
+export 'dynamiccolor.dart';
+export 'hct.dart';
+export 'palettes.dart';
+export 'quantize.dart';
+export 'scheme.dart';
+export 'score.dart';
+export 'temperature.dart';
+export 'utils.dart';
