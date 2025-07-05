@@ -6,6 +6,7 @@ import '../utils/math_utils.dart';
 import 'color_spec.dart';
 import 'color_specs.dart';
 import 'dynamic_color.dart';
+import 'material_dynamic_colors.dart';
 import 'variant.dart';
 
 enum Platform { phone, watch }
@@ -278,4 +279,79 @@ class DynamicScheme {
     }
     return MathUtils.sanitizeDegrees(sourceColorHct.hue + rotation);
   }
+
+  static const MaterialDynamicColors _colors = MaterialDynamicColors();
+
+  int get primaryPaletteKeyColor => getArgb(_colors.primaryPaletteKeyColor());
+  int get secondaryPaletteKeyColor =>
+      getArgb(_colors.secondaryPaletteKeyColor());
+  int get tertiaryPaletteKeyColor => getArgb(_colors.tertiaryPaletteKeyColor());
+  int get neutralPaletteKeyColor => getArgb(_colors.neutralPaletteKeyColor());
+  int get neutralVariantPaletteKeyColor =>
+      getArgb(_colors.neutralVariantPaletteKeyColor());
+  int get errorPaletteKeyColor => getArgb(_colors.errorPaletteKeyColor());
+  int get background => getArgb(_colors.background());
+  int get onBackground => getArgb(_colors.onBackground());
+  int get surface => getArgb(_colors.surface());
+  int get surfaceDim => getArgb(_colors.surfaceDim());
+  int get surfaceBright => getArgb(_colors.surfaceBright());
+  int get surfaceContainerLowest => getArgb(_colors.surfaceContainerLowest());
+  int get surfaceContainerLow => getArgb(_colors.surfaceContainerLow());
+  int get surfaceContainer => getArgb(_colors.surfaceContainer());
+  int get surfaceContainerHigh => getArgb(_colors.surfaceContainerHigh());
+  int get surfaceContainerHighest => getArgb(_colors.surfaceContainerHighest());
+  int get onSurface => getArgb(_colors.onSurface());
+  int get surfaceVariant => getArgb(_colors.surfaceVariant());
+  int get onSurfaceVariant => getArgb(_colors.onSurfaceVariant());
+  int get outline => getArgb(_colors.outline());
+  int get outlineVariant => getArgb(_colors.outlineVariant());
+  int get inverseSurface => getArgb(_colors.inverseSurface());
+  int get inverseOnSurface => getArgb(_colors.inverseOnSurface());
+  int get shadow => getArgb(_colors.shadow());
+  int get scrim => getArgb(_colors.scrim());
+  int get surfaceTint => getArgb(_colors.surfaceTint());
+  int get primary => getArgb(_colors.primary());
+  int get primaryDim => getArgb(_colors.primaryDim());
+  int get onPrimary => getArgb(_colors.onPrimary());
+  int get primaryContainer => getArgb(_colors.primaryContainer());
+  int get onPrimaryContainer => getArgb(_colors.onPrimaryContainer());
+  int get primaryFixed => getArgb(_colors.primaryFixed());
+  int get primaryFixedDim => getArgb(_colors.primaryFixedDim());
+  int get onPrimaryFixed => getArgb(_colors.onPrimaryFixed());
+  int get onPrimaryFixedVariant => getArgb(_colors.onPrimaryFixedVariant());
+  int get inversePrimary => getArgb(_colors.inversePrimary());
+  int get secondary => getArgb(_colors.secondary());
+  int get secondaryDim => getArgb(_colors.secondaryDim());
+  int get onSecondary => getArgb(_colors.onSecondary());
+  int get secondaryContainer => getArgb(_colors.secondaryContainer());
+  int get onSecondaryContainer => getArgb(_colors.onSecondaryContainer());
+  int get secondaryFixed => getArgb(_colors.secondaryFixed());
+  int get secondaryFixedDim => getArgb(_colors.secondaryFixedDim());
+  int get onSecondaryFixed => getArgb(_colors.onSecondaryFixed());
+  int get onSecondaryFixedVariant => getArgb(_colors.onSecondaryFixedVariant());
+  int get tertiary => getArgb(_colors.tertiary());
+  int get tertiaryDim => getArgb(_colors.tertiaryDim());
+  int get onTertiary => getArgb(_colors.onTertiary());
+  int get tertiaryContainer => getArgb(_colors.tertiaryContainer());
+  int get onTertiaryContainer => getArgb(_colors.onTertiaryContainer());
+  int get tertiaryFixed => getArgb(_colors.tertiaryFixed());
+  int get tertiaryFixedDim => getArgb(_colors.tertiaryFixedDim());
+  int get onTertiaryFixed => getArgb(_colors.onTertiaryFixed());
+  int get onTertiaryFixedVariant => getArgb(_colors.onTertiaryFixedVariant());
+  int get error => getArgb(_colors.error());
+  int get errorDim => getArgb(_colors.errorDim());
+  int get onError => getArgb(_colors.onError());
+  int get errorContainer => getArgb(_colors.errorContainer());
+  int get onErrorContainer => getArgb(_colors.onErrorContainer());
+  int get controlActivated => getArgb(_colors.controlActivated());
+  int get controlNormal => getArgb(_colors.controlNormal());
+  int get controlHighlight => getArgb(_colors.controlHighlight());
+  int get textPrimaryInverse => getArgb(_colors.textPrimaryInverse());
+  int get textSecondaryAndTertiaryInverse =>
+      getArgb(_colors.textSecondaryAndTertiaryInverse());
+  int get textPrimaryInverseDisableOnly =>
+      getArgb(_colors.textPrimaryInverseDisableOnly());
+  int get textSecondaryAndTertiaryInverseDisabled =>
+      getArgb(_colors.textSecondaryAndTertiaryInverseDisabled());
+  int get textHintInverse => getArgb(_colors.textHintInverse());
 }

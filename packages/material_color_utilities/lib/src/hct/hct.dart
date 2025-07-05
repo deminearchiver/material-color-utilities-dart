@@ -89,4 +89,18 @@ final class Hct {
   static bool isCyan(double hue) {
     return hue >= 170.0 && hue < 207.0;
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        runtimeType == other.runtimeType &&
+            other is Hct &&
+            _argb == other._argb &&
+            _hue == other._hue &&
+            _chroma == other._chroma &&
+            _tone == other._tone;
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, _argb, _hue, _chroma, _tone);
 }
