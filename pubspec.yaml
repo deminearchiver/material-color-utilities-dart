@@ -8,3 +8,6 @@ environment:
 workspace:
   # Packages
   - packages/material_color_utilities
+
+  # Apps
+  - apps/mtb

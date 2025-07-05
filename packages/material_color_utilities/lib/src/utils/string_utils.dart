@@ -1,6 +1,6 @@
 import 'color_utils.dart';
 
-class StringUtils {
+abstract final class StringUtils {
   static String hexFromArgb(int argb, {bool leadingHashSign = true}) {
     final red = ColorUtils.redFromArgb(argb);
     final green = ColorUtils.greenFromArgb(argb);

@@ -42,7 +42,7 @@ final class TemperatureCache {
     // Find the color in the other section, closest to the inverse percentile
     // of the input color. This is the complement.
     for (double hueAddend = 0.0; hueAddend <= 360.0; hueAddend += 1.0) {
-      final hue = MathUtils.sanitizeDegrees(
+      final hue = MathUtils.sanitizeDegreesDouble(
         startHue + directionOfRotation * hueAddend,
       );
       if (!_isBetween(hue, startHue, endHue)) {
@@ -85,7 +85,7 @@ final class TemperatureCache {
     double totalTempDelta = 0.0;
     lastTemp = getRelativeTemperature(startHct);
     while (allColors.length < divisions) {
-      final hue = MathUtils.sanitizeDegrees(startHue + hueAddend);
+      final hue = MathUtils.sanitizeDegreesInt(startHue + hueAddend);
       final hct = _getHctsByHue()[hue];
       final temp = getRelativeTemperature(hct);
       final tempDelta = (temp - lastTemp).abs();

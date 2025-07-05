@@ -42,7 +42,7 @@ abstract final class Score {
     // filtering out values that do not have enough chroma or usage.
     final List<_ScoredHct> scoredHcts = <_ScoredHct>[];
     for (final hct in colorsHct) {
-      final hue = MathUtils.sanitizeDegrees(hct.hue.round());
+      final hue = MathUtils.sanitizeDegreesInt(hct.hue.round());
       final proportion = hueExcitedProportions[hue];
       if (filter &&
           (hct.chroma < _cutoffChroma ||

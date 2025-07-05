@@ -329,7 +329,7 @@ class DynamicScheme {
       // No condition matched, return the source hue.
       rotation = 0.0;
     }
-    return MathUtils.sanitizeDegrees(sourceColorHct.hue + rotation);
+    return MathUtils.sanitizeDegreesDouble(sourceColorHct.hue + rotation);
   }
 
   static const MaterialDynamicColors _colors = MaterialDynamicColors();
