@@ -1,0 +1,10 @@
+name: _
+publish_to: none
+
+environment:
+  sdk: ^3.8.1
+  flutter: ">=3.32.0"
+
+workspace:
+  # Packages
+  - packages/material_color_utilities

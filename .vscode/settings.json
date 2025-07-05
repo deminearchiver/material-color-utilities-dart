@@ -1,0 +1,8 @@
+{
+  "dart.flutterSdkPath": ".fvm/versions/stable",
+  "prettier.useEditorConfig": true,
+  "[json][jsonc][json5][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}

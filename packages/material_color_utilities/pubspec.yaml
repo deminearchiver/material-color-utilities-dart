@@ -1,0 +1,16 @@
+name: material_color_utilities
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+repository: https://github.com/deminearchiver/material-color-utilities-dart
+resolution: workspace
+
+environment:
+  sdk: ^3.8.1
+
+# Add regular dependencies here.
+dependencies:
+  meta: ^1.16.0
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.24.0
