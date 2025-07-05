@@ -5,6 +5,7 @@ import '../dynamiccolor/variant.dart';
 ///
 /// A Dynamic Color theme that maxes out colorfulness at each position in the
 /// Primary Tonal Palette.
+@Deprecated("Use DynamicScheme directly instead")
 class SchemeVibrant extends DynamicScheme {
   SchemeVibrant({
     required super.sourceColorHct,
@@ -12,5 +13,5 @@ class SchemeVibrant extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromVariant(variant: Variant.vibrant);
+  }) : super.fromPalettesOrKeyColors(variant: Variant.vibrant);
 }

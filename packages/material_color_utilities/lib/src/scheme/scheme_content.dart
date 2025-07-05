@@ -11,6 +11,7 @@ import '../dynamiccolor/variant.dart';
 /// into 6, and the precise analog is the one found by increasing hue. This is a scientifically
 /// grounded equivalent to rotating hue clockwise by 60 degrees. It also maintains constant
 /// appearance.
+@Deprecated("Use DynamicScheme directly instead")
 class SchemeContent extends DynamicScheme {
   SchemeContent({
     required super.sourceColorHct,
@@ -18,5 +19,5 @@ class SchemeContent extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromVariant(variant: Variant.content);
+  }) : super.fromPalettesOrKeyColors(variant: Variant.content);
 }

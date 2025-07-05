@@ -7,6 +7,7 @@ import '../dynamiccolor/variant.dart';
 /// TonalPalette with a hue related to the source color.
 ///
 /// The default Material You theme on Android 12 and 13.
+@Deprecated("Use DynamicScheme directly instead")
 class SchemeTonalSpot extends DynamicScheme {
   SchemeTonalSpot({
     required super.sourceColorHct,
@@ -14,5 +15,5 @@ class SchemeTonalSpot extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromVariant(variant: Variant.tonalSpot);
+  }) : super.fromPalettesOrKeyColors(variant: Variant.tonalSpot);
 }

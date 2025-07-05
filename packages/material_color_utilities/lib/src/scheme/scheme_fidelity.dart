@@ -9,6 +9,7 @@ import '../dynamiccolor/variant.dart';
 ///
 /// Tertiary Container is the complement to the source color, using TemperatureCache. It also
 /// maintains constant appearance.
+@Deprecated("Use DynamicScheme directly instead")
 class SchemeFidelity extends DynamicScheme {
   SchemeFidelity({
     required super.sourceColorHct,
@@ -16,5 +17,5 @@ class SchemeFidelity extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromVariant(variant: Variant.vibrant);
+  }) : super.fromPalettesOrKeyColors(variant: Variant.vibrant);
 }
