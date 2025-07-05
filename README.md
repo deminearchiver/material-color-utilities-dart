@@ -1,17 +1,6 @@
 
 # Material Color Utilities
 
-<details>
-  <summary><h3>Table of contents</h3></summary>
-  
-- [Material Color Utilities](#material-color-utilities)
-  - [About](#about)
-    - [Theory behind MCU](#theory-behind-mcu)
-    - [Capabilities Overview](#capabilities-overview)
-    - [Learn about color science](#learn-about-color-science)
-
-</details>
-
 Algorithms and utilities that power the Material Design 3 (M3) color system, including choosing theme colors from images and creating tones of colors; all in a new color space.
 
 ## About
