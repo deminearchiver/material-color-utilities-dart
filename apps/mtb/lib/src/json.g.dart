@@ -348,34 +348,26 @@ Map<String, dynamic> _$FigmaSchemeToJson(
 
 _FigmaPalettes _$FigmaPalettesFromJson(Map<String, dynamic> json) =>
     _FigmaPalettes(
-      primary:
-          json['primary'] == null
-              ? null
-              : FigmaPalette.fromJson(json['primary'] as Map<String, dynamic>),
-      secondary:
-          json['secondary'] == null
-              ? null
-              : FigmaPalette.fromJson(
-                json['secondary'] as Map<String, dynamic>,
-              ),
-      tertiary:
-          json['tertiary'] == null
-              ? null
-              : FigmaPalette.fromJson(json['tertiary'] as Map<String, dynamic>),
-      neutral:
-          json['neutral'] == null
-              ? null
-              : FigmaPalette.fromJson(json['neutral'] as Map<String, dynamic>),
-      neutralVariant:
-          json['neutral-variant'] == null
-              ? null
-              : FigmaPalette.fromJson(
-                json['neutral-variant'] as Map<String, dynamic>,
-              ),
-      error:
-          json['error'] == null
-              ? null
-              : FigmaPalette.fromJson(json['error'] as Map<String, dynamic>),
+      primary: json['primary'] == null
+          ? null
+          : FigmaPalette.fromJson(json['primary'] as Map<String, dynamic>),
+      secondary: json['secondary'] == null
+          ? null
+          : FigmaPalette.fromJson(json['secondary'] as Map<String, dynamic>),
+      tertiary: json['tertiary'] == null
+          ? null
+          : FigmaPalette.fromJson(json['tertiary'] as Map<String, dynamic>),
+      neutral: json['neutral'] == null
+          ? null
+          : FigmaPalette.fromJson(json['neutral'] as Map<String, dynamic>),
+      neutralVariant: json['neutral-variant'] == null
+          ? null
+          : FigmaPalette.fromJson(
+              json['neutral-variant'] as Map<String, dynamic>,
+            ),
+      error: json['error'] == null
+          ? null
+          : FigmaPalette.fromJson(json['error'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FigmaPalettesToJson(_FigmaPalettes instance) =>

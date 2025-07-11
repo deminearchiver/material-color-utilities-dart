@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -107,6 +106,136 @@ $FigmaPalettesCopyWith<$Res> get palettes {
 }
 }
 
+
+/// Adds pattern-matching-related methods to [Figma].
+extension FigmaPatterns on Figma {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Figma value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Figma() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Figma value)  $default,){
+final _that = this;
+switch (_that) {
+case _Figma():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Figma value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Figma() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String description, @ColorConverter()  Color seed,  FigmaCoreColors coreColors,  List<FigmaExtendedColor> extendedColors,  FigmaSchemes schemes,  FigmaPalettes palettes)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Figma() when $default != null:
+return $default(_that.description,_that.seed,_that.coreColors,_that.extendedColors,_that.schemes,_that.palettes);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String description, @ColorConverter()  Color seed,  FigmaCoreColors coreColors,  List<FigmaExtendedColor> extendedColors,  FigmaSchemes schemes,  FigmaPalettes palettes)  $default,) {final _that = this;
+switch (_that) {
+case _Figma():
+return $default(_that.description,_that.seed,_that.coreColors,_that.extendedColors,_that.schemes,_that.palettes);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String description, @ColorConverter()  Color seed,  FigmaCoreColors coreColors,  List<FigmaExtendedColor> extendedColors,  FigmaSchemes schemes,  FigmaPalettes palettes)?  $default,) {final _that = this;
+switch (_that) {
+case _Figma() when $default != null:
+return $default(_that.description,_that.seed,_that.coreColors,_that.extendedColors,_that.schemes,_that.palettes);case _:
+  return null;
+
+}
+}
+
+}
 
 /// @nodoc
 @JsonSerializable()
@@ -289,6 +418,136 @@ as Color?,
 }
 
 
+/// Adds pattern-matching-related methods to [FigmaCoreColors].
+extension FigmaCoreColorsPatterns on FigmaCoreColors {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _FigmaCoreColors value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _FigmaCoreColors() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _FigmaCoreColors value)  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaCoreColors():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _FigmaCoreColors value)?  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaCoreColors() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(includeIfNull: false)@ColorConverter()  Color? primary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? secondary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? tertiary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutral, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralVariant, @JsonKey(includeIfNull: false)@ColorConverter()  Color? error)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _FigmaCoreColors() when $default != null:
+return $default(_that.primary,_that.secondary,_that.tertiary,_that.neutral,_that.neutralVariant,_that.error);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(includeIfNull: false)@ColorConverter()  Color? primary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? secondary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? tertiary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutral, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralVariant, @JsonKey(includeIfNull: false)@ColorConverter()  Color? error)  $default,) {final _that = this;
+switch (_that) {
+case _FigmaCoreColors():
+return $default(_that.primary,_that.secondary,_that.tertiary,_that.neutral,_that.neutralVariant,_that.error);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(includeIfNull: false)@ColorConverter()  Color? primary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? secondary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? tertiary, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutral, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralVariant, @JsonKey(includeIfNull: false)@ColorConverter()  Color? error)?  $default,) {final _that = this;
+switch (_that) {
+case _FigmaCoreColors() when $default != null:
+return $default(_that.primary,_that.secondary,_that.tertiary,_that.neutral,_that.neutralVariant,_that.error);case _:
+  return null;
+
+}
+}
+
+}
+
 /// @nodoc
 @JsonSerializable()
 
@@ -434,6 +693,136 @@ as bool,
 
 }
 
+
+/// Adds pattern-matching-related methods to [FigmaExtendedColor].
+extension FigmaExtendedColorPatterns on FigmaExtendedColor {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _FigmaExtendedColor value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _FigmaExtendedColor() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _FigmaExtendedColor value)  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaExtendedColor():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _FigmaExtendedColor value)?  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaExtendedColor() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name, @ColorConverter()  Color color,  String description,  bool harmonized)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _FigmaExtendedColor() when $default != null:
+return $default(_that.name,_that.color,_that.description,_that.harmonized);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name, @ColorConverter()  Color color,  String description,  bool harmonized)  $default,) {final _that = this;
+switch (_that) {
+case _FigmaExtendedColor():
+return $default(_that.name,_that.color,_that.description,_that.harmonized);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name, @ColorConverter()  Color color,  String description,  bool harmonized)?  $default,) {final _that = this;
+switch (_that) {
+case _FigmaExtendedColor() when $default != null:
+return $default(_that.name,_that.color,_that.description,_that.harmonized);case _:
+  return null;
+
+}
+}
+
+}
 
 /// @nodoc
 @JsonSerializable()
@@ -632,6 +1021,136 @@ $FigmaSchemeCopyWith<$Res> get darkHighContrast {
 }
 }
 
+
+/// Adds pattern-matching-related methods to [FigmaSchemes].
+extension FigmaSchemesPatterns on FigmaSchemes {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _FigmaSchemes value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _FigmaSchemes() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _FigmaSchemes value)  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaSchemes():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _FigmaSchemes value)?  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaSchemes() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( FigmaScheme light,  FigmaScheme lightMediumContrast,  FigmaScheme lightHighContrast,  FigmaScheme dark,  FigmaScheme darkMediumContrast,  FigmaScheme darkHighContrast)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _FigmaSchemes() when $default != null:
+return $default(_that.light,_that.lightMediumContrast,_that.lightHighContrast,_that.dark,_that.darkMediumContrast,_that.darkHighContrast);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( FigmaScheme light,  FigmaScheme lightMediumContrast,  FigmaScheme lightHighContrast,  FigmaScheme dark,  FigmaScheme darkMediumContrast,  FigmaScheme darkHighContrast)  $default,) {final _that = this;
+switch (_that) {
+case _FigmaSchemes():
+return $default(_that.light,_that.lightMediumContrast,_that.lightHighContrast,_that.dark,_that.darkMediumContrast,_that.darkHighContrast);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( FigmaScheme light,  FigmaScheme lightMediumContrast,  FigmaScheme lightHighContrast,  FigmaScheme dark,  FigmaScheme darkMediumContrast,  FigmaScheme darkHighContrast)?  $default,) {final _that = this;
+switch (_that) {
+case _FigmaSchemes() when $default != null:
+return $default(_that.light,_that.lightMediumContrast,_that.lightHighContrast,_that.dark,_that.darkMediumContrast,_that.darkHighContrast);case _:
+  return null;
+
+}
+}
+
+}
 
 /// @nodoc
 
@@ -877,6 +1396,136 @@ as Color,
 
 }
 
+
+/// Adds pattern-matching-related methods to [FigmaScheme].
+extension FigmaSchemePatterns on FigmaScheme {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _FigmaScheme value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _FigmaScheme() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _FigmaScheme value)  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaScheme():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _FigmaScheme value)?  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaScheme() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ColorConverter()  Color primary, @ColorConverter()  Color surfaceTint, @ColorConverter()  Color onPrimary, @ColorConverter()  Color primaryContainer, @ColorConverter()  Color onPrimaryContainer, @ColorConverter()  Color secondary, @ColorConverter()  Color onSecondary, @ColorConverter()  Color secondaryContainer, @ColorConverter()  Color onSecondaryContainer, @ColorConverter()  Color tertiary, @ColorConverter()  Color onTertiary, @ColorConverter()  Color tertiaryContainer, @ColorConverter()  Color onTertiaryContainer, @ColorConverter()  Color error, @ColorConverter()  Color onError, @ColorConverter()  Color errorContainer, @ColorConverter()  Color onErrorContainer, @ColorConverter()  Color background, @ColorConverter()  Color onBackground, @ColorConverter()  Color surface, @ColorConverter()  Color onSurface, @ColorConverter()  Color surfaceVariant, @ColorConverter()  Color onSurfaceVariant, @ColorConverter()  Color outline, @ColorConverter()  Color outlineVariant, @ColorConverter()  Color shadow, @ColorConverter()  Color scrim, @ColorConverter()  Color inverseSurface, @ColorConverter()  Color inverseOnSurface, @ColorConverter()  Color inversePrimary, @ColorConverter()  Color primaryFixed, @ColorConverter()  Color onPrimaryFixed, @ColorConverter()  Color primaryFixedDim, @ColorConverter()  Color onPrimaryFixedVariant, @ColorConverter()  Color secondaryFixed, @ColorConverter()  Color onSecondaryFixed, @ColorConverter()  Color secondaryFixedDim, @ColorConverter()  Color onSecondaryFixedVariant, @ColorConverter()  Color tertiaryFixed, @ColorConverter()  Color onTertiaryFixed, @ColorConverter()  Color tertiaryFixedDim, @ColorConverter()  Color onTertiaryFixedVariant, @ColorConverter()  Color surfaceDim, @ColorConverter()  Color surfaceBright, @ColorConverter()  Color surfaceContainerLowest, @ColorConverter()  Color surfaceContainerLow, @ColorConverter()  Color surfaceContainer, @ColorConverter()  Color surfaceContainerHigh, @ColorConverter()  Color surfaceContainerHighest)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _FigmaScheme() when $default != null:
+return $default(_that.primary,_that.surfaceTint,_that.onPrimary,_that.primaryContainer,_that.onPrimaryContainer,_that.secondary,_that.onSecondary,_that.secondaryContainer,_that.onSecondaryContainer,_that.tertiary,_that.onTertiary,_that.tertiaryContainer,_that.onTertiaryContainer,_that.error,_that.onError,_that.errorContainer,_that.onErrorContainer,_that.background,_that.onBackground,_that.surface,_that.onSurface,_that.surfaceVariant,_that.onSurfaceVariant,_that.outline,_that.outlineVariant,_that.shadow,_that.scrim,_that.inverseSurface,_that.inverseOnSurface,_that.inversePrimary,_that.primaryFixed,_that.onPrimaryFixed,_that.primaryFixedDim,_that.onPrimaryFixedVariant,_that.secondaryFixed,_that.onSecondaryFixed,_that.secondaryFixedDim,_that.onSecondaryFixedVariant,_that.tertiaryFixed,_that.onTertiaryFixed,_that.tertiaryFixedDim,_that.onTertiaryFixedVariant,_that.surfaceDim,_that.surfaceBright,_that.surfaceContainerLowest,_that.surfaceContainerLow,_that.surfaceContainer,_that.surfaceContainerHigh,_that.surfaceContainerHighest);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ColorConverter()  Color primary, @ColorConverter()  Color surfaceTint, @ColorConverter()  Color onPrimary, @ColorConverter()  Color primaryContainer, @ColorConverter()  Color onPrimaryContainer, @ColorConverter()  Color secondary, @ColorConverter()  Color onSecondary, @ColorConverter()  Color secondaryContainer, @ColorConverter()  Color onSecondaryContainer, @ColorConverter()  Color tertiary, @ColorConverter()  Color onTertiary, @ColorConverter()  Color tertiaryContainer, @ColorConverter()  Color onTertiaryContainer, @ColorConverter()  Color error, @ColorConverter()  Color onError, @ColorConverter()  Color errorContainer, @ColorConverter()  Color onErrorContainer, @ColorConverter()  Color background, @ColorConverter()  Color onBackground, @ColorConverter()  Color surface, @ColorConverter()  Color onSurface, @ColorConverter()  Color surfaceVariant, @ColorConverter()  Color onSurfaceVariant, @ColorConverter()  Color outline, @ColorConverter()  Color outlineVariant, @ColorConverter()  Color shadow, @ColorConverter()  Color scrim, @ColorConverter()  Color inverseSurface, @ColorConverter()  Color inverseOnSurface, @ColorConverter()  Color inversePrimary, @ColorConverter()  Color primaryFixed, @ColorConverter()  Color onPrimaryFixed, @ColorConverter()  Color primaryFixedDim, @ColorConverter()  Color onPrimaryFixedVariant, @ColorConverter()  Color secondaryFixed, @ColorConverter()  Color onSecondaryFixed, @ColorConverter()  Color secondaryFixedDim, @ColorConverter()  Color onSecondaryFixedVariant, @ColorConverter()  Color tertiaryFixed, @ColorConverter()  Color onTertiaryFixed, @ColorConverter()  Color tertiaryFixedDim, @ColorConverter()  Color onTertiaryFixedVariant, @ColorConverter()  Color surfaceDim, @ColorConverter()  Color surfaceBright, @ColorConverter()  Color surfaceContainerLowest, @ColorConverter()  Color surfaceContainerLow, @ColorConverter()  Color surfaceContainer, @ColorConverter()  Color surfaceContainerHigh, @ColorConverter()  Color surfaceContainerHighest)  $default,) {final _that = this;
+switch (_that) {
+case _FigmaScheme():
+return $default(_that.primary,_that.surfaceTint,_that.onPrimary,_that.primaryContainer,_that.onPrimaryContainer,_that.secondary,_that.onSecondary,_that.secondaryContainer,_that.onSecondaryContainer,_that.tertiary,_that.onTertiary,_that.tertiaryContainer,_that.onTertiaryContainer,_that.error,_that.onError,_that.errorContainer,_that.onErrorContainer,_that.background,_that.onBackground,_that.surface,_that.onSurface,_that.surfaceVariant,_that.onSurfaceVariant,_that.outline,_that.outlineVariant,_that.shadow,_that.scrim,_that.inverseSurface,_that.inverseOnSurface,_that.inversePrimary,_that.primaryFixed,_that.onPrimaryFixed,_that.primaryFixedDim,_that.onPrimaryFixedVariant,_that.secondaryFixed,_that.onSecondaryFixed,_that.secondaryFixedDim,_that.onSecondaryFixedVariant,_that.tertiaryFixed,_that.onTertiaryFixed,_that.tertiaryFixedDim,_that.onTertiaryFixedVariant,_that.surfaceDim,_that.surfaceBright,_that.surfaceContainerLowest,_that.surfaceContainerLow,_that.surfaceContainer,_that.surfaceContainerHigh,_that.surfaceContainerHighest);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ColorConverter()  Color primary, @ColorConverter()  Color surfaceTint, @ColorConverter()  Color onPrimary, @ColorConverter()  Color primaryContainer, @ColorConverter()  Color onPrimaryContainer, @ColorConverter()  Color secondary, @ColorConverter()  Color onSecondary, @ColorConverter()  Color secondaryContainer, @ColorConverter()  Color onSecondaryContainer, @ColorConverter()  Color tertiary, @ColorConverter()  Color onTertiary, @ColorConverter()  Color tertiaryContainer, @ColorConverter()  Color onTertiaryContainer, @ColorConverter()  Color error, @ColorConverter()  Color onError, @ColorConverter()  Color errorContainer, @ColorConverter()  Color onErrorContainer, @ColorConverter()  Color background, @ColorConverter()  Color onBackground, @ColorConverter()  Color surface, @ColorConverter()  Color onSurface, @ColorConverter()  Color surfaceVariant, @ColorConverter()  Color onSurfaceVariant, @ColorConverter()  Color outline, @ColorConverter()  Color outlineVariant, @ColorConverter()  Color shadow, @ColorConverter()  Color scrim, @ColorConverter()  Color inverseSurface, @ColorConverter()  Color inverseOnSurface, @ColorConverter()  Color inversePrimary, @ColorConverter()  Color primaryFixed, @ColorConverter()  Color onPrimaryFixed, @ColorConverter()  Color primaryFixedDim, @ColorConverter()  Color onPrimaryFixedVariant, @ColorConverter()  Color secondaryFixed, @ColorConverter()  Color onSecondaryFixed, @ColorConverter()  Color secondaryFixedDim, @ColorConverter()  Color onSecondaryFixedVariant, @ColorConverter()  Color tertiaryFixed, @ColorConverter()  Color onTertiaryFixed, @ColorConverter()  Color tertiaryFixedDim, @ColorConverter()  Color onTertiaryFixedVariant, @ColorConverter()  Color surfaceDim, @ColorConverter()  Color surfaceBright, @ColorConverter()  Color surfaceContainerLowest, @ColorConverter()  Color surfaceContainerLow, @ColorConverter()  Color surfaceContainer, @ColorConverter()  Color surfaceContainerHigh, @ColorConverter()  Color surfaceContainerHighest)?  $default,) {final _that = this;
+switch (_that) {
+case _FigmaScheme() when $default != null:
+return $default(_that.primary,_that.surfaceTint,_that.onPrimary,_that.primaryContainer,_that.onPrimaryContainer,_that.secondary,_that.onSecondary,_that.secondaryContainer,_that.onSecondaryContainer,_that.tertiary,_that.onTertiary,_that.tertiaryContainer,_that.onTertiaryContainer,_that.error,_that.onError,_that.errorContainer,_that.onErrorContainer,_that.background,_that.onBackground,_that.surface,_that.onSurface,_that.surfaceVariant,_that.onSurfaceVariant,_that.outline,_that.outlineVariant,_that.shadow,_that.scrim,_that.inverseSurface,_that.inverseOnSurface,_that.inversePrimary,_that.primaryFixed,_that.onPrimaryFixed,_that.primaryFixedDim,_that.onPrimaryFixedVariant,_that.secondaryFixed,_that.onSecondaryFixed,_that.secondaryFixedDim,_that.onSecondaryFixedVariant,_that.tertiaryFixed,_that.onTertiaryFixed,_that.tertiaryFixedDim,_that.onTertiaryFixedVariant,_that.surfaceDim,_that.surfaceBright,_that.surfaceContainerLowest,_that.surfaceContainerLow,_that.surfaceContainer,_that.surfaceContainerHigh,_that.surfaceContainerHighest);case _:
+  return null;
+
+}
+}
+
+}
 
 /// @nodoc
 @JsonSerializable()
@@ -1184,6 +1833,136 @@ $FigmaPaletteCopyWith<$Res>? get error {
 }
 
 
+/// Adds pattern-matching-related methods to [FigmaPalettes].
+extension FigmaPalettesPatterns on FigmaPalettes {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _FigmaPalettes value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _FigmaPalettes() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _FigmaPalettes value)  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaPalettes():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _FigmaPalettes value)?  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaPalettes() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(includeIfNull: false)  FigmaPalette? primary, @JsonKey(includeIfNull: false)  FigmaPalette? secondary, @JsonKey(includeIfNull: false)  FigmaPalette? tertiary, @JsonKey(includeIfNull: false)  FigmaPalette? neutral, @JsonKey(includeIfNull: false)  FigmaPalette? neutralVariant, @JsonKey(includeIfNull: false)  FigmaPalette? error)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _FigmaPalettes() when $default != null:
+return $default(_that.primary,_that.secondary,_that.tertiary,_that.neutral,_that.neutralVariant,_that.error);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(includeIfNull: false)  FigmaPalette? primary, @JsonKey(includeIfNull: false)  FigmaPalette? secondary, @JsonKey(includeIfNull: false)  FigmaPalette? tertiary, @JsonKey(includeIfNull: false)  FigmaPalette? neutral, @JsonKey(includeIfNull: false)  FigmaPalette? neutralVariant, @JsonKey(includeIfNull: false)  FigmaPalette? error)  $default,) {final _that = this;
+switch (_that) {
+case _FigmaPalettes():
+return $default(_that.primary,_that.secondary,_that.tertiary,_that.neutral,_that.neutralVariant,_that.error);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(includeIfNull: false)  FigmaPalette? primary, @JsonKey(includeIfNull: false)  FigmaPalette? secondary, @JsonKey(includeIfNull: false)  FigmaPalette? tertiary, @JsonKey(includeIfNull: false)  FigmaPalette? neutral, @JsonKey(includeIfNull: false)  FigmaPalette? neutralVariant, @JsonKey(includeIfNull: false)  FigmaPalette? error)?  $default,) {final _that = this;
+switch (_that) {
+case _FigmaPalettes() when $default != null:
+return $default(_that.primary,_that.secondary,_that.tertiary,_that.neutral,_that.neutralVariant,_that.error);case _:
+  return null;
+
+}
+}
+
+}
+
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.kebab)
@@ -1416,6 +2195,136 @@ as Color,
 }
 
 
+/// Adds pattern-matching-related methods to [FigmaPalette].
+extension FigmaPalettePatterns on FigmaPalette {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _FigmaPalette value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _FigmaPalette() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _FigmaPalette value)  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaPalette():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _FigmaPalette value)?  $default,){
+final _that = this;
+switch (_that) {
+case _FigmaPalette() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: "0")@ColorConverter()  Color t0, @JsonKey(name: "5")@ColorConverter()  Color t5, @JsonKey(name: "10")@ColorConverter()  Color t10, @JsonKey(name: "15")@ColorConverter()  Color t15, @JsonKey(name: "20")@ColorConverter()  Color t20, @JsonKey(name: "25")@ColorConverter()  Color t25, @JsonKey(name: "30")@ColorConverter()  Color t30, @JsonKey(name: "35")@ColorConverter()  Color t35, @JsonKey(name: "40")@ColorConverter()  Color t40, @JsonKey(name: "50")@ColorConverter()  Color t50, @JsonKey(name: "60")@ColorConverter()  Color t60, @JsonKey(name: "70")@ColorConverter()  Color t70, @JsonKey(name: "80")@ColorConverter()  Color t80, @JsonKey(name: "90")@ColorConverter()  Color t90, @JsonKey(name: "95")@ColorConverter()  Color t95, @JsonKey(name: "98")@ColorConverter()  Color t98, @JsonKey(name: "99")@ColorConverter()  Color t99, @JsonKey(name: "100")@ColorConverter()  Color t100)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _FigmaPalette() when $default != null:
+return $default(_that.t0,_that.t5,_that.t10,_that.t15,_that.t20,_that.t25,_that.t30,_that.t35,_that.t40,_that.t50,_that.t60,_that.t70,_that.t80,_that.t90,_that.t95,_that.t98,_that.t99,_that.t100);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: "0")@ColorConverter()  Color t0, @JsonKey(name: "5")@ColorConverter()  Color t5, @JsonKey(name: "10")@ColorConverter()  Color t10, @JsonKey(name: "15")@ColorConverter()  Color t15, @JsonKey(name: "20")@ColorConverter()  Color t20, @JsonKey(name: "25")@ColorConverter()  Color t25, @JsonKey(name: "30")@ColorConverter()  Color t30, @JsonKey(name: "35")@ColorConverter()  Color t35, @JsonKey(name: "40")@ColorConverter()  Color t40, @JsonKey(name: "50")@ColorConverter()  Color t50, @JsonKey(name: "60")@ColorConverter()  Color t60, @JsonKey(name: "70")@ColorConverter()  Color t70, @JsonKey(name: "80")@ColorConverter()  Color t80, @JsonKey(name: "90")@ColorConverter()  Color t90, @JsonKey(name: "95")@ColorConverter()  Color t95, @JsonKey(name: "98")@ColorConverter()  Color t98, @JsonKey(name: "99")@ColorConverter()  Color t99, @JsonKey(name: "100")@ColorConverter()  Color t100)  $default,) {final _that = this;
+switch (_that) {
+case _FigmaPalette():
+return $default(_that.t0,_that.t5,_that.t10,_that.t15,_that.t20,_that.t25,_that.t30,_that.t35,_that.t40,_that.t50,_that.t60,_that.t70,_that.t80,_that.t90,_that.t95,_that.t98,_that.t99,_that.t100);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: "0")@ColorConverter()  Color t0, @JsonKey(name: "5")@ColorConverter()  Color t5, @JsonKey(name: "10")@ColorConverter()  Color t10, @JsonKey(name: "15")@ColorConverter()  Color t15, @JsonKey(name: "20")@ColorConverter()  Color t20, @JsonKey(name: "25")@ColorConverter()  Color t25, @JsonKey(name: "30")@ColorConverter()  Color t30, @JsonKey(name: "35")@ColorConverter()  Color t35, @JsonKey(name: "40")@ColorConverter()  Color t40, @JsonKey(name: "50")@ColorConverter()  Color t50, @JsonKey(name: "60")@ColorConverter()  Color t60, @JsonKey(name: "70")@ColorConverter()  Color t70, @JsonKey(name: "80")@ColorConverter()  Color t80, @JsonKey(name: "90")@ColorConverter()  Color t90, @JsonKey(name: "95")@ColorConverter()  Color t95, @JsonKey(name: "98")@ColorConverter()  Color t98, @JsonKey(name: "99")@ColorConverter()  Color t99, @JsonKey(name: "100")@ColorConverter()  Color t100)?  $default,) {final _that = this;
+switch (_that) {
+case _FigmaPalette() when $default != null:
+return $default(_that.t0,_that.t5,_that.t10,_that.t15,_that.t20,_that.t25,_that.t30,_that.t35,_that.t40,_that.t50,_that.t60,_that.t70,_that.t80,_that.t90,_that.t95,_that.t98,_that.t99,_that.t100);case _:
+  return null;
+
+}
+}
+
+}
+
 /// @nodoc
 @JsonSerializable()
 
@@ -1588,6 +2497,136 @@ as Color?,
 
 }
 
+
+/// Adds pattern-matching-related methods to [Template].
+extension TemplatePatterns on Template {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Template value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Template() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Template value)  $default,){
+final _that = this;
+switch (_that) {
+case _Template():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Template value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Template() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(includeIfNull: false)@ColorConverter()  Color? sourceColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? primaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? secondaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? tertiaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralVariantPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? errorPaletteKeyColor)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Template() when $default != null:
+return $default(_that.sourceColor,_that.primaryPaletteKeyColor,_that.secondaryPaletteKeyColor,_that.tertiaryPaletteKeyColor,_that.neutralPaletteKeyColor,_that.neutralVariantPaletteKeyColor,_that.errorPaletteKeyColor);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(includeIfNull: false)@ColorConverter()  Color? sourceColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? primaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? secondaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? tertiaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralVariantPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? errorPaletteKeyColor)  $default,) {final _that = this;
+switch (_that) {
+case _Template():
+return $default(_that.sourceColor,_that.primaryPaletteKeyColor,_that.secondaryPaletteKeyColor,_that.tertiaryPaletteKeyColor,_that.neutralPaletteKeyColor,_that.neutralVariantPaletteKeyColor,_that.errorPaletteKeyColor);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(includeIfNull: false)@ColorConverter()  Color? sourceColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? primaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? secondaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? tertiaryPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? neutralVariantPaletteKeyColor, @JsonKey(includeIfNull: false)@ColorConverter()  Color? errorPaletteKeyColor)?  $default,) {final _that = this;
+switch (_that) {
+case _Template() when $default != null:
+return $default(_that.sourceColor,_that.primaryPaletteKeyColor,_that.secondaryPaletteKeyColor,_that.tertiaryPaletteKeyColor,_that.neutralPaletteKeyColor,_that.neutralVariantPaletteKeyColor,_that.errorPaletteKeyColor);case _:
+  return null;
+
+}
+}
+
+}
 
 /// @nodoc
 @JsonSerializable()
