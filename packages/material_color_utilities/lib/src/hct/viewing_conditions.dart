@@ -1,8 +1,7 @@
 import 'dart:math' as math;
 
-import 'package:material_color_utilities/src/utils/color_utils.dart';
-
 import '../utils/math_utils.dart';
+import '../utils/color_utils.dart';
 
 final class ViewingConditions {
   static final ViewingConditions standard = sRgb;
