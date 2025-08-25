@@ -11,7 +11,7 @@
   "schemes": {
     "light": {
       "primary": "#9920A5",
-      "surfaceTint": "#F67AFD",
+      "surfaceTint": "#9920A5",
       "onPrimary": "#FFEEFA",
       "primaryContainer": "#F67AFD",
       "onPrimaryContainer": "#52005A",
@@ -62,7 +62,7 @@
     },
     "light-medium-contrast": {
       "primary": "#71007C",
-      "surfaceTint": "#F67AFD",
+      "surfaceTint": "#71007C",
       "onPrimary": "#FFC0FC",
       "primaryContainer": "#B740C1",
       "onPrimaryContainer": "#FFFFFF",
@@ -113,7 +113,7 @@
     },
     "light-high-contrast": {
       "primary": "#3D0043",
-      "surfaceTint": "#F67AFD",
+      "surfaceTint": "#3D0043",
       "onPrimary": "#FFC0FC",
       "primaryContainer": "#9920A5",
       "onPrimaryContainer": "#FFFFFF",
@@ -164,7 +164,7 @@
     },
     "dark": {
       "primary": "#F97EFF",
-      "surfaceTint": "#F67AFD",
+      "surfaceTint": "#F97EFF",
       "onPrimary": "#56005E",
       "primaryContainer": "#EA6FF1",
       "onPrimaryContainer": "#420049",
@@ -184,7 +184,7 @@
       "onBackground": "#FFDCEA",
       "surface": "#220215",
       "onSurface": "#FFDCEA",
-      "surfaceVariant": "#3F182D",
+      "surfaceVariant": "#451230",
       "onSurfaceVariant": "#D49BB5",
       "outline": "#99667F",
       "outlineVariant": "#663A50",
@@ -215,7 +215,7 @@
     },
     "dark-medium-contrast": {
       "primary": "#FC91FF",
-      "surfaceTint": "#F67AFD",
+      "surfaceTint": "#FC91FF",
       "onPrimary": "#52005A",
       "primaryContainer": "#EA6FF1",
       "onPrimaryContainer": "#2B0030",
@@ -235,7 +235,7 @@
       "onBackground": "#FFFFFF",
       "surface": "#220215",
       "onSurface": "#FFFFFF",
-      "surfaceVariant": "#3F182D",
+      "surfaceVariant": "#451230",
       "onSurfaceVariant": "#E3A8C3",
       "outline": "#BA849D",
       "outlineVariant": "#99667F",
@@ -266,7 +266,7 @@
     },
     "dark-high-contrast": {
       "primary": "#FFDBFA",
-      "surfaceTint": "#F67AFD",
+      "surfaceTint": "#FFDBFA",
       "onPrimary": "#52005A",
       "primaryContainer": "#EA6FF1",
       "onPrimaryContainer": "#000000",
@@ -286,7 +286,7 @@
       "onBackground": "#FFFFFF",
       "surface": "#220215",
       "onSurface": "#FFFFFF",
-      "surfaceVariant": "#3F182D",
+      "surfaceVariant": "#451230",
       "onSurfaceVariant": "#FFDCEA",
       "outline": "#E3A8C3",
       "outlineVariant": "#BA849D",

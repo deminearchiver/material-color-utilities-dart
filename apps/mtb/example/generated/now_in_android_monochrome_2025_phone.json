@@ -11,7 +11,7 @@
   "schemes": {
     "light": {
       "primary": "#5F5F5F",
-      "surfaceTint": "#F9F9F9",
+      "surfaceTint": "#5F5F5F",
       "onPrimary": "#F9F9F9",
       "primaryContainer": "#EBEBEB",
       "onPrimaryContainer": "#575757",
@@ -62,7 +62,7 @@
     },
     "light-medium-contrast": {
       "primary": "#434343",
-      "surfaceTint": "#F9F9F9",
+      "surfaceTint": "#434343",
       "onPrimary": "#DADADA",
       "primaryContainer": "#747474",
       "onPrimaryContainer": "#FFFFFF",
@@ -113,7 +113,7 @@
     },
     "light-high-contrast": {
       "primary": "#242424",
-      "surfaceTint": "#F9F9F9",
+      "surfaceTint": "#242424",
       "onPrimary": "#DADADA",
       "primaryContainer": "#5F5F5F",
       "onPrimaryContainer": "#FFFFFF",

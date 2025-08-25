@@ -8,7 +8,7 @@
   "schemes": {
     "light": {
       "primary": "#A7D2FF",
-      "surfaceTint": "#6BB6FA",
+      "surfaceTint": "#A7D2FF",
       "onPrimary": "#002742",
       "primaryContainer": "#004A77",
       "onPrimaryContainer": "#CAE3FF",
@@ -59,7 +59,7 @@
     },
     "light-medium-contrast": {
       "primary": "#FFFEFF",
-      "surfaceTint": "#6BB6FA",
+      "surfaceTint": "#FFFEFF",
       "onPrimary": "#001B30",
       "primaryContainer": "#004A77",
       "onPrimaryContainer": "#FFFFFF",
@@ -110,7 +110,7 @@
     },
     "light-high-contrast": {
       "primary": "#FFFFFF",
-      "surfaceTint": "#6BB6FA",
+      "surfaceTint": "#FFFFFF",
       "onPrimary": "#000000",
       "primaryContainer": "#004A77",
       "onPrimaryContainer": "#FFFFFF",
@@ -161,7 +161,7 @@
     },
     "dark": {
       "primary": "#A7D2FF",
-      "surfaceTint": "#6BB6FA",
+      "surfaceTint": "#A7D2FF",
       "onPrimary": "#002742",
       "primaryContainer": "#004A77",
       "onPrimaryContainer": "#CAE3FF",
@@ -212,7 +212,7 @@
     },
     "dark-medium-contrast": {
       "primary": "#FFFEFF",
-      "surfaceTint": "#6BB6FA",
+      "surfaceTint": "#FFFEFF",
       "onPrimary": "#001B30",
       "primaryContainer": "#004A77",
       "onPrimaryContainer": "#FFFFFF",
@@ -263,7 +263,7 @@
     },
     "dark-high-contrast": {
       "primary": "#FFFFFF",
-      "surfaceTint": "#6BB6FA",
+      "surfaceTint": "#FFFFFF",
       "onPrimary": "#000000",
       "primaryContainer": "#004A77",
       "onPrimaryContainer": "#FFFFFF",

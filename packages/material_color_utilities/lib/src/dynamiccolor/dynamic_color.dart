@@ -26,15 +26,18 @@ final class DynamicColor {
     this.opacity,
   }) : assert(
          secondBackground == null || background != null,
-         "Color $name has secondBackground defined, but background is not defined.",
+         "Color $name has secondBackground defined,"
+         " but background is not defined.",
        ),
        assert(
          contrastCurve == null || background != null,
-         "Color $name has contrastCurve defined, but background is not defined.",
+         "Color $name has contrastCurve defined,"
+         " but background is not defined.",
        ),
        assert(
          background == null || contrastCurve != null,
-         "Color $name has background defined, but contrastCurve is not defined.",
+         "Color $name has background defined,"
+         " but contrastCurve is not defined.",
        );
 
   DynamicColor.fromPalette({
@@ -80,6 +83,12 @@ final class DynamicColor {
       palette: palette ?? this.palette,
       tone: tone ?? this.tone,
       isBackground: isBackground ?? this.isBackground,
+      chromaMultiplier: chromaMultiplier,
+      background: background,
+      secondBackground: secondBackground,
+      contrastCurve: contrastCurve,
+      toneDeltaPair: toneDeltaPair,
+      opacity: opacity,
     );
   }
 
@@ -114,13 +123,16 @@ final class DynamicColor {
     final preferLighter = tonePrefersLightForeground(bgTone);
 
     if (preferLighter) {
-      // "Neglible difference" handles an edge case where the initial contrast ratio is high
-      // (ex. 13.0), and the ratio passed to the function is that high ratio, and both the lighter
+      // "Neglible difference" handles an edge case where
+      // the initial contrast ratio is high (ex. 13.0),
+      // and the ratio passed to the function is that high ratio,
+      // and both the lighter
       // and darker ratio fails to pass that ratio.
       //
-      // This was observed with Tonal Spot's On Primary Container turning black momentarily between
-      // high and max contrast in light mode. PC's standard tone was T90, OPC's was T10, it was
-      // light mode, and the contrast level was 0.6568521221032331.
+      // This was observed with Tonal Spot's On Primary Container
+      // turning black momentarily between high and max contrast in light mode.
+      // PC's standard tone was T90, OPC's was T10, it was light mode,
+      // and the contrast level was 0.6568521221032331.
       final negligibleDifference =
           (lighterRatio - darkerRatio).abs() < 0.1 &&
           lighterRatio < ratio &&
@@ -167,11 +179,17 @@ final class DynamicColor {
   ) {
     assert(
       name == extendedColor.name,
-      "Attempting to extend color $name with color ${extendedColor.name} of different name for spec version $specVersion.",
+      "Attempting to extend color $name "
+      "with color ${extendedColor.name} of different name "
+      "for spec version $specVersion.",
     );
     assert(
       isBackground == extendedColor.isBackground,
-      "Attempting to extend color $name as a ${isBackground ? "background" : "foreground"} with color ${extendedColor.name} as a ${extendedColor.isBackground ? "background" : "foreground"} for spec version $specVersion.",
+      "Attempting to extend color $name as a "
+      "${isBackground ? "background" : "foreground"} with color "
+      "${extendedColor.name} as a "
+      "${extendedColor.isBackground ? "background" : "foreground"} "
+      "for spec version $specVersion.",
     );
   }
 
@@ -225,37 +243,4 @@ final class DynamicColor {
       },
     );
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is DynamicColor &&
-            runtimeType == other.runtimeType &&
-            name == other.name &&
-            palette == other.palette &&
-            tone == other.tone &&
-            isBackground == other.isBackground &&
-            chromaMultiplier == other.chromaMultiplier &&
-            background == other.background &&
-            secondBackground == other.secondBackground &&
-            contrastCurve == other.contrastCurve &&
-            toneDeltaPair == other.toneDeltaPair &&
-            opacity == other.opacity;
-  }
-
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    name,
-    palette,
-    tone,
-    isBackground,
-    chromaMultiplier,
-    background,
-    secondBackground,
-    contrastCurve,
-    toneDeltaPair,
-    opacity,
-  );
 }
