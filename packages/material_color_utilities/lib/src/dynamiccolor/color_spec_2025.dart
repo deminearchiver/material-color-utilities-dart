@@ -67,7 +67,7 @@ class ColorSpec2025 extends ColorSpec2021 {
     return MathUtils.clampDouble(lowerBound, upperBound, answer);
   }
 
-  static _getContrastCurve(double defaultContrast) {
+  static ContrastCurve _getContrastCurve(double defaultContrast) {
     if (defaultContrast == 1.5) {
       return const ContrastCurve(1.5, 1.5, 3, 4.5);
     } else if (defaultContrast == 3) {
