@@ -23,6 +23,11 @@ final class ContrastCurve {
   }
 
   @override
+  String toString() =>
+      "ContrastCurve(${low.toStringAsFixed(1)}, ${normal.toStringAsFixed(1)}, "
+      "${medium.toStringAsFixed(1)}, ${high.toStringAsFixed(1)})";
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         runtimeType == other.runtimeType &&
