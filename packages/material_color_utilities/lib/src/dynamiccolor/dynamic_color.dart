@@ -69,7 +69,10 @@ final class DynamicColor {
     DynamicSchemeCallback<double>? tone,
     bool? isBackground,
   }) {
-    if (name == null && palette == null) {
+    if (name == null &&
+        palette == null &&
+        tone == null &&
+        isBackground == null) {
       return this;
     }
     return DynamicColor(

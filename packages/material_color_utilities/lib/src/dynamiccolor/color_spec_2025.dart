@@ -136,7 +136,11 @@ class ColorSpec2025 extends ColorSpec2021 {
 
   @override
   DynamicColor onBackground() {
-    final color2025 = onSurface().copyWith(name: "on_background");
+    final color2025 = onSurface().copyWith(
+      name: "on_background",
+      tone: (s) =>
+          s.platform == Platform.watch ? 100.0 : onSurface().getTone(s),
+    );
     return super.onBackground().extendSpecVersion(
       SpecVersion.spec2025,
       color2025,
