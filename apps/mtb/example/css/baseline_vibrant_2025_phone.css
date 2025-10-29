@@ -50,14 +50,14 @@
   --md-sys-color-tertiary-container: #FF8EB2;
   --md-sys-color-on-tertiary-container: #640432;
   --md-sys-color-tertiary-fixed: #FF8EB2;
-  --md-sys-color-tertiary-fixed-dim: #BF8CF7;
+  --md-sys-color-tertiary-fixed-dim: #F67CA4;
   --md-sys-color-on-tertiary-fixed: #380018;
   --md-sys-color-on-tertiary-fixed-variant: #70103A;
   --md-sys-color-error: #B41340;
   --md-sys-color-error-dim: #A20036;
   --md-sys-color-on-error: #FFEFEF;
   --md-sys-color-error-container: #F74B6D;
-  --md-sys-color-on-error-container: #100002;
+  --md-sys-color-on-error-container: #510017;
   --md-sys-color-widget-background: #F6EEFF;
 }
 .light-medium-contrast {
@@ -112,7 +112,7 @@
   --md-sys-color-tertiary-container: #BD4F76;
   --md-sys-color-on-tertiary-container: #FFFFFF;
   --md-sys-color-tertiary-fixed: #BD4F76;
-  --md-sys-color-tertiary-fixed-dim: #8150B7;
+  --md-sys-color-tertiary-fixed-dim: #AD4269;
   --md-sys-color-on-tertiary-fixed: #FFFFFF;
   --md-sys-color-on-tertiary-fixed-variant: #FFFFFF;
   --md-sys-color-error: #83002A;
@@ -174,7 +174,7 @@
   --md-sys-color-tertiary-container: #9D365D;
   --md-sys-color-on-tertiary-container: #FFFFFF;
   --md-sys-color-tertiary-fixed: #9D365D;
-  --md-sys-color-tertiary-fixed-dim: #67369C;
+  --md-sys-color-tertiary-fixed-dim: #8E2951;
   --md-sys-color-on-tertiary-fixed: #FFFFFF;
   --md-sys-color-on-tertiary-fixed-variant: #FFFFFF;
   --md-sys-color-error: #470013;
@@ -195,7 +195,7 @@
   --md-sys-color-on-background: #F1DFFF;
   --md-sys-color-surface: #16052A;
   --md-sys-color-surface-dim: #16052A;
-  --md-sys-color-surface-bright: #36244A;
+  --md-sys-color-surface-bright: #391E58;
   --md-sys-color-surface-container-lowest: #000000;
   --md-sys-color-surface-container-low: #1D0832;
   --md-sys-color-surface-container: #240E3B;
@@ -236,14 +236,14 @@
   --md-sys-color-tertiary-container: #FC81AA;
   --md-sys-color-on-tertiary-container: #59002B;
   --md-sys-color-tertiary-fixed: #FF8EB2;
-  --md-sys-color-tertiary-fixed-dim: #BF8CF7;
+  --md-sys-color-tertiary-fixed-dim: #F67CA4;
   --md-sys-color-on-tertiary-fixed: #380018;
   --md-sys-color-on-tertiary-fixed-variant: #70103A;
   --md-sys-color-error: #FF6E84;
   --md-sys-color-error-dim: #D73357;
   --md-sys-color-on-error: #490013;
   --md-sys-color-error-container: #A70138;
-  --md-sys-color-on-error-container: #FFDADD;
+  --md-sys-color-on-error-container: #FFB2B9;
   --md-sys-color-widget-background: #3A0092;
 }
 .dark-medium-contrast {
@@ -257,7 +257,7 @@
   --md-sys-color-on-background: #FFFFFF;
   --md-sys-color-surface: #16052A;
   --md-sys-color-surface-dim: #16052A;
-  --md-sys-color-surface-bright: #36244A;
+  --md-sys-color-surface-bright: #391E58;
   --md-sys-color-surface-container-lowest: #000000;
   --md-sys-color-surface-container-low: #1D0832;
   --md-sys-color-surface-container: #240E3B;
@@ -298,7 +298,7 @@
   --md-sys-color-tertiary-container: #FC81AA;
   --md-sys-color-on-tertiary-container: #43001E;
   --md-sys-color-tertiary-fixed: #FF8EB2;
-  --md-sys-color-tertiary-fixed-dim: #BF8CF7;
+  --md-sys-color-tertiary-fixed-dim: #F67CA4;
   --md-sys-color-on-tertiary-fixed: #000000;
   --md-sys-color-on-tertiary-fixed-variant: #380018;
   --md-sys-color-error: #FF9DA8;
@@ -319,7 +319,7 @@
   --md-sys-color-on-background: #FFFFFF;
   --md-sys-color-surface: #16052A;
   --md-sys-color-surface-dim: #16052A;
-  --md-sys-color-surface-bright: #36244A;
+  --md-sys-color-surface-bright: #391E58;
   --md-sys-color-surface-container-lowest: #000000;
   --md-sys-color-surface-container-low: #1D0832;
   --md-sys-color-surface-container: #240E3B;
@@ -360,7 +360,7 @@
   --md-sys-color-tertiary-container: #FC81AA;
   --md-sys-color-on-tertiary-container: #000000;
   --md-sys-color-tertiary-fixed: #FF8EB2;
-  --md-sys-color-tertiary-fixed-dim: #BF8CF7;
+  --md-sys-color-tertiary-fixed-dim: #F67CA4;
   --md-sys-color-on-tertiary-fixed: #000000;
   --md-sys-color-on-tertiary-fixed-variant: #000000;
   --md-sys-color-error: #FFDDDF;

@@ -57,7 +57,7 @@
   --md-sys-color-error-dim: #A90810;
   --md-sys-color-on-error: #FFF7F6;
   --md-sys-color-error-container: #FE4E44;
-  --md-sys-color-on-error-container: #1F0000;
+  --md-sys-color-on-error-container: #570003;
   --md-sys-color-widget-background: #F1F1F1;
 }
 .light-medium-contrast {
@@ -243,7 +243,7 @@
   --md-sys-color-error-dim: #DA342E;
   --md-sys-color-on-error: #4A0002;
   --md-sys-color-error-container: #AC0C12;
-  --md-sys-color-on-error-container: #FFE0DC;
+  --md-sys-color-on-error-container: #FFB8B0;
   --md-sys-color-widget-background: #303030;
 }
 .dark-medium-contrast {

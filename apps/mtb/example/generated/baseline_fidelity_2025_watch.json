@@ -28,7 +28,7 @@
       "onBackground": "#FFFFFF",
       "surface": "#000000",
       "onSurface": "#ECE6EE",
-      "surfaceVariant": "#322F35",
+      "surfaceVariant": "#E6E0E9",
       "onSurfaceVariant": "#D2CCD4",
       "outline": "#A9A4AC",
       "outlineVariant": "#88848B",
@@ -47,7 +47,7 @@
       "onSecondaryFixedVariant": "#ACA0C6",
       "tertiaryFixed": "#D2AF54",
       "onTertiaryFixed": "#241A00",
-      "tertiaryFixedDim": "#ACA0C7",
+      "tertiaryFixedDim": "#C4A249",
       "onTertiaryFixedVariant": "#4B3900",
       "surfaceDim": "#DED8E0",
       "surfaceBright": "#FDF7FF",
@@ -55,7 +55,7 @@
       "surfaceContainerLow": "#27252B",
       "surfaceContainer": "#322F35",
       "surfaceContainerHigh": "#3D3A41",
-      "surfaceContainerHighest": "#322F35"
+      "surfaceContainerHighest": "#E6E0E9"
     },
     "light-medium-contrast": {
       "primary": "#FFFEFF",
@@ -79,7 +79,7 @@
       "onBackground": "#FFFFFF",
       "surface": "#000000",
       "onSurface": "#FFFEFF",
-      "surfaceVariant": "#322F35",
+      "surfaceVariant": "#E6E0E9",
       "onSurfaceVariant": "#FFFEFF",
       "outline": "#D2CCD4",
       "outlineVariant": "#A9A4AC",
@@ -98,7 +98,7 @@
       "onSecondaryFixedVariant": "#D5C8F0",
       "tertiaryFixed": "#D2AF54",
       "onTertiaryFixed": "#000000",
-      "tertiaryFixedDim": "#ACA0C7",
+      "tertiaryFixedDim": "#C4A249",
       "onTertiaryFixedVariant": "#241A00",
       "surfaceDim": "#DED8E0",
       "surfaceBright": "#FDF7FF",
@@ -106,7 +106,7 @@
       "surfaceContainerLow": "#27252B",
       "surfaceContainer": "#322F35",
       "surfaceContainerHigh": "#3D3A41",
-      "surfaceContainerHighest": "#322F35"
+      "surfaceContainerHighest": "#E6E0E9"
     },
     "light-high-contrast": {
       "primary": "#FFFFFF",
@@ -130,7 +130,7 @@
       "onBackground": "#FFFFFF",
       "surface": "#000000",
       "onSurface": "#FFFFFF",
-      "surfaceVariant": "#322F35",
+      "surfaceVariant": "#E6E0E9",
       "onSurfaceVariant": "#FFFFFF",
       "outline": "#FFFEFF",
       "outlineVariant": "#D2CCD4",
@@ -149,7 +149,7 @@
       "onSecondaryFixedVariant": "#FFFEFF",
       "tertiaryFixed": "#D2AF54",
       "onTertiaryFixed": "#000000",
-      "tertiaryFixedDim": "#ACA0C7",
+      "tertiaryFixedDim": "#C4A249",
       "onTertiaryFixedVariant": "#000000",
       "surfaceDim": "#DED8E0",
       "surfaceBright": "#FDF7FF",
@@ -157,7 +157,7 @@
       "surfaceContainerLow": "#27252B",
       "surfaceContainer": "#322F35",
       "surfaceContainerHigh": "#3D3A41",
-      "surfaceContainerHighest": "#322F35"
+      "surfaceContainerHighest": "#E6E0E9"
     },
     "dark": {
       "primary": "#D6C5FF",
@@ -181,7 +181,7 @@
       "onBackground": "#FFFFFF",
       "surface": "#000000",
       "onSurface": "#FFFEFF",
-      "surfaceVariant": "#322F35",
+      "surfaceVariant": "#27252B",
       "onSurfaceVariant": "#D2CCD4",
       "outline": "#A9A4AC",
       "outlineVariant": "#88848B",
@@ -200,7 +200,7 @@
       "onSecondaryFixedVariant": "#ACA0C6",
       "tertiaryFixed": "#D2AF54",
       "onTertiaryFixed": "#241A00",
-      "tertiaryFixedDim": "#ACA0C7",
+      "tertiaryFixedDim": "#C4A249",
       "onTertiaryFixedVariant": "#4B3900",
       "surfaceDim": "#0F0D13",
       "surfaceBright": "#2D2B31",
@@ -208,7 +208,7 @@
       "surfaceContainerLow": "#27252B",
       "surfaceContainer": "#322F35",
       "surfaceContainerHigh": "#3D3A41",
-      "surfaceContainerHighest": "#322F35"
+      "surfaceContainerHighest": "#27252B"
     },
     "dark-medium-contrast": {
       "primary": "#FFFEFF",
@@ -232,7 +232,7 @@
       "onBackground": "#FFFFFF",
       "surface": "#000000",
       "onSurface": "#FFFFFF",
-      "surfaceVariant": "#322F35",
+      "surfaceVariant": "#27252B",
       "onSurfaceVariant": "#FFFEFF",
       "outline": "#D2CCD4",
       "outlineVariant": "#A9A4AC",
@@ -251,7 +251,7 @@
       "onSecondaryFixedVariant": "#D5C8F0",
       "tertiaryFixed": "#D2AF54",
       "onTertiaryFixed": "#000000",
-      "tertiaryFixedDim": "#ACA0C7",
+      "tertiaryFixedDim": "#C4A249",
       "onTertiaryFixedVariant": "#241A00",
       "surfaceDim": "#0F0D13",
       "surfaceBright": "#2D2B31",
@@ -259,7 +259,7 @@
       "surfaceContainerLow": "#27252B",
       "surfaceContainer": "#322F35",
       "surfaceContainerHigh": "#3D3A41",
-      "surfaceContainerHighest": "#322F35"
+      "surfaceContainerHighest": "#27252B"
     },
     "dark-high-contrast": {
       "primary": "#FFFFFF",
@@ -283,7 +283,7 @@
       "onBackground": "#FFFFFF",
       "surface": "#000000",
       "onSurface": "#FFFFFF",
-      "surfaceVariant": "#322F35",
+      "surfaceVariant": "#27252B",
       "onSurfaceVariant": "#FFFFFF",
       "outline": "#FFFEFF",
       "outlineVariant": "#D2CCD4",
@@ -302,7 +302,7 @@
       "onSecondaryFixedVariant": "#FFFEFF",
       "tertiaryFixed": "#D2AF54",
       "onTertiaryFixed": "#000000",
-      "tertiaryFixedDim": "#ACA0C7",
+      "tertiaryFixedDim": "#C4A249",
       "onTertiaryFixedVariant": "#000000",
       "surfaceDim": "#0F0D13",
       "surfaceBright": "#2D2B31",
@@ -310,7 +310,7 @@
       "surfaceContainerLow": "#27252B",
       "surfaceContainer": "#322F35",
       "surfaceContainerHigh": "#3D3A41",
-      "surfaceContainerHighest": "#322F35"
+      "surfaceContainerHighest": "#27252B"
     }
   },
   "palettes": {}
