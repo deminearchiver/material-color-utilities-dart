@@ -1,13 +1,20 @@
-name: _
+name: material_color_utilities
+description: Algorithms and utilities that power the Material Design 3 (M3) color system, including choosing theme colors from images and creating tones of colors; all in a new color space.
+version: 1.0.0
+repository: https://github.com/deminearchiver/material-color-utilities-dart
+homepage: https://github.com/deminearchiver/material-color-utilities
 publish_to: none
 
 environment:
   sdk: ^3.9.2
-  # flutter: ">=3.32.0"
 
 workspace:
-  # Packages
-  - packages/material_color_utilities
-
-  # Apps
   - apps/mtb
+
+dependencies:
+  meta: ^1.17.0
+
+dev_dependencies:
+  collection: ^1.19.1
+  lints: ^6.0.0
+  test: ^1.26.3
