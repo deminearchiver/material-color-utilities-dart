@@ -476,8 +476,9 @@ class ColorSpec2025 extends ColorSpec2021 {
           return surfaceContainerHigh();
         }
       },
-      contrastCurve: (s) =>
-          s.isDark ? _getContrastCurve(11) : _getContrastCurve(9),
+      contrastCurve: (s) => s.isDark && s.platform == Platform.phone
+          ? _getContrastCurve(11)
+          : _getContrastCurve(9),
     );
     return super.onSurface().extendSpecVersion(SpecVersion.spec2025, color2025);
   }
