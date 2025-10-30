@@ -959,6 +959,10 @@ class ColorSpec2025 extends ColorSpec2021 {
               constraint: DeltaConstraint.farther,
             )
           : null,
+      contrastCurve: (s) =>
+          s.platform == Platform.phone && s.contrastLevel > 0.0
+          ? _getContrastCurve(1.5)
+          : null,
     );
     return super.secondaryContainer().extendSpecVersion(
       SpecVersion.spec2025,
