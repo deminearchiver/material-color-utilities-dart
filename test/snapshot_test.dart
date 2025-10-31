@@ -399,56 +399,6 @@ class ColorMapConverter
       object.map((key, value) => MapEntry(key, "#${value.hex}"));
 }
 
-void _expectMatchesSnapshot(String snapshotFilePath) {
-  final Map<String, DynamicColor> dynamicColorsMap = Map.fromEntries(
-    const MaterialDynamicColors().allDynamicColors.map(
-      (value) => MapEntry(value.name, value),
-    ),
-  );
-
-  // Data loading
-  final file = File(snapshotFilePath);
-  expect(file.existsSync(), true);
-  final text = file.readAsStringSync();
-
-  // JSON validation
-  final Object? decodedJson = jsonDecode(text);
-  final validJson = _tryValidateSnapshots(decodedJson);
-
-  // JSON parsing
-  final snapshots = _tryParseSnapshots(validJson);
-
-  for (final snapshot in snapshots) {
-    final scheme = DynamicScheme.fromPalettesOrKeyColors(
-      isDark: snapshot.properties.isDark,
-      sourceColorHct: snapshot.properties.sourceColor.hct,
-      contrastLevel: snapshot.properties.contrastLevel,
-      variant: snapshot.properties.variant,
-      platform: snapshot.properties.platform,
-      specVersion: snapshot.properties.specVersion,
-    );
-    final snapshotColors = {
-      ...snapshot.materialDynamicColors,
-      ...snapshot.androidOnlyDynamicColors,
-    };
-
-    for (final MapEntry(key: name, value: snapshotColor)
-        in snapshotColors.entries) {
-      final dynamicColor = dynamicColorsMap[name];
-      if (dynamicColor != null) {
-        final generatedColor = Color.argb(scheme.getArgb(dynamicColor));
-        expect(
-          generatedColor.argb,
-          snapshotColor.argb,
-          reason:
-              "snapshot: ${snapshot.properties}\nscheme: $scheme\ncolor: $name",
-        );
-      }
-    }
-  }
-}
-
-// TODO: generate kotlin and typescript snapshots and add here
 void main() {
   // Implementation priority: high
   test(
@@ -469,6 +419,59 @@ void main() {
   //   "matches kotlin snapshot",
   //   () => _expectMatchesSnapshot("./test/snapshots/kotlin.json"),
   // );
+}
+
+void _expectMatchesSnapshot(String snapshotFilePath) {
+  final dynamicColorsMap = Map<String, DynamicColor>.fromEntries(
+    const MaterialDynamicColors().allDynamicColors.map(
+      (value) => MapEntry(value.name, value),
+    ),
+  );
+
+  // Data loading
+  final file = File(snapshotFilePath);
+  expect(file.existsSync(), isTrue);
+  final text = file.readAsStringSync();
+
+  // JSON validation
+  final Object? decodedJson = jsonDecode(text);
+  final validJson = _tryValidateSnapshots(decodedJson);
+
+  // JSON parsing
+  final snapshots = _tryParseSnapshots(validJson);
+
+  for (final snapshot in snapshots) {
+    final scheme = DynamicScheme.fromPalettesOrKeyColors(
+      isDark: snapshot.properties.isDark,
+      sourceColorHct: snapshot.properties.sourceColor.hct,
+      contrastLevel: snapshot.properties.contrastLevel,
+      variant: snapshot.properties.variant,
+      platform: snapshot.properties.platform,
+      specVersion: snapshot.properties.specVersion,
+    );
+
+    final snapshotColors = {
+      ...snapshot.materialDynamicColors,
+      ...snapshot.androidOnlyDynamicColors,
+    };
+
+    final dynamicColorsMapCopy = Map.of(dynamicColorsMap);
+    for (final MapEntry(key: name, value: snapshotColor)
+        in snapshotColors.entries) {
+      final dynamicColor = dynamicColorsMapCopy.remove(name);
+      expect(dynamicColor, isNotNull);
+      if (dynamicColor != null) {
+        final generatedColor = Color.argb(scheme.getArgb(dynamicColor));
+        expect(
+          generatedColor.argb,
+          snapshotColor.argb,
+          reason:
+              "snapshot: ${snapshot.properties}\nscheme: $scheme\ncolor: $name",
+        );
+      }
+    }
+    expect(dynamicColorsMapCopy, isEmpty);
+  }
 }
 
 List<Map<String, Object?>> _tryValidateSnapshots(Object? json) {
