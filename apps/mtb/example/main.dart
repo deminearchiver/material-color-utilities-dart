@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:material_color_utilities/material_color_utilities.dart';
-import 'package:mtb/api.dart';
 import 'package:change_case/change_case.dart';
 import 'package:mtb/src/cli.dart' show DynamicSchemes;
 import 'package:mtb/src/color.dart';
@@ -79,10 +78,7 @@ const Map<String, SeedColors> seedColorsToThemeNameMap = {
 
 final Set<DynamicSchemes> seen = <DynamicSchemes>{};
 
-final allDynamicColors = [
-  ...const MaterialDynamicColors().allDynamicColors,
-  ...const AndroidDynamicColors().allDynamicColors,
-];
+final allDynamicColors = const MaterialDynamicColors().allDynamicColors;
 
 void main() async {
   final List<Future<File>> futures = [];
