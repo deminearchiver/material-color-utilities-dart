@@ -5,7 +5,6 @@ import 'package:change_case/change_case.dart';
 import 'package:mtb/src/cli.dart' show DynamicSchemes;
 import 'package:mtb/src/color.dart';
 import 'package:mtb/src/json.dart';
-import 'package:change_case/change_case.dart';
 
 const List<Variant> variants = Variant.values;
 const List<SpecVersion> specVersions = SpecVersion.values;
@@ -60,29 +59,101 @@ class SeedColors {
 
 const String baseline = "baseline";
 const String nowInAndroid = "now_in_android";
-const String figmaDesign = "figmadesign";
-const String figmaDevMode = "figmadevmode";
 
-const Map<String, SeedColors> seedColorsToThemeNameMap = {
+const Map<String, SeedColors> seedColorsByName = {
   baseline: SeedColors(sourceColor: Color.argb(0xFF6750A4)),
   nowInAndroid: SeedColors(
     sourceColor: Color.argb(0xFF8C4190),
-    // primaryPaletteKeyColorArgb: 0xFF8C4190,
+    // primaryPaletteKeyColor: Color.argb(0xFF8C4190),
     secondaryPaletteKeyColor: Color.argb(0xFFFF8456),
     tertiaryPaletteKeyColor: Color.argb(0xFFB3E9FF),
     neutralPaletteKeyColor: Color.argb(0xFF201A1B),
   ),
-  // figmaDesign: SeedColors(sourceColor: Color.argb(0xFF0d99ff)),
-  // figmaDevMode: SeedColors(sourceColor: Color.argb(0xFF14ae5c)),
 };
 
-final Set<DynamicSchemes> seen = <DynamicSchemes>{};
+const MaterialDynamicColors _mdc = MaterialDynamicColors();
 
-final allDynamicColors = const MaterialDynamicColors().allDynamicColors;
+final List<DynamicColor> _materialDynamicColors = <DynamicColor>[
+  _mdc.primaryPaletteKeyColor(),
+  _mdc.secondaryPaletteKeyColor(),
+  _mdc.tertiaryPaletteKeyColor(),
+  _mdc.neutralPaletteKeyColor(),
+  _mdc.neutralVariantPaletteKeyColor(),
+  _mdc.errorPaletteKeyColor(),
+  _mdc.background(),
+  _mdc.onBackground(),
+  _mdc.surface(),
+  _mdc.surfaceDim(),
+  _mdc.surfaceBright(),
+  _mdc.surfaceContainerLowest(),
+  _mdc.surfaceContainerLow(),
+  _mdc.surfaceContainer(),
+  _mdc.surfaceContainerHigh(),
+  _mdc.surfaceContainerHighest(),
+  _mdc.onSurface(),
+  _mdc.surfaceVariant(),
+  _mdc.onSurfaceVariant(),
+  _mdc.outline(),
+  _mdc.outlineVariant(),
+  _mdc.inverseSurface(),
+  _mdc.inverseOnSurface(),
+  _mdc.shadow(),
+  _mdc.scrim(),
+  _mdc.surfaceTint(),
+  _mdc.primary(),
+  _mdc.primaryDim(),
+  _mdc.onPrimary(),
+  _mdc.primaryContainer(),
+  _mdc.onPrimaryContainer(),
+  _mdc.primaryFixed(),
+  _mdc.primaryFixedDim(),
+  _mdc.onPrimaryFixed(),
+  _mdc.onPrimaryFixedVariant(),
+  _mdc.inversePrimary(),
+  _mdc.secondary(),
+  _mdc.secondaryDim(),
+  _mdc.onSecondary(),
+  _mdc.secondaryContainer(),
+  _mdc.onSecondaryContainer(),
+  _mdc.secondaryFixed(),
+  _mdc.secondaryFixedDim(),
+  _mdc.onSecondaryFixed(),
+  _mdc.onSecondaryFixedVariant(),
+  _mdc.tertiary(),
+  _mdc.tertiaryDim(),
+  _mdc.onTertiary(),
+  _mdc.tertiaryContainer(),
+  _mdc.onTertiaryContainer(),
+  _mdc.tertiaryFixed(),
+  _mdc.tertiaryFixedDim(),
+  _mdc.onTertiaryFixed(),
+  _mdc.onTertiaryFixedVariant(),
+  _mdc.error(),
+  _mdc.errorDim(),
+  _mdc.onError(),
+  _mdc.errorContainer(),
+  _mdc.onErrorContainer(),
+];
+
+final List<DynamicColor> _androidOnlyDynamicColors = <DynamicColor>[
+  _mdc.controlActivated(),
+  _mdc.controlNormal(),
+  _mdc.controlHighlight(),
+  _mdc.textPrimaryInverse(),
+  _mdc.textSecondaryAndTertiaryInverse(),
+  _mdc.textPrimaryInverseDisableOnly(),
+  _mdc.textSecondaryAndTertiaryInverseDisabled(),
+  _mdc.textHintInverse(),
+];
+
+final List<DynamicColor> _allDynamicColors = <DynamicColor>[
+  ..._materialDynamicColors,
+  ..._androidOnlyDynamicColors,
+];
 
 void main() async {
-  final List<Future<File>> futures = [];
-  for (final entry in seedColorsToThemeNameMap.entries) {
+  final List<Future<File>> futures = <Future<File>>[];
+  for (final entry in seedColorsByName.entries) {
     final name = entry.key;
     final seedColors = entry.value;
     for (final variant in variants) {
@@ -122,9 +193,9 @@ void main() async {
           final encoder = JsonEncoder.withIndent(" " * 2);
           final encoded = encoder.convert(json);
           final fileName =
-              "${name}_${variant._name}_${specVersion._name}_${platform._name}.json";
+              "${_buildNamedDescriptor(name: name, variant: variant, specVersion: specVersion, platform: platform)}.json";
 
-          final path = "./example/generated/$fileName";
+          final path = "./example/figma/$fileName";
           final file = File(path);
           print("Writing: $path");
           final future = file
@@ -134,11 +205,9 @@ void main() async {
 
           final css = StringBuffer();
 
-          // Light
-
           void write(String selector, DynamicScheme scheme) {
             css.writeln("$selector {");
-            for (final dynamicColor in allDynamicColors) {
+            for (final dynamicColor in _allDynamicColors) {
               final variableName =
                   "md-sys-color-${dynamicColor.name.toKebabCase()}";
               final variableProperty = "--$variableName";
@@ -158,7 +227,7 @@ void main() async {
 
           final cssContents = css.toString();
           final cssFileName =
-              "${name}_${variant._name}_${specVersion._name}_${platform._name}.css";
+              "${_buildNamedDescriptor(name: name, variant: variant, specVersion: specVersion, platform: platform)}.css";
           final cssPath = "./example/css/$cssFileName";
           final cssFile = File(cssPath);
           print("Writing: $cssPath");
@@ -173,14 +242,22 @@ void main() async {
   await Future.wait(futures);
 }
 
-// String buildJson({
-//   required Variant variant,
-//   required SpecVersion specVersion,
-//   required Platform platform,
-// }) {}
+String _buildDescriptor({
+  required Variant variant,
+  required SpecVersion specVersion,
+  required Platform platform,
+}) => "${variant._flatCase}_${specVersion._flatCase}_${platform._flatCase}";
+
+String _buildNamedDescriptor({
+  required String name,
+  required Variant variant,
+  required SpecVersion specVersion,
+  required Platform platform,
+}) =>
+    "${name}_${_buildDescriptor(variant: variant, specVersion: specVersion, platform: platform)}";
 
 extension on Variant {
-  String get _name => switch (this) {
+  String get _flatCase => switch (this) {
     Variant.monochrome => "monochrome",
     Variant.neutral => "neutral",
     Variant.tonalSpot => "tonalspot",
@@ -194,14 +271,14 @@ extension on Variant {
 }
 
 extension on SpecVersion {
-  String get _name => switch (this) {
+  String get _flatCase => switch (this) {
     SpecVersion.spec2021 => "2021",
     SpecVersion.spec2025 => "2025",
   };
 }
 
 extension on Platform {
-  String get _name => switch (this) {
+  String get _flatCase => switch (this) {
     Platform.phone => "phone",
     Platform.watch => "watch",
   };
