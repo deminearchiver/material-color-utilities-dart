@@ -2,7 +2,6 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:material_color_utilities/material_color_utilities.dart' as mcu;
-import 'package:csslib/parser.dart' as css;
 
 import 'color.dart';
 
