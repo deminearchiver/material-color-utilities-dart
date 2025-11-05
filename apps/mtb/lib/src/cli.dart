@@ -329,7 +329,8 @@ class CreateCommand extends Command<int> {
                 buffer.write("\n");
               }
               buffer.writeln("$selector {");
-              for (final dynamicColor in dynamicColors) {
+              for (final dynamicColorCallback in dynamicColors) {
+                final dynamicColor = dynamicColorCallback();
                 final color = Color.argb(dynamicColor.getArgb(scheme));
                 final name = dynamicColor.name.toKebabCase();
                 final prefix = "md-sys-color";

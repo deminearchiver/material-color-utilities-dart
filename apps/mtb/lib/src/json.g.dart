@@ -60,42 +60,30 @@ _FigmaCoreColors _$FigmaCoreColorsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FigmaCoreColorsToJson(_FigmaCoreColors instance) =>
     <String, dynamic>{
-      if (_$JsonConverterToJson<String, Color>(
-            instance.primary,
-            const ColorConverter().toJson,
-          )
-          case final value?)
-        'primary': value,
-      if (_$JsonConverterToJson<String, Color>(
-            instance.secondary,
-            const ColorConverter().toJson,
-          )
-          case final value?)
-        'secondary': value,
-      if (_$JsonConverterToJson<String, Color>(
-            instance.tertiary,
-            const ColorConverter().toJson,
-          )
-          case final value?)
-        'tertiary': value,
-      if (_$JsonConverterToJson<String, Color>(
-            instance.neutral,
-            const ColorConverter().toJson,
-          )
-          case final value?)
-        'neutral': value,
-      if (_$JsonConverterToJson<String, Color>(
-            instance.neutralVariant,
-            const ColorConverter().toJson,
-          )
-          case final value?)
-        'neutralVariant': value,
-      if (_$JsonConverterToJson<String, Color>(
-            instance.error,
-            const ColorConverter().toJson,
-          )
-          case final value?)
-        'error': value,
+      'primary': ?_$JsonConverterToJson<String, Color>(
+        instance.primary,
+        const ColorConverter().toJson,
+      ),
+      'secondary': ?_$JsonConverterToJson<String, Color>(
+        instance.secondary,
+        const ColorConverter().toJson,
+      ),
+      'tertiary': ?_$JsonConverterToJson<String, Color>(
+        instance.tertiary,
+        const ColorConverter().toJson,
+      ),
+      'neutral': ?_$JsonConverterToJson<String, Color>(
+        instance.neutral,
+        const ColorConverter().toJson,
+      ),
+      'neutralVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.neutralVariant,
+        const ColorConverter().toJson,
+      ),
+      'error': ?_$JsonConverterToJson<String, Color>(
+        instance.error,
+        const ColorConverter().toJson,
+      ),
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
@@ -372,12 +360,12 @@ _FigmaPalettes _$FigmaPalettesFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FigmaPalettesToJson(_FigmaPalettes instance) =>
     <String, dynamic>{
-      if (instance.primary case final value?) 'primary': value,
-      if (instance.secondary case final value?) 'secondary': value,
-      if (instance.tertiary case final value?) 'tertiary': value,
-      if (instance.neutral case final value?) 'neutral': value,
-      if (instance.neutralVariant case final value?) 'neutral-variant': value,
-      if (instance.error case final value?) 'error': value,
+      'primary': ?instance.primary,
+      'secondary': ?instance.secondary,
+      'tertiary': ?instance.tertiary,
+      'neutral': ?instance.neutral,
+      'neutral-variant': ?instance.neutralVariant,
+      'error': ?instance.error,
     };
 
 _FigmaPalette _$FigmaPaletteFromJson(Map<String, dynamic> json) =>
@@ -456,46 +444,32 @@ _Template _$TemplateFromJson(Map<String, dynamic> json) => _Template(
 );
 
 Map<String, dynamic> _$TemplateToJson(_Template instance) => <String, dynamic>{
-  if (_$JsonConverterToJson<String, Color>(
-        instance.sourceColor,
-        const ColorConverter().toJson,
-      )
-      case final value?)
-    'sourceColor': value,
-  if (_$JsonConverterToJson<String, Color>(
-        instance.primaryPaletteKeyColor,
-        const ColorConverter().toJson,
-      )
-      case final value?)
-    'primaryPaletteKeyColor': value,
-  if (_$JsonConverterToJson<String, Color>(
-        instance.secondaryPaletteKeyColor,
-        const ColorConverter().toJson,
-      )
-      case final value?)
-    'secondaryPaletteKeyColor': value,
-  if (_$JsonConverterToJson<String, Color>(
-        instance.tertiaryPaletteKeyColor,
-        const ColorConverter().toJson,
-      )
-      case final value?)
-    'tertiaryPaletteKeyColor': value,
-  if (_$JsonConverterToJson<String, Color>(
-        instance.neutralPaletteKeyColor,
-        const ColorConverter().toJson,
-      )
-      case final value?)
-    'neutralPaletteKeyColor': value,
-  if (_$JsonConverterToJson<String, Color>(
-        instance.neutralVariantPaletteKeyColor,
-        const ColorConverter().toJson,
-      )
-      case final value?)
-    'neutralVariantPaletteKeyColor': value,
-  if (_$JsonConverterToJson<String, Color>(
-        instance.errorPaletteKeyColor,
-        const ColorConverter().toJson,
-      )
-      case final value?)
-    'errorPaletteKeyColor': value,
+  'sourceColor': ?_$JsonConverterToJson<String, Color>(
+    instance.sourceColor,
+    const ColorConverter().toJson,
+  ),
+  'primaryPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+    instance.primaryPaletteKeyColor,
+    const ColorConverter().toJson,
+  ),
+  'secondaryPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+    instance.secondaryPaletteKeyColor,
+    const ColorConverter().toJson,
+  ),
+  'tertiaryPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+    instance.tertiaryPaletteKeyColor,
+    const ColorConverter().toJson,
+  ),
+  'neutralPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+    instance.neutralPaletteKeyColor,
+    const ColorConverter().toJson,
+  ),
+  'neutralVariantPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+    instance.neutralVariantPaletteKeyColor,
+    const ColorConverter().toJson,
+  ),
+  'errorPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+    instance.errorPaletteKeyColor,
+    const ColorConverter().toJson,
+  ),
 };
