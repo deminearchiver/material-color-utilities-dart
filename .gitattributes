@@ -1,1 +1,3 @@
 /test/snapshots/* binary -diff
+/apps/mtb/example/css linguist-generated
+/apps/mtb/example/figma linguist-generated
