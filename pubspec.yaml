@@ -9,7 +9,7 @@ environment:
   sdk: ^3.10.0-0
 
 workspace:
-  - apps/mtb
+  - mtb
 
 dependencies:
   meta: ^1.17.0

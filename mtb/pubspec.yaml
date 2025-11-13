@@ -13,7 +13,7 @@ environment:
 
 dependencies:
   material_color_utilities:
-    path: ../..
+    path: ..
 
   args: ^2.7.0
   dcli: ^8.2.0
