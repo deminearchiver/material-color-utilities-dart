@@ -9,7 +9,7 @@ executables:
   mtb:
 
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.10.0-0
 
 dependencies:
   material_color_utilities:
@@ -27,7 +27,7 @@ dependencies:
 
 dev_dependencies:
   lints: ^6.0.0
-  build_runner: ^2.10.1
+  build_runner: ^2.10.2
   freezed: ^3.2.3
   json_serializable: ^6.11.1
-  test: ^1.26.3
+  test: ^1.27.0

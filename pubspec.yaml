@@ -6,7 +6,7 @@ homepage: https://github.com/deminearchiver/material-color-utilities
 publish_to: none
 
 environment:
-  sdk: ^3.9.2
+  sdk: ^3.10.0-0
 
 workspace:
   - apps/mtb
@@ -15,11 +15,11 @@ dependencies:
   meta: ^1.17.0
 
 dev_dependencies:
-  build_runner: ^2.10.1
+  build_runner: ^2.10.2
   collection: ^1.19.1
   freezed: ^3.2.3
   freezed_annotation: ^3.1.0
   json_annotation: ^4.9.0
   json_serializable: ^6.11.1
   lints: ^6.0.0
-  test: ^1.26.3
+  test: ^1.27.0
