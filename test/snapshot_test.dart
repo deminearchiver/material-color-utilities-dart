@@ -86,7 +86,7 @@ sealed class Color {
     source = source.trim().toLowerCase();
 
     if (source == "transparent") {
-      return Color.argb(0x00000000);
+      return const Color.argb(0x00000000);
     }
 
     // Hex format
