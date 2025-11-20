@@ -112,11 +112,7 @@ final class Cam16 {
     // hue
     final atan2 = math.atan2(b, a);
     final atanDegrees = MathUtils.toDegrees(atan2);
-    final hue = atanDegrees < 0
-        ? atanDegrees + 360.0
-        : atanDegrees >= 360
-        ? atanDegrees - 360.0
-        : atanDegrees;
+    final hue = MathUtils.sanitizeDegreesDouble(atanDegrees);
     final hueRadians = MathUtils.toRadians(hue);
 
     // achromatic response to color
