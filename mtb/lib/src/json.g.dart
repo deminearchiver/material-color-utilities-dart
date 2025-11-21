@@ -141,282 +141,725 @@ Map<String, dynamic> _$FigmaSchemesToJson(_FigmaSchemes instance) =>
     };
 
 _FigmaScheme _$FigmaSchemeFromJson(Map<String, dynamic> json) => _FigmaScheme(
-  primaryPaletteKeyColor: const ColorConverter().fromJson(
-    json['primaryPaletteKeyColor'] as String,
+  primaryPaletteKeyColor: _$JsonConverterFromJson<String, Color>(
+    json['primaryPaletteKeyColor'],
+    const ColorConverter().fromJson,
   ),
-  secondaryPaletteKeyColor: const ColorConverter().fromJson(
-    json['secondaryPaletteKeyColor'] as String,
+  secondaryPaletteKeyColor: _$JsonConverterFromJson<String, Color>(
+    json['secondaryPaletteKeyColor'],
+    const ColorConverter().fromJson,
   ),
-  tertiaryPaletteKeyColor: const ColorConverter().fromJson(
-    json['tertiaryPaletteKeyColor'] as String,
+  tertiaryPaletteKeyColor: _$JsonConverterFromJson<String, Color>(
+    json['tertiaryPaletteKeyColor'],
+    const ColorConverter().fromJson,
   ),
-  neutralPaletteKeyColor: const ColorConverter().fromJson(
-    json['neutralPaletteKeyColor'] as String,
+  neutralPaletteKeyColor: _$JsonConverterFromJson<String, Color>(
+    json['neutralPaletteKeyColor'],
+    const ColorConverter().fromJson,
   ),
-  neutralVariantPaletteKeyColor: const ColorConverter().fromJson(
-    json['neutralVariantPaletteKeyColor'] as String,
+  neutralVariantPaletteKeyColor: _$JsonConverterFromJson<String, Color>(
+    json['neutralVariantPaletteKeyColor'],
+    const ColorConverter().fromJson,
   ),
-  errorPaletteKeyColor: const ColorConverter().fromJson(
-    json['errorPaletteKeyColor'] as String,
+  errorPaletteKeyColor: _$JsonConverterFromJson<String, Color>(
+    json['errorPaletteKeyColor'],
+    const ColorConverter().fromJson,
   ),
-  background: const ColorConverter().fromJson(json['background'] as String),
-  onBackground: const ColorConverter().fromJson(json['onBackground'] as String),
-  surface: const ColorConverter().fromJson(json['surface'] as String),
-  surfaceDim: const ColorConverter().fromJson(json['surfaceDim'] as String),
-  surfaceBright: const ColorConverter().fromJson(
-    json['surfaceBright'] as String,
+  background: _$JsonConverterFromJson<String, Color>(
+    json['background'],
+    const ColorConverter().fromJson,
   ),
-  surfaceContainerLowest: const ColorConverter().fromJson(
-    json['surfaceContainerLowest'] as String,
+  onBackground: _$JsonConverterFromJson<String, Color>(
+    json['onBackground'],
+    const ColorConverter().fromJson,
   ),
-  surfaceContainerLow: const ColorConverter().fromJson(
-    json['surfaceContainerLow'] as String,
+  surface: _$JsonConverterFromJson<String, Color>(
+    json['surface'],
+    const ColorConverter().fromJson,
   ),
-  surfaceContainer: const ColorConverter().fromJson(
-    json['surfaceContainer'] as String,
+  surfaceDim: _$JsonConverterFromJson<String, Color>(
+    json['surfaceDim'],
+    const ColorConverter().fromJson,
   ),
-  surfaceContainerHigh: const ColorConverter().fromJson(
-    json['surfaceContainerHigh'] as String,
+  surfaceBright: _$JsonConverterFromJson<String, Color>(
+    json['surfaceBright'],
+    const ColorConverter().fromJson,
   ),
-  surfaceContainerHighest: const ColorConverter().fromJson(
-    json['surfaceContainerHighest'] as String,
+  surfaceContainerLowest: _$JsonConverterFromJson<String, Color>(
+    json['surfaceContainerLowest'],
+    const ColorConverter().fromJson,
   ),
-  onSurface: const ColorConverter().fromJson(json['onSurface'] as String),
-  surfaceVariant: const ColorConverter().fromJson(
-    json['surfaceVariant'] as String,
+  surfaceContainerLow: _$JsonConverterFromJson<String, Color>(
+    json['surfaceContainerLow'],
+    const ColorConverter().fromJson,
   ),
-  onSurfaceVariant: const ColorConverter().fromJson(
-    json['onSurfaceVariant'] as String,
+  surfaceContainer: _$JsonConverterFromJson<String, Color>(
+    json['surfaceContainer'],
+    const ColorConverter().fromJson,
   ),
-  outline: const ColorConverter().fromJson(json['outline'] as String),
-  outlineVariant: const ColorConverter().fromJson(
-    json['outlineVariant'] as String,
+  surfaceContainerHigh: _$JsonConverterFromJson<String, Color>(
+    json['surfaceContainerHigh'],
+    const ColorConverter().fromJson,
   ),
-  inverseSurface: const ColorConverter().fromJson(
-    json['inverseSurface'] as String,
+  surfaceContainerHighest: _$JsonConverterFromJson<String, Color>(
+    json['surfaceContainerHighest'],
+    const ColorConverter().fromJson,
   ),
-  inverseOnSurface: const ColorConverter().fromJson(
-    json['inverseOnSurface'] as String,
+  onSurface: _$JsonConverterFromJson<String, Color>(
+    json['onSurface'],
+    const ColorConverter().fromJson,
   ),
-  shadow: const ColorConverter().fromJson(json['shadow'] as String),
-  scrim: const ColorConverter().fromJson(json['scrim'] as String),
-  surfaceTint: const ColorConverter().fromJson(json['surfaceTint'] as String),
-  primary: const ColorConverter().fromJson(json['primary'] as String),
-  primaryDim: const ColorConverter().fromJson(json['primaryDim'] as String),
-  onPrimary: const ColorConverter().fromJson(json['onPrimary'] as String),
-  primaryContainer: const ColorConverter().fromJson(
-    json['primaryContainer'] as String,
+  surfaceVariant: _$JsonConverterFromJson<String, Color>(
+    json['surfaceVariant'],
+    const ColorConverter().fromJson,
   ),
-  onPrimaryContainer: const ColorConverter().fromJson(
-    json['onPrimaryContainer'] as String,
+  onSurfaceVariant: _$JsonConverterFromJson<String, Color>(
+    json['onSurfaceVariant'],
+    const ColorConverter().fromJson,
   ),
-  primaryFixed: const ColorConverter().fromJson(json['primaryFixed'] as String),
-  primaryFixedDim: const ColorConverter().fromJson(
-    json['primaryFixedDim'] as String,
+  outline: _$JsonConverterFromJson<String, Color>(
+    json['outline'],
+    const ColorConverter().fromJson,
   ),
-  onPrimaryFixed: const ColorConverter().fromJson(
-    json['onPrimaryFixed'] as String,
+  outlineVariant: _$JsonConverterFromJson<String, Color>(
+    json['outlineVariant'],
+    const ColorConverter().fromJson,
   ),
-  onPrimaryFixedVariant: const ColorConverter().fromJson(
-    json['onPrimaryFixedVariant'] as String,
+  inverseSurface: _$JsonConverterFromJson<String, Color>(
+    json['inverseSurface'],
+    const ColorConverter().fromJson,
   ),
-  inversePrimary: const ColorConverter().fromJson(
-    json['inversePrimary'] as String,
+  inverseOnSurface: _$JsonConverterFromJson<String, Color>(
+    json['inverseOnSurface'],
+    const ColorConverter().fromJson,
   ),
-  secondary: const ColorConverter().fromJson(json['secondary'] as String),
-  secondaryDim: const ColorConverter().fromJson(json['secondaryDim'] as String),
-  onSecondary: const ColorConverter().fromJson(json['onSecondary'] as String),
-  secondaryContainer: const ColorConverter().fromJson(
-    json['secondaryContainer'] as String,
+  shadow: _$JsonConverterFromJson<String, Color>(
+    json['shadow'],
+    const ColorConverter().fromJson,
   ),
-  onSecondaryContainer: const ColorConverter().fromJson(
-    json['onSecondaryContainer'] as String,
+  scrim: _$JsonConverterFromJson<String, Color>(
+    json['scrim'],
+    const ColorConverter().fromJson,
   ),
-  secondaryFixed: const ColorConverter().fromJson(
-    json['secondaryFixed'] as String,
+  surfaceTint: _$JsonConverterFromJson<String, Color>(
+    json['surfaceTint'],
+    const ColorConverter().fromJson,
   ),
-  secondaryFixedDim: const ColorConverter().fromJson(
-    json['secondaryFixedDim'] as String,
+  primary: _$JsonConverterFromJson<String, Color>(
+    json['primary'],
+    const ColorConverter().fromJson,
   ),
-  onSecondaryFixed: const ColorConverter().fromJson(
-    json['onSecondaryFixed'] as String,
+  primaryDim: _$JsonConverterFromJson<String, Color>(
+    json['primaryDim'],
+    const ColorConverter().fromJson,
   ),
-  onSecondaryFixedVariant: const ColorConverter().fromJson(
-    json['onSecondaryFixedVariant'] as String,
+  onPrimary: _$JsonConverterFromJson<String, Color>(
+    json['onPrimary'],
+    const ColorConverter().fromJson,
   ),
-  tertiary: const ColorConverter().fromJson(json['tertiary'] as String),
-  tertiaryDim: const ColorConverter().fromJson(json['tertiaryDim'] as String),
-  onTertiary: const ColorConverter().fromJson(json['onTertiary'] as String),
-  tertiaryContainer: const ColorConverter().fromJson(
-    json['tertiaryContainer'] as String,
+  primaryContainer: _$JsonConverterFromJson<String, Color>(
+    json['primaryContainer'],
+    const ColorConverter().fromJson,
   ),
-  onTertiaryContainer: const ColorConverter().fromJson(
-    json['onTertiaryContainer'] as String,
+  onPrimaryContainer: _$JsonConverterFromJson<String, Color>(
+    json['onPrimaryContainer'],
+    const ColorConverter().fromJson,
   ),
-  tertiaryFixed: const ColorConverter().fromJson(
-    json['tertiaryFixed'] as String,
+  primaryFixed: _$JsonConverterFromJson<String, Color>(
+    json['primaryFixed'],
+    const ColorConverter().fromJson,
   ),
-  tertiaryFixedDim: const ColorConverter().fromJson(
-    json['tertiaryFixedDim'] as String,
+  primaryFixedDim: _$JsonConverterFromJson<String, Color>(
+    json['primaryFixedDim'],
+    const ColorConverter().fromJson,
   ),
-  onTertiaryFixed: const ColorConverter().fromJson(
-    json['onTertiaryFixed'] as String,
+  onPrimaryFixed: _$JsonConverterFromJson<String, Color>(
+    json['onPrimaryFixed'],
+    const ColorConverter().fromJson,
   ),
-  onTertiaryFixedVariant: const ColorConverter().fromJson(
-    json['onTertiaryFixedVariant'] as String,
+  onPrimaryFixedVariant: _$JsonConverterFromJson<String, Color>(
+    json['onPrimaryFixedVariant'],
+    const ColorConverter().fromJson,
   ),
-  error: const ColorConverter().fromJson(json['error'] as String),
-  errorDim: const ColorConverter().fromJson(json['errorDim'] as String),
-  onError: const ColorConverter().fromJson(json['onError'] as String),
-  errorContainer: const ColorConverter().fromJson(
-    json['errorContainer'] as String,
+  inversePrimary: _$JsonConverterFromJson<String, Color>(
+    json['inversePrimary'],
+    const ColorConverter().fromJson,
   ),
-  onErrorContainer: const ColorConverter().fromJson(
-    json['onErrorContainer'] as String,
+  secondary: _$JsonConverterFromJson<String, Color>(
+    json['secondary'],
+    const ColorConverter().fromJson,
   ),
-  controlActivated: const ColorConverter().fromJson(
-    json['controlActivated'] as String,
+  secondaryDim: _$JsonConverterFromJson<String, Color>(
+    json['secondaryDim'],
+    const ColorConverter().fromJson,
   ),
-  controlNormal: const ColorConverter().fromJson(
-    json['controlNormal'] as String,
+  onSecondary: _$JsonConverterFromJson<String, Color>(
+    json['onSecondary'],
+    const ColorConverter().fromJson,
   ),
-  controlHighlight: const ColorConverter().fromJson(
-    json['controlHighlight'] as String,
+  secondaryContainer: _$JsonConverterFromJson<String, Color>(
+    json['secondaryContainer'],
+    const ColorConverter().fromJson,
   ),
-  textPrimaryInverse: const ColorConverter().fromJson(
-    json['textPrimaryInverse'] as String,
+  onSecondaryContainer: _$JsonConverterFromJson<String, Color>(
+    json['onSecondaryContainer'],
+    const ColorConverter().fromJson,
   ),
-  textSecondaryAndTertiaryInverse: const ColorConverter().fromJson(
-    json['textSecondaryAndTertiaryInverse'] as String,
+  secondaryFixed: _$JsonConverterFromJson<String, Color>(
+    json['secondaryFixed'],
+    const ColorConverter().fromJson,
   ),
-  textPrimaryInverseDisableOnly: const ColorConverter().fromJson(
-    json['textPrimaryInverseDisableOnly'] as String,
+  secondaryFixedDim: _$JsonConverterFromJson<String, Color>(
+    json['secondaryFixedDim'],
+    const ColorConverter().fromJson,
   ),
-  textSecondaryAndTertiaryInverseDisabled: const ColorConverter().fromJson(
-    json['textSecondaryAndTertiaryInverseDisabled'] as String,
+  onSecondaryFixed: _$JsonConverterFromJson<String, Color>(
+    json['onSecondaryFixed'],
+    const ColorConverter().fromJson,
   ),
-  textHintInverse: const ColorConverter().fromJson(
-    json['textHintInverse'] as String,
+  onSecondaryFixedVariant: _$JsonConverterFromJson<String, Color>(
+    json['onSecondaryFixedVariant'],
+    const ColorConverter().fromJson,
+  ),
+  tertiary: _$JsonConverterFromJson<String, Color>(
+    json['tertiary'],
+    const ColorConverter().fromJson,
+  ),
+  tertiaryDim: _$JsonConverterFromJson<String, Color>(
+    json['tertiaryDim'],
+    const ColorConverter().fromJson,
+  ),
+  onTertiary: _$JsonConverterFromJson<String, Color>(
+    json['onTertiary'],
+    const ColorConverter().fromJson,
+  ),
+  tertiaryContainer: _$JsonConverterFromJson<String, Color>(
+    json['tertiaryContainer'],
+    const ColorConverter().fromJson,
+  ),
+  onTertiaryContainer: _$JsonConverterFromJson<String, Color>(
+    json['onTertiaryContainer'],
+    const ColorConverter().fromJson,
+  ),
+  tertiaryFixed: _$JsonConverterFromJson<String, Color>(
+    json['tertiaryFixed'],
+    const ColorConverter().fromJson,
+  ),
+  tertiaryFixedDim: _$JsonConverterFromJson<String, Color>(
+    json['tertiaryFixedDim'],
+    const ColorConverter().fromJson,
+  ),
+  onTertiaryFixed: _$JsonConverterFromJson<String, Color>(
+    json['onTertiaryFixed'],
+    const ColorConverter().fromJson,
+  ),
+  onTertiaryFixedVariant: _$JsonConverterFromJson<String, Color>(
+    json['onTertiaryFixedVariant'],
+    const ColorConverter().fromJson,
+  ),
+  error: _$JsonConverterFromJson<String, Color>(
+    json['error'],
+    const ColorConverter().fromJson,
+  ),
+  errorDim: _$JsonConverterFromJson<String, Color>(
+    json['errorDim'],
+    const ColorConverter().fromJson,
+  ),
+  onError: _$JsonConverterFromJson<String, Color>(
+    json['onError'],
+    const ColorConverter().fromJson,
+  ),
+  errorContainer: _$JsonConverterFromJson<String, Color>(
+    json['errorContainer'],
+    const ColorConverter().fromJson,
+  ),
+  onErrorContainer: _$JsonConverterFromJson<String, Color>(
+    json['onErrorContainer'],
+    const ColorConverter().fromJson,
+  ),
+  controlActivated: _$JsonConverterFromJson<String, Color>(
+    json['controlActivated'],
+    const ColorConverter().fromJson,
+  ),
+  controlNormal: _$JsonConverterFromJson<String, Color>(
+    json['controlNormal'],
+    const ColorConverter().fromJson,
+  ),
+  controlHighlight: _$JsonConverterFromJson<String, Color>(
+    json['controlHighlight'],
+    const ColorConverter().fromJson,
+  ),
+  textPrimaryInverse: _$JsonConverterFromJson<String, Color>(
+    json['textPrimaryInverse'],
+    const ColorConverter().fromJson,
+  ),
+  textSecondaryAndTertiaryInverse: _$JsonConverterFromJson<String, Color>(
+    json['textSecondaryAndTertiaryInverse'],
+    const ColorConverter().fromJson,
+  ),
+  textPrimaryInverseDisableOnly: _$JsonConverterFromJson<String, Color>(
+    json['textPrimaryInverseDisableOnly'],
+    const ColorConverter().fromJson,
+  ),
+  textSecondaryAndTertiaryInverseDisabled:
+      _$JsonConverterFromJson<String, Color>(
+        json['textSecondaryAndTertiaryInverseDisabled'],
+        const ColorConverter().fromJson,
+      ),
+  textHintInverse: _$JsonConverterFromJson<String, Color>(
+    json['textHintInverse'],
+    const ColorConverter().fromJson,
+  ),
+  widgetBackground: _$JsonConverterFromJson<String, Color>(
+    json['widgetBackground'],
+    const ColorConverter().fromJson,
+  ),
+  clockHour: _$JsonConverterFromJson<String, Color>(
+    json['clockHour'],
+    const ColorConverter().fromJson,
+  ),
+  clockMinute: _$JsonConverterFromJson<String, Color>(
+    json['clockMinute'],
+    const ColorConverter().fromJson,
+  ),
+  clockSecond: _$JsonConverterFromJson<String, Color>(
+    json['clockSecond'],
+    const ColorConverter().fromJson,
+  ),
+  weatherTemp: _$JsonConverterFromJson<String, Color>(
+    json['weatherTemp'],
+    const ColorConverter().fromJson,
+  ),
+  themeApp: _$JsonConverterFromJson<String, Color>(
+    json['themeApp'],
+    const ColorConverter().fromJson,
+  ),
+  onThemeApp: _$JsonConverterFromJson<String, Color>(
+    json['onThemeApp'],
+    const ColorConverter().fromJson,
+  ),
+  themeAppRing: _$JsonConverterFromJson<String, Color>(
+    json['themeAppRing'],
+    const ColorConverter().fromJson,
+  ),
+  themeNotif: _$JsonConverterFromJson<String, Color>(
+    json['themeNotif'],
+    const ColorConverter().fromJson,
+  ),
+  brandA: _$JsonConverterFromJson<String, Color>(
+    json['brandA'],
+    const ColorConverter().fromJson,
+  ),
+  brandB: _$JsonConverterFromJson<String, Color>(
+    json['brandB'],
+    const ColorConverter().fromJson,
+  ),
+  brandC: _$JsonConverterFromJson<String, Color>(
+    json['brandC'],
+    const ColorConverter().fromJson,
+  ),
+  brandD: _$JsonConverterFromJson<String, Color>(
+    json['brandD'],
+    const ColorConverter().fromJson,
+  ),
+  underSurface: _$JsonConverterFromJson<String, Color>(
+    json['underSurface'],
+    const ColorConverter().fromJson,
+  ),
+  shadeActive: _$JsonConverterFromJson<String, Color>(
+    json['shadeActive'],
+    const ColorConverter().fromJson,
+  ),
+  onShadeActive: _$JsonConverterFromJson<String, Color>(
+    json['onShadeActive'],
+    const ColorConverter().fromJson,
+  ),
+  onShadeActiveVariant: _$JsonConverterFromJson<String, Color>(
+    json['onShadeActiveVariant'],
+    const ColorConverter().fromJson,
+  ),
+  shadeInactive: _$JsonConverterFromJson<String, Color>(
+    json['shadeInactive'],
+    const ColorConverter().fromJson,
+  ),
+  onShadeInactive: _$JsonConverterFromJson<String, Color>(
+    json['onShadeInactive'],
+    const ColorConverter().fromJson,
+  ),
+  onShadeInactiveVariant: _$JsonConverterFromJson<String, Color>(
+    json['onShadeInactiveVariant'],
+    const ColorConverter().fromJson,
+  ),
+  shadeDisabled: _$JsonConverterFromJson<String, Color>(
+    json['shadeDisabled'],
+    const ColorConverter().fromJson,
+  ),
+  overviewBackground: _$JsonConverterFromJson<String, Color>(
+    json['overviewBackground'],
+    const ColorConverter().fromJson,
   ),
 );
 
-Map<String, dynamic> _$FigmaSchemeToJson(
-  _FigmaScheme instance,
-) => <String, dynamic>{
-  'primaryPaletteKeyColor': const ColorConverter().toJson(
-    instance.primaryPaletteKeyColor,
-  ),
-  'secondaryPaletteKeyColor': const ColorConverter().toJson(
-    instance.secondaryPaletteKeyColor,
-  ),
-  'tertiaryPaletteKeyColor': const ColorConverter().toJson(
-    instance.tertiaryPaletteKeyColor,
-  ),
-  'neutralPaletteKeyColor': const ColorConverter().toJson(
-    instance.neutralPaletteKeyColor,
-  ),
-  'neutralVariantPaletteKeyColor': const ColorConverter().toJson(
-    instance.neutralVariantPaletteKeyColor,
-  ),
-  'errorPaletteKeyColor': const ColorConverter().toJson(
-    instance.errorPaletteKeyColor,
-  ),
-  'background': const ColorConverter().toJson(instance.background),
-  'onBackground': const ColorConverter().toJson(instance.onBackground),
-  'surface': const ColorConverter().toJson(instance.surface),
-  'surfaceDim': const ColorConverter().toJson(instance.surfaceDim),
-  'surfaceBright': const ColorConverter().toJson(instance.surfaceBright),
-  'surfaceContainerLowest': const ColorConverter().toJson(
-    instance.surfaceContainerLowest,
-  ),
-  'surfaceContainerLow': const ColorConverter().toJson(
-    instance.surfaceContainerLow,
-  ),
-  'surfaceContainer': const ColorConverter().toJson(instance.surfaceContainer),
-  'surfaceContainerHigh': const ColorConverter().toJson(
-    instance.surfaceContainerHigh,
-  ),
-  'surfaceContainerHighest': const ColorConverter().toJson(
-    instance.surfaceContainerHighest,
-  ),
-  'onSurface': const ColorConverter().toJson(instance.onSurface),
-  'surfaceVariant': const ColorConverter().toJson(instance.surfaceVariant),
-  'onSurfaceVariant': const ColorConverter().toJson(instance.onSurfaceVariant),
-  'outline': const ColorConverter().toJson(instance.outline),
-  'outlineVariant': const ColorConverter().toJson(instance.outlineVariant),
-  'inverseSurface': const ColorConverter().toJson(instance.inverseSurface),
-  'inverseOnSurface': const ColorConverter().toJson(instance.inverseOnSurface),
-  'shadow': const ColorConverter().toJson(instance.shadow),
-  'scrim': const ColorConverter().toJson(instance.scrim),
-  'surfaceTint': const ColorConverter().toJson(instance.surfaceTint),
-  'primary': const ColorConverter().toJson(instance.primary),
-  'primaryDim': const ColorConverter().toJson(instance.primaryDim),
-  'onPrimary': const ColorConverter().toJson(instance.onPrimary),
-  'primaryContainer': const ColorConverter().toJson(instance.primaryContainer),
-  'onPrimaryContainer': const ColorConverter().toJson(
-    instance.onPrimaryContainer,
-  ),
-  'primaryFixed': const ColorConverter().toJson(instance.primaryFixed),
-  'primaryFixedDim': const ColorConverter().toJson(instance.primaryFixedDim),
-  'onPrimaryFixed': const ColorConverter().toJson(instance.onPrimaryFixed),
-  'onPrimaryFixedVariant': const ColorConverter().toJson(
-    instance.onPrimaryFixedVariant,
-  ),
-  'inversePrimary': const ColorConverter().toJson(instance.inversePrimary),
-  'secondary': const ColorConverter().toJson(instance.secondary),
-  'secondaryDim': const ColorConverter().toJson(instance.secondaryDim),
-  'onSecondary': const ColorConverter().toJson(instance.onSecondary),
-  'secondaryContainer': const ColorConverter().toJson(
-    instance.secondaryContainer,
-  ),
-  'onSecondaryContainer': const ColorConverter().toJson(
-    instance.onSecondaryContainer,
-  ),
-  'secondaryFixed': const ColorConverter().toJson(instance.secondaryFixed),
-  'secondaryFixedDim': const ColorConverter().toJson(
-    instance.secondaryFixedDim,
-  ),
-  'onSecondaryFixed': const ColorConverter().toJson(instance.onSecondaryFixed),
-  'onSecondaryFixedVariant': const ColorConverter().toJson(
-    instance.onSecondaryFixedVariant,
-  ),
-  'tertiary': const ColorConverter().toJson(instance.tertiary),
-  'tertiaryDim': const ColorConverter().toJson(instance.tertiaryDim),
-  'onTertiary': const ColorConverter().toJson(instance.onTertiary),
-  'tertiaryContainer': const ColorConverter().toJson(
-    instance.tertiaryContainer,
-  ),
-  'onTertiaryContainer': const ColorConverter().toJson(
-    instance.onTertiaryContainer,
-  ),
-  'tertiaryFixed': const ColorConverter().toJson(instance.tertiaryFixed),
-  'tertiaryFixedDim': const ColorConverter().toJson(instance.tertiaryFixedDim),
-  'onTertiaryFixed': const ColorConverter().toJson(instance.onTertiaryFixed),
-  'onTertiaryFixedVariant': const ColorConverter().toJson(
-    instance.onTertiaryFixedVariant,
-  ),
-  'error': const ColorConverter().toJson(instance.error),
-  'errorDim': const ColorConverter().toJson(instance.errorDim),
-  'onError': const ColorConverter().toJson(instance.onError),
-  'errorContainer': const ColorConverter().toJson(instance.errorContainer),
-  'onErrorContainer': const ColorConverter().toJson(instance.onErrorContainer),
-  'controlActivated': const ColorConverter().toJson(instance.controlActivated),
-  'controlNormal': const ColorConverter().toJson(instance.controlNormal),
-  'controlHighlight': const ColorConverter().toJson(instance.controlHighlight),
-  'textPrimaryInverse': const ColorConverter().toJson(
-    instance.textPrimaryInverse,
-  ),
-  'textSecondaryAndTertiaryInverse': const ColorConverter().toJson(
-    instance.textSecondaryAndTertiaryInverse,
-  ),
-  'textPrimaryInverseDisableOnly': const ColorConverter().toJson(
-    instance.textPrimaryInverseDisableOnly,
-  ),
-  'textSecondaryAndTertiaryInverseDisabled': const ColorConverter().toJson(
-    instance.textSecondaryAndTertiaryInverseDisabled,
-  ),
-  'textHintInverse': const ColorConverter().toJson(instance.textHintInverse),
-};
+Map<String, dynamic> _$FigmaSchemeToJson(_FigmaScheme instance) =>
+    <String, dynamic>{
+      'primaryPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+        instance.primaryPaletteKeyColor,
+        const ColorConverter().toJson,
+      ),
+      'secondaryPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+        instance.secondaryPaletteKeyColor,
+        const ColorConverter().toJson,
+      ),
+      'tertiaryPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+        instance.tertiaryPaletteKeyColor,
+        const ColorConverter().toJson,
+      ),
+      'neutralPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+        instance.neutralPaletteKeyColor,
+        const ColorConverter().toJson,
+      ),
+      'neutralVariantPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+        instance.neutralVariantPaletteKeyColor,
+        const ColorConverter().toJson,
+      ),
+      'errorPaletteKeyColor': ?_$JsonConverterToJson<String, Color>(
+        instance.errorPaletteKeyColor,
+        const ColorConverter().toJson,
+      ),
+      'background': ?_$JsonConverterToJson<String, Color>(
+        instance.background,
+        const ColorConverter().toJson,
+      ),
+      'onBackground': ?_$JsonConverterToJson<String, Color>(
+        instance.onBackground,
+        const ColorConverter().toJson,
+      ),
+      'surface': ?_$JsonConverterToJson<String, Color>(
+        instance.surface,
+        const ColorConverter().toJson,
+      ),
+      'surfaceDim': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceDim,
+        const ColorConverter().toJson,
+      ),
+      'surfaceBright': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceBright,
+        const ColorConverter().toJson,
+      ),
+      'surfaceContainerLowest': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceContainerLowest,
+        const ColorConverter().toJson,
+      ),
+      'surfaceContainerLow': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceContainerLow,
+        const ColorConverter().toJson,
+      ),
+      'surfaceContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceContainer,
+        const ColorConverter().toJson,
+      ),
+      'surfaceContainerHigh': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceContainerHigh,
+        const ColorConverter().toJson,
+      ),
+      'surfaceContainerHighest': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceContainerHighest,
+        const ColorConverter().toJson,
+      ),
+      'onSurface': ?_$JsonConverterToJson<String, Color>(
+        instance.onSurface,
+        const ColorConverter().toJson,
+      ),
+      'surfaceVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceVariant,
+        const ColorConverter().toJson,
+      ),
+      'onSurfaceVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.onSurfaceVariant,
+        const ColorConverter().toJson,
+      ),
+      'outline': ?_$JsonConverterToJson<String, Color>(
+        instance.outline,
+        const ColorConverter().toJson,
+      ),
+      'outlineVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.outlineVariant,
+        const ColorConverter().toJson,
+      ),
+      'inverseSurface': ?_$JsonConverterToJson<String, Color>(
+        instance.inverseSurface,
+        const ColorConverter().toJson,
+      ),
+      'inverseOnSurface': ?_$JsonConverterToJson<String, Color>(
+        instance.inverseOnSurface,
+        const ColorConverter().toJson,
+      ),
+      'shadow': ?_$JsonConverterToJson<String, Color>(
+        instance.shadow,
+        const ColorConverter().toJson,
+      ),
+      'scrim': ?_$JsonConverterToJson<String, Color>(
+        instance.scrim,
+        const ColorConverter().toJson,
+      ),
+      'surfaceTint': ?_$JsonConverterToJson<String, Color>(
+        instance.surfaceTint,
+        const ColorConverter().toJson,
+      ),
+      'primary': ?_$JsonConverterToJson<String, Color>(
+        instance.primary,
+        const ColorConverter().toJson,
+      ),
+      'primaryDim': ?_$JsonConverterToJson<String, Color>(
+        instance.primaryDim,
+        const ColorConverter().toJson,
+      ),
+      'onPrimary': ?_$JsonConverterToJson<String, Color>(
+        instance.onPrimary,
+        const ColorConverter().toJson,
+      ),
+      'primaryContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.primaryContainer,
+        const ColorConverter().toJson,
+      ),
+      'onPrimaryContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.onPrimaryContainer,
+        const ColorConverter().toJson,
+      ),
+      'primaryFixed': ?_$JsonConverterToJson<String, Color>(
+        instance.primaryFixed,
+        const ColorConverter().toJson,
+      ),
+      'primaryFixedDim': ?_$JsonConverterToJson<String, Color>(
+        instance.primaryFixedDim,
+        const ColorConverter().toJson,
+      ),
+      'onPrimaryFixed': ?_$JsonConverterToJson<String, Color>(
+        instance.onPrimaryFixed,
+        const ColorConverter().toJson,
+      ),
+      'onPrimaryFixedVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.onPrimaryFixedVariant,
+        const ColorConverter().toJson,
+      ),
+      'inversePrimary': ?_$JsonConverterToJson<String, Color>(
+        instance.inversePrimary,
+        const ColorConverter().toJson,
+      ),
+      'secondary': ?_$JsonConverterToJson<String, Color>(
+        instance.secondary,
+        const ColorConverter().toJson,
+      ),
+      'secondaryDim': ?_$JsonConverterToJson<String, Color>(
+        instance.secondaryDim,
+        const ColorConverter().toJson,
+      ),
+      'onSecondary': ?_$JsonConverterToJson<String, Color>(
+        instance.onSecondary,
+        const ColorConverter().toJson,
+      ),
+      'secondaryContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.secondaryContainer,
+        const ColorConverter().toJson,
+      ),
+      'onSecondaryContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.onSecondaryContainer,
+        const ColorConverter().toJson,
+      ),
+      'secondaryFixed': ?_$JsonConverterToJson<String, Color>(
+        instance.secondaryFixed,
+        const ColorConverter().toJson,
+      ),
+      'secondaryFixedDim': ?_$JsonConverterToJson<String, Color>(
+        instance.secondaryFixedDim,
+        const ColorConverter().toJson,
+      ),
+      'onSecondaryFixed': ?_$JsonConverterToJson<String, Color>(
+        instance.onSecondaryFixed,
+        const ColorConverter().toJson,
+      ),
+      'onSecondaryFixedVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.onSecondaryFixedVariant,
+        const ColorConverter().toJson,
+      ),
+      'tertiary': ?_$JsonConverterToJson<String, Color>(
+        instance.tertiary,
+        const ColorConverter().toJson,
+      ),
+      'tertiaryDim': ?_$JsonConverterToJson<String, Color>(
+        instance.tertiaryDim,
+        const ColorConverter().toJson,
+      ),
+      'onTertiary': ?_$JsonConverterToJson<String, Color>(
+        instance.onTertiary,
+        const ColorConverter().toJson,
+      ),
+      'tertiaryContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.tertiaryContainer,
+        const ColorConverter().toJson,
+      ),
+      'onTertiaryContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.onTertiaryContainer,
+        const ColorConverter().toJson,
+      ),
+      'tertiaryFixed': ?_$JsonConverterToJson<String, Color>(
+        instance.tertiaryFixed,
+        const ColorConverter().toJson,
+      ),
+      'tertiaryFixedDim': ?_$JsonConverterToJson<String, Color>(
+        instance.tertiaryFixedDim,
+        const ColorConverter().toJson,
+      ),
+      'onTertiaryFixed': ?_$JsonConverterToJson<String, Color>(
+        instance.onTertiaryFixed,
+        const ColorConverter().toJson,
+      ),
+      'onTertiaryFixedVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.onTertiaryFixedVariant,
+        const ColorConverter().toJson,
+      ),
+      'error': ?_$JsonConverterToJson<String, Color>(
+        instance.error,
+        const ColorConverter().toJson,
+      ),
+      'errorDim': ?_$JsonConverterToJson<String, Color>(
+        instance.errorDim,
+        const ColorConverter().toJson,
+      ),
+      'onError': ?_$JsonConverterToJson<String, Color>(
+        instance.onError,
+        const ColorConverter().toJson,
+      ),
+      'errorContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.errorContainer,
+        const ColorConverter().toJson,
+      ),
+      'onErrorContainer': ?_$JsonConverterToJson<String, Color>(
+        instance.onErrorContainer,
+        const ColorConverter().toJson,
+      ),
+      'controlActivated': ?_$JsonConverterToJson<String, Color>(
+        instance.controlActivated,
+        const ColorConverter().toJson,
+      ),
+      'controlNormal': ?_$JsonConverterToJson<String, Color>(
+        instance.controlNormal,
+        const ColorConverter().toJson,
+      ),
+      'controlHighlight': ?_$JsonConverterToJson<String, Color>(
+        instance.controlHighlight,
+        const ColorConverter().toJson,
+      ),
+      'textPrimaryInverse': ?_$JsonConverterToJson<String, Color>(
+        instance.textPrimaryInverse,
+        const ColorConverter().toJson,
+      ),
+      'textSecondaryAndTertiaryInverse': ?_$JsonConverterToJson<String, Color>(
+        instance.textSecondaryAndTertiaryInverse,
+        const ColorConverter().toJson,
+      ),
+      'textPrimaryInverseDisableOnly': ?_$JsonConverterToJson<String, Color>(
+        instance.textPrimaryInverseDisableOnly,
+        const ColorConverter().toJson,
+      ),
+      'textSecondaryAndTertiaryInverseDisabled':
+          ?_$JsonConverterToJson<String, Color>(
+            instance.textSecondaryAndTertiaryInverseDisabled,
+            const ColorConverter().toJson,
+          ),
+      'textHintInverse': ?_$JsonConverterToJson<String, Color>(
+        instance.textHintInverse,
+        const ColorConverter().toJson,
+      ),
+      'widgetBackground': ?_$JsonConverterToJson<String, Color>(
+        instance.widgetBackground,
+        const ColorConverter().toJson,
+      ),
+      'clockHour': ?_$JsonConverterToJson<String, Color>(
+        instance.clockHour,
+        const ColorConverter().toJson,
+      ),
+      'clockMinute': ?_$JsonConverterToJson<String, Color>(
+        instance.clockMinute,
+        const ColorConverter().toJson,
+      ),
+      'clockSecond': ?_$JsonConverterToJson<String, Color>(
+        instance.clockSecond,
+        const ColorConverter().toJson,
+      ),
+      'weatherTemp': ?_$JsonConverterToJson<String, Color>(
+        instance.weatherTemp,
+        const ColorConverter().toJson,
+      ),
+      'themeApp': ?_$JsonConverterToJson<String, Color>(
+        instance.themeApp,
+        const ColorConverter().toJson,
+      ),
+      'onThemeApp': ?_$JsonConverterToJson<String, Color>(
+        instance.onThemeApp,
+        const ColorConverter().toJson,
+      ),
+      'themeAppRing': ?_$JsonConverterToJson<String, Color>(
+        instance.themeAppRing,
+        const ColorConverter().toJson,
+      ),
+      'themeNotif': ?_$JsonConverterToJson<String, Color>(
+        instance.themeNotif,
+        const ColorConverter().toJson,
+      ),
+      'brandA': ?_$JsonConverterToJson<String, Color>(
+        instance.brandA,
+        const ColorConverter().toJson,
+      ),
+      'brandB': ?_$JsonConverterToJson<String, Color>(
+        instance.brandB,
+        const ColorConverter().toJson,
+      ),
+      'brandC': ?_$JsonConverterToJson<String, Color>(
+        instance.brandC,
+        const ColorConverter().toJson,
+      ),
+      'brandD': ?_$JsonConverterToJson<String, Color>(
+        instance.brandD,
+        const ColorConverter().toJson,
+      ),
+      'underSurface': ?_$JsonConverterToJson<String, Color>(
+        instance.underSurface,
+        const ColorConverter().toJson,
+      ),
+      'shadeActive': ?_$JsonConverterToJson<String, Color>(
+        instance.shadeActive,
+        const ColorConverter().toJson,
+      ),
+      'onShadeActive': ?_$JsonConverterToJson<String, Color>(
+        instance.onShadeActive,
+        const ColorConverter().toJson,
+      ),
+      'onShadeActiveVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.onShadeActiveVariant,
+        const ColorConverter().toJson,
+      ),
+      'shadeInactive': ?_$JsonConverterToJson<String, Color>(
+        instance.shadeInactive,
+        const ColorConverter().toJson,
+      ),
+      'onShadeInactive': ?_$JsonConverterToJson<String, Color>(
+        instance.onShadeInactive,
+        const ColorConverter().toJson,
+      ),
+      'onShadeInactiveVariant': ?_$JsonConverterToJson<String, Color>(
+        instance.onShadeInactiveVariant,
+        const ColorConverter().toJson,
+      ),
+      'shadeDisabled': ?_$JsonConverterToJson<String, Color>(
+        instance.shadeDisabled,
+        const ColorConverter().toJson,
+      ),
+      'overviewBackground': ?_$JsonConverterToJson<String, Color>(
+        instance.overviewBackground,
+        const ColorConverter().toJson,
+      ),
+    };
 
 _FigmaPalettes _$FigmaPalettesFromJson(Map<String, dynamic> json) =>
     _FigmaPalettes(

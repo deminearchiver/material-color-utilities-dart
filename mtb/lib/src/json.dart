@@ -1,7 +1,11 @@
 // ignore_for_file: invalid_annotation_target
 
+import 'dart:collection';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:material_color_utilities/dynamiccolor.dart';
 import 'package:material_color_utilities/material_color_utilities.dart' as mcu;
+import 'package:mtb/android_dynamic_colors.dart';
 
 import 'color.dart';
 
@@ -87,156 +91,261 @@ abstract class FigmaSchemes with _$FigmaSchemes {
 @freezed
 abstract class FigmaScheme with _$FigmaScheme {
   const factory FigmaScheme({
-    @ColorConverter() required Color primaryPaletteKeyColor,
-    @ColorConverter() required Color secondaryPaletteKeyColor,
-    @ColorConverter() required Color tertiaryPaletteKeyColor,
-    @ColorConverter() required Color neutralPaletteKeyColor,
-    @ColorConverter() required Color neutralVariantPaletteKeyColor,
-    @ColorConverter() required Color errorPaletteKeyColor,
-    @ColorConverter() required Color background,
-    @ColorConverter() required Color onBackground,
-    @ColorConverter() required Color surface,
-    @ColorConverter() required Color surfaceDim,
-    @ColorConverter() required Color surfaceBright,
-    @ColorConverter() required Color surfaceContainerLowest,
-    @ColorConverter() required Color surfaceContainerLow,
-    @ColorConverter() required Color surfaceContainer,
-    @ColorConverter() required Color surfaceContainerHigh,
-    @ColorConverter() required Color surfaceContainerHighest,
-    @ColorConverter() required Color onSurface,
-    @ColorConverter() required Color surfaceVariant,
-    @ColorConverter() required Color onSurfaceVariant,
-    @ColorConverter() required Color outline,
-    @ColorConverter() required Color outlineVariant,
-    @ColorConverter() required Color inverseSurface,
-    @ColorConverter() required Color inverseOnSurface,
-    @ColorConverter() required Color shadow,
-    @ColorConverter() required Color scrim,
-    @ColorConverter() required Color surfaceTint,
-    @ColorConverter() required Color primary,
-    @ColorConverter() required Color primaryDim,
-    @ColorConverter() required Color onPrimary,
-    @ColorConverter() required Color primaryContainer,
-    @ColorConverter() required Color onPrimaryContainer,
-    @ColorConverter() required Color primaryFixed,
-    @ColorConverter() required Color primaryFixedDim,
-    @ColorConverter() required Color onPrimaryFixed,
-    @ColorConverter() required Color onPrimaryFixedVariant,
-    @ColorConverter() required Color inversePrimary,
-    @ColorConverter() required Color secondary,
-    @ColorConverter() required Color secondaryDim,
-    @ColorConverter() required Color onSecondary,
-    @ColorConverter() required Color secondaryContainer,
-    @ColorConverter() required Color onSecondaryContainer,
-    @ColorConverter() required Color secondaryFixed,
-    @ColorConverter() required Color secondaryFixedDim,
-    @ColorConverter() required Color onSecondaryFixed,
-    @ColorConverter() required Color onSecondaryFixedVariant,
-    @ColorConverter() required Color tertiary,
-    @ColorConverter() required Color tertiaryDim,
-    @ColorConverter() required Color onTertiary,
-    @ColorConverter() required Color tertiaryContainer,
-    @ColorConverter() required Color onTertiaryContainer,
-    @ColorConverter() required Color tertiaryFixed,
-    @ColorConverter() required Color tertiaryFixedDim,
-    @ColorConverter() required Color onTertiaryFixed,
-    @ColorConverter() required Color onTertiaryFixedVariant,
-    @ColorConverter() required Color error,
-    @ColorConverter() required Color errorDim,
-    @ColorConverter() required Color onError,
-    @ColorConverter() required Color errorContainer,
-    @ColorConverter() required Color onErrorContainer,
-    @ColorConverter() required Color controlActivated,
-    @ColorConverter() required Color controlNormal,
-    @ColorConverter() required Color controlHighlight,
-    @ColorConverter() required Color textPrimaryInverse,
-    @ColorConverter() required Color textSecondaryAndTertiaryInverse,
-    @ColorConverter() required Color textPrimaryInverseDisableOnly,
-    @ColorConverter() required Color textSecondaryAndTertiaryInverseDisabled,
-    @ColorConverter() required Color textHintInverse,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? primaryPaletteKeyColor,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? secondaryPaletteKeyColor,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? tertiaryPaletteKeyColor,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? neutralPaletteKeyColor,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? neutralVariantPaletteKeyColor,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? errorPaletteKeyColor,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? background,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onBackground,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? surface,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? surfaceDim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? surfaceBright,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? surfaceContainerLowest,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? surfaceContainerLow,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? surfaceContainer,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? surfaceContainerHigh,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? surfaceContainerHighest,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onSurface,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? surfaceVariant,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onSurfaceVariant,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? outline,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? outlineVariant,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? inverseSurface,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? inverseOnSurface,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? shadow,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? scrim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? surfaceTint,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? primary,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? primaryDim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onPrimary,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? primaryContainer,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onPrimaryContainer,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? primaryFixed,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? primaryFixedDim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onPrimaryFixed,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? onPrimaryFixedVariant,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? inversePrimary,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? secondary,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? secondaryDim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onSecondary,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? secondaryContainer,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? onSecondaryContainer,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? secondaryFixed,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? secondaryFixedDim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onSecondaryFixed,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? onSecondaryFixedVariant,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? tertiary,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? tertiaryDim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onTertiary,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? tertiaryContainer,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onTertiaryContainer,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? tertiaryFixed,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? tertiaryFixedDim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onTertiaryFixed,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? onTertiaryFixedVariant,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? error,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? errorDim,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onError,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? errorContainer,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onErrorContainer,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? controlActivated,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? controlNormal,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? controlHighlight,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? textPrimaryInverse,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? textSecondaryAndTertiaryInverse,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? textPrimaryInverseDisableOnly,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? textSecondaryAndTertiaryInverseDisabled,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? textHintInverse,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? widgetBackground,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? clockHour,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? clockMinute,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? clockSecond,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? weatherTemp,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? themeApp,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onThemeApp,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? themeAppRing,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? themeNotif,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? brandA,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? brandB,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? brandC,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? brandD,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? underSurface,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? shadeActive,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onShadeActive,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? onShadeActiveVariant,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? shadeInactive,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? onShadeInactive,
+    @JsonKey(includeIfNull: false)
+    @ColorConverter()
+    Color? onShadeInactiveVariant,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? shadeDisabled,
+    @JsonKey(includeIfNull: false) @ColorConverter() Color? overviewBackground,
   }) = _FigmaScheme;
 
-  factory FigmaScheme.fromDynamicScheme(mcu.DynamicScheme scheme) =>
-      FigmaScheme(
-        primaryPaletteKeyColor: Color.argb(scheme.primaryPaletteKeyColor),
-        secondaryPaletteKeyColor: Color.argb(scheme.secondaryPaletteKeyColor),
-        tertiaryPaletteKeyColor: Color.argb(scheme.tertiaryPaletteKeyColor),
-        neutralPaletteKeyColor: Color.argb(scheme.neutralPaletteKeyColor),
-        neutralVariantPaletteKeyColor: Color.argb(
-          scheme.neutralVariantPaletteKeyColor,
-        ),
-        errorPaletteKeyColor: Color.argb(scheme.errorPaletteKeyColor),
-        background: Color.argb(scheme.background),
-        onBackground: Color.argb(scheme.onBackground),
-        surface: Color.argb(scheme.surface),
-        surfaceDim: Color.argb(scheme.surfaceDim),
-        surfaceBright: Color.argb(scheme.surfaceBright),
-        surfaceContainerLowest: Color.argb(scheme.surfaceContainerLowest),
-        surfaceContainerLow: Color.argb(scheme.surfaceContainerLow),
-        surfaceContainer: Color.argb(scheme.surfaceContainer),
-        surfaceContainerHigh: Color.argb(scheme.surfaceContainerHigh),
-        surfaceContainerHighest: Color.argb(scheme.surfaceContainerHighest),
-        onSurface: Color.argb(scheme.onSurface),
-        surfaceVariant: Color.argb(scheme.surfaceVariant),
-        onSurfaceVariant: Color.argb(scheme.onSurfaceVariant),
-        outline: Color.argb(scheme.outline),
-        outlineVariant: Color.argb(scheme.outlineVariant),
-        inverseSurface: Color.argb(scheme.inverseSurface),
-        inverseOnSurface: Color.argb(scheme.inverseOnSurface),
-        shadow: Color.argb(scheme.shadow),
-        scrim: Color.argb(scheme.scrim),
-        surfaceTint: Color.argb(scheme.surfaceTint),
-        primary: Color.argb(scheme.primary),
-        primaryDim: Color.argb(scheme.primaryDim),
-        onPrimary: Color.argb(scheme.onPrimary),
-        primaryContainer: Color.argb(scheme.primaryContainer),
-        onPrimaryContainer: Color.argb(scheme.onPrimaryContainer),
-        primaryFixed: Color.argb(scheme.primaryFixed),
-        primaryFixedDim: Color.argb(scheme.primaryFixedDim),
-        onPrimaryFixed: Color.argb(scheme.onPrimaryFixed),
-        onPrimaryFixedVariant: Color.argb(scheme.onPrimaryFixedVariant),
-        inversePrimary: Color.argb(scheme.inversePrimary),
-        secondary: Color.argb(scheme.secondary),
-        secondaryDim: Color.argb(scheme.secondaryDim),
-        onSecondary: Color.argb(scheme.onSecondary),
-        secondaryContainer: Color.argb(scheme.secondaryContainer),
-        onSecondaryContainer: Color.argb(scheme.onSecondaryContainer),
-        secondaryFixed: Color.argb(scheme.secondaryFixed),
-        secondaryFixedDim: Color.argb(scheme.secondaryFixedDim),
-        onSecondaryFixed: Color.argb(scheme.onSecondaryFixed),
-        onSecondaryFixedVariant: Color.argb(scheme.onSecondaryFixedVariant),
-        tertiary: Color.argb(scheme.tertiary),
-        tertiaryDim: Color.argb(scheme.tertiaryDim),
-        onTertiary: Color.argb(scheme.onTertiary),
-        tertiaryContainer: Color.argb(scheme.tertiaryContainer),
-        onTertiaryContainer: Color.argb(scheme.onTertiaryContainer),
-        tertiaryFixed: Color.argb(scheme.tertiaryFixed),
-        tertiaryFixedDim: Color.argb(scheme.tertiaryFixedDim),
-        onTertiaryFixed: Color.argb(scheme.onTertiaryFixed),
-        onTertiaryFixedVariant: Color.argb(scheme.onTertiaryFixedVariant),
-        error: Color.argb(scheme.error),
-        errorDim: Color.argb(scheme.errorDim),
-        onError: Color.argb(scheme.onError),
-        errorContainer: Color.argb(scheme.errorContainer),
-        onErrorContainer: Color.argb(scheme.onErrorContainer),
-        controlActivated: Color.argb(scheme.controlActivated),
-        controlNormal: Color.argb(scheme.controlNormal),
-        controlHighlight: Color.argb(scheme.controlHighlight),
-        textPrimaryInverse: Color.argb(scheme.textPrimaryInverse),
-        textSecondaryAndTertiaryInverse: Color.argb(
-          scheme.textSecondaryAndTertiaryInverse,
-        ),
-        textPrimaryInverseDisableOnly: Color.argb(
-          scheme.textPrimaryInverseDisableOnly,
-        ),
-        textSecondaryAndTertiaryInverseDisabled: Color.argb(
-          scheme.textSecondaryAndTertiaryInverseDisabled,
-        ),
-        textHintInverse: Color.argb(scheme.textHintInverse),
-      );
+  factory FigmaScheme.fromDynamicScheme(
+    mcu.DynamicScheme scheme,
+  ) => FigmaScheme(
+    primaryPaletteKeyColor: Color.argb(
+      _mdc.primaryPaletteKeyColor.getArgb(scheme),
+    ),
+    secondaryPaletteKeyColor: Color.argb(
+      _mdc.secondaryPaletteKeyColor.getArgb(scheme),
+    ),
+    tertiaryPaletteKeyColor: Color.argb(
+      _mdc.tertiaryPaletteKeyColor.getArgb(scheme),
+    ),
+    neutralPaletteKeyColor: Color.argb(
+      _mdc.neutralPaletteKeyColor.getArgb(scheme),
+    ),
+    neutralVariantPaletteKeyColor: Color.argb(
+      _mdc.neutralVariantPaletteKeyColor.getArgb(scheme),
+    ),
+    errorPaletteKeyColor: Color.argb(_mdc.errorPaletteKeyColor.getArgb(scheme)),
+    background: Color.argb(_mdc.background.getArgb(scheme)),
+    onBackground: Color.argb(_mdc.onBackground.getArgb(scheme)),
+    surface: Color.argb(_mdc.surface.getArgb(scheme)),
+    surfaceDim: Color.argb(_mdc.surfaceDim.getArgb(scheme)),
+    surfaceBright: Color.argb(_mdc.surfaceBright.getArgb(scheme)),
+    surfaceContainerLowest: Color.argb(
+      _mdc.surfaceContainerLowest.getArgb(scheme),
+    ),
+    surfaceContainerLow: Color.argb(_mdc.surfaceContainerLow.getArgb(scheme)),
+    surfaceContainer: Color.argb(_mdc.surfaceContainer.getArgb(scheme)),
+    surfaceContainerHigh: Color.argb(_mdc.surfaceContainerHigh.getArgb(scheme)),
+    surfaceContainerHighest: Color.argb(
+      _mdc.surfaceContainerHighest.getArgb(scheme),
+    ),
+    onSurface: Color.argb(_mdc.onSurface.getArgb(scheme)),
+    surfaceVariant: Color.argb(_mdc.surfaceVariant.getArgb(scheme)),
+    onSurfaceVariant: Color.argb(_mdc.onSurfaceVariant.getArgb(scheme)),
+    outline: Color.argb(_mdc.outline.getArgb(scheme)),
+    outlineVariant: Color.argb(_mdc.outlineVariant.getArgb(scheme)),
+    inverseSurface: Color.argb(_mdc.inverseSurface.getArgb(scheme)),
+    inverseOnSurface: Color.argb(_mdc.inverseOnSurface.getArgb(scheme)),
+    shadow: Color.argb(_mdc.shadow.getArgb(scheme)),
+    scrim: Color.argb(_mdc.scrim.getArgb(scheme)),
+    surfaceTint: Color.argb(_mdc.surfaceTint.getArgb(scheme)),
+    primary: Color.argb(_mdc.primary.getArgb(scheme)),
+    primaryDim: Color.argb(_mdc.primaryDim.getArgb(scheme)),
+    onPrimary: Color.argb(_mdc.onPrimary.getArgb(scheme)),
+    primaryContainer: Color.argb(_mdc.primaryContainer.getArgb(scheme)),
+    onPrimaryContainer: Color.argb(_mdc.onPrimaryContainer.getArgb(scheme)),
+    primaryFixed: Color.argb(_mdc.primaryFixed.getArgb(scheme)),
+    primaryFixedDim: Color.argb(_mdc.primaryFixedDim.getArgb(scheme)),
+    onPrimaryFixed: Color.argb(_mdc.onPrimaryFixed.getArgb(scheme)),
+    onPrimaryFixedVariant: Color.argb(
+      _mdc.onPrimaryFixedVariant.getArgb(scheme),
+    ),
+    inversePrimary: Color.argb(_mdc.inversePrimary.getArgb(scheme)),
+    secondary: Color.argb(_mdc.secondary.getArgb(scheme)),
+    secondaryDim: Color.argb(_mdc.secondaryDim.getArgb(scheme)),
+    onSecondary: Color.argb(_mdc.onSecondary.getArgb(scheme)),
+    secondaryContainer: Color.argb(_mdc.secondaryContainer.getArgb(scheme)),
+    onSecondaryContainer: Color.argb(_mdc.onSecondaryContainer.getArgb(scheme)),
+    secondaryFixed: Color.argb(_mdc.secondaryFixed.getArgb(scheme)),
+    secondaryFixedDim: Color.argb(_mdc.secondaryFixedDim.getArgb(scheme)),
+    onSecondaryFixed: Color.argb(_mdc.onSecondaryFixed.getArgb(scheme)),
+    onSecondaryFixedVariant: Color.argb(
+      _mdc.onSecondaryFixedVariant.getArgb(scheme),
+    ),
+    tertiary: Color.argb(_mdc.tertiary.getArgb(scheme)),
+    tertiaryDim: Color.argb(_mdc.tertiaryDim.getArgb(scheme)),
+    onTertiary: Color.argb(_mdc.onTertiary.getArgb(scheme)),
+    tertiaryContainer: Color.argb(_mdc.tertiaryContainer.getArgb(scheme)),
+    onTertiaryContainer: Color.argb(_mdc.onTertiaryContainer.getArgb(scheme)),
+    tertiaryFixed: Color.argb(_mdc.tertiaryFixed.getArgb(scheme)),
+    tertiaryFixedDim: Color.argb(_mdc.tertiaryFixedDim.getArgb(scheme)),
+    onTertiaryFixed: Color.argb(_mdc.onTertiaryFixed.getArgb(scheme)),
+    onTertiaryFixedVariant: Color.argb(
+      _mdc.onTertiaryFixedVariant.getArgb(scheme),
+    ),
+    error: Color.argb(_mdc.error.getArgb(scheme)),
+    errorDim: Color.argb(_mdc.errorDim.getArgb(scheme)),
+    onError: Color.argb(_mdc.onError.getArgb(scheme)),
+    errorContainer: Color.argb(_mdc.errorContainer.getArgb(scheme)),
+    onErrorContainer: Color.argb(_mdc.onErrorContainer.getArgb(scheme)),
+    controlActivated: Color.argb(_mdc.controlActivated.getArgb(scheme)),
+    controlNormal: Color.argb(_mdc.controlNormal.getArgb(scheme)),
+    controlHighlight: Color.argb(_mdc.controlHighlight.getArgb(scheme)),
+    textPrimaryInverse: Color.argb(_mdc.textPrimaryInverse.getArgb(scheme)),
+    textSecondaryAndTertiaryInverse: Color.argb(
+      _mdc.textSecondaryAndTertiaryInverse.getArgb(scheme),
+    ),
+    textPrimaryInverseDisableOnly: Color.argb(
+      _mdc.textPrimaryInverseDisableOnly.getArgb(scheme),
+    ),
+    textSecondaryAndTertiaryInverseDisabled: Color.argb(
+      _mdc.textSecondaryAndTertiaryInverseDisabled.getArgb(scheme),
+    ),
+    textHintInverse: Color.argb(_mdc.textHintInverse.getArgb(scheme)),
+    widgetBackground: Color.argb(_adc.widgetBackground.getArgb(scheme)),
+    clockHour: Color.argb(_adc.clockHour.getArgb(scheme)),
+    clockMinute: Color.argb(_adc.clockMinute.getArgb(scheme)),
+    clockSecond: Color.argb(_adc.clockSecond.getArgb(scheme)),
+    weatherTemp: Color.argb(_adc.weatherTemp.getArgb(scheme)),
+    themeApp: Color.argb(_adc.themeApp.getArgb(scheme)),
+    onThemeApp: Color.argb(_adc.onThemeApp.getArgb(scheme)),
+    themeAppRing: Color.argb(_adc.themeAppRing.getArgb(scheme)),
+    themeNotif: Color.argb(_adc.themeNotif.getArgb(scheme)),
+    brandA: Color.argb(_adc.brandA.getArgb(scheme)),
+    brandB: Color.argb(_adc.brandB.getArgb(scheme)),
+    brandC: Color.argb(_adc.brandC.getArgb(scheme)),
+    brandD: Color.argb(_adc.brandD.getArgb(scheme)),
+    underSurface: Color.argb(_adc.underSurface.getArgb(scheme)),
+    shadeActive: Color.argb(_adc.shadeActive.getArgb(scheme)),
+    onShadeActive: Color.argb(_adc.onShadeActive.getArgb(scheme)),
+    onShadeActiveVariant: Color.argb(_adc.onShadeActiveVariant.getArgb(scheme)),
+    shadeInactive: Color.argb(_adc.shadeInactive.getArgb(scheme)),
+    onShadeInactive: Color.argb(_adc.onShadeInactive.getArgb(scheme)),
+    onShadeInactiveVariant: Color.argb(
+      _adc.onShadeInactiveVariant.getArgb(scheme),
+    ),
+    shadeDisabled: Color.argb(_adc.shadeDisabled.getArgb(scheme)),
+    overviewBackground: Color.argb(_adc.overviewBackground.getArgb(scheme)),
+  );
 
   factory FigmaScheme.fromJson(Map<String, Object?> json) =>
       _$FigmaSchemeFromJson(json);
+
+  // ignore: prefer_const_constructors
+  static final MaterialDynamicColors _mdc = MaterialDynamicColors();
+  static final AndroidCustomDynamicColors _adc = AndroidCustomDynamicColors();
 }
 
 @freezed
