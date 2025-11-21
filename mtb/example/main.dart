@@ -9,9 +9,35 @@ import 'package:mtb/src/cli.dart' show DynamicSchemes;
 import 'package:mtb/src/color.dart';
 import 'package:mtb/src/json.dart';
 
-const List<Variant> variants = Variant.values;
-const List<SpecVersion> specVersions = SpecVersion.values;
-const List<Platform> platforms = Platform.values;
+// const Map<SpecVersion, List<double>> _specVersionToContrastLevels = {
+//   SpecVersion.spec2021: [-1.0, 0.0, 0.5, 1.0],
+//   SpecVersion.spec2025: [0.0, 0.5, 1.0],
+// };
+
+const Map<SpecVersion, List<Variant>> _specVersionToVariants = {
+  SpecVersion.spec2021: [
+    Variant.monochrome,
+    Variant.neutral,
+    Variant.tonalSpot,
+    Variant.vibrant,
+    Variant.expressive,
+    Variant.fidelity,
+    Variant.content,
+    Variant.rainbow,
+    Variant.fruitSalad,
+  ],
+  SpecVersion.spec2025: [
+    Variant.neutral,
+    Variant.tonalSpot,
+    Variant.vibrant,
+    Variant.expressive,
+  ],
+};
+
+const Map<SpecVersion, List<Platform>> _specVersionToPlatforms = {
+  SpecVersion.spec2021: [Platform.phone],
+  SpecVersion.spec2025: [Platform.phone, Platform.watch],
+};
 
 class SeedColors {
   const SeedColors({
@@ -186,8 +212,10 @@ void main() async {
   for (final entry in seedColorsByName.entries) {
     final name = entry.key;
     final seedColors = entry.value;
-    for (final variant in variants) {
-      for (final specVersion in specVersions) {
+    for (final specVersion in SpecVersion.values) {
+      final variants = _specVersionToVariants[specVersion] ?? const [];
+      for (final variant in variants) {
+        final platforms = _specVersionToPlatforms[specVersion] ?? const [];
         for (final platform in platforms) {
           final schemes = DynamicSchemes.fromKeyColors(
             sourceColor: seedColors.sourceColor,
