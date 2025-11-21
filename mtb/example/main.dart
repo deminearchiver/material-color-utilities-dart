@@ -96,6 +96,7 @@ const Map<String, SeedColors> seedColorsByName = {
     tertiaryPaletteKeyColor: Color.argb(0xFFB3E9FF),
     neutralPaletteKeyColor: Color.argb(0xFF201A1B),
   ),
+  "obtainium": SeedColors(sourceColor: Color.argb(0xFF6438B5)),
 };
 
 final MaterialDynamicColors _mdc = const MaterialDynamicColors();
