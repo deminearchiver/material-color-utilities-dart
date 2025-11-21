@@ -86,14 +86,11 @@ class SeedColors {
   );
 }
 
-const String baseline = "baseline";
-const String nowInAndroid = "now_in_android";
-
 const Map<String, SeedColors> seedColorsByName = {
-  baseline: SeedColors(sourceColor: Color.argb(0xFF6750A4)),
-  nowInAndroid: SeedColors(
+  "baseline": SeedColors(sourceColor: Color.argb(0xFF6750A4)),
+  "nowinandroid": SeedColors(
     sourceColor: Color.argb(0xFF8C4190),
-    // primaryPaletteKeyColor: Color.argb(0xFF8C4190),
+    primaryPaletteKeyColor: Color.argb(0xFF8C4190),
     secondaryPaletteKeyColor: Color.argb(0xFFFF8456),
     tertiaryPaletteKeyColor: Color.argb(0xFFB3E9FF),
     neutralPaletteKeyColor: Color.argb(0xFF201A1B),
@@ -304,7 +301,8 @@ String _buildDescriptor({
   required Variant variant,
   required SpecVersion specVersion,
   required Platform platform,
-}) => "${variant._flatCase}_${specVersion._flatCase}_${platform._flatCase}";
+}) =>
+    "${variant.toFlatCase()}_${specVersion.toFlatCase()}_${platform.toFlatCase()}";
 
 String _buildNamedDescriptor({
   required String name,
@@ -315,7 +313,7 @@ String _buildNamedDescriptor({
     "${name}_${_buildDescriptor(variant: variant, specVersion: specVersion, platform: platform)}";
 
 extension on Variant {
-  String get _flatCase => switch (this) {
+  String toFlatCase() => switch (this) {
     Variant.monochrome => "monochrome",
     Variant.neutral => "neutral",
     Variant.tonalSpot => "tonalspot",
@@ -329,14 +327,14 @@ extension on Variant {
 }
 
 extension on SpecVersion {
-  String get _flatCase => switch (this) {
+  String toFlatCase() => switch (this) {
     SpecVersion.spec2021 => "2021",
     SpecVersion.spec2025 => "2025",
   };
 }
 
 extension on Platform {
-  String get _flatCase => switch (this) {
+  String toFlatCase() => switch (this) {
     Platform.phone => "phone",
     Platform.watch => "watch",
   };
