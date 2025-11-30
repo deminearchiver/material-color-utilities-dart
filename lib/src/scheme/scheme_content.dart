@@ -19,5 +19,5 @@ class SchemeContent extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromPalettesOrKeyColors(variant: Variant.content);
+  }) : super.fromPalettesOrKeyColors(variant: .content);
 }

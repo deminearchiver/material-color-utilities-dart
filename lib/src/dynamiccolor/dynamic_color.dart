@@ -178,10 +178,8 @@ final class DynamicColor {
     return answer;
   }
 
-  double getTone(DynamicScheme scheme) {
-    // ignore: invalid_use_of_protected_member
-    return ColorSpecs.get(scheme.specVersion).getTone(scheme, this);
-  }
+  double getTone(DynamicScheme scheme) =>
+      ColorSpecs.get(scheme.specVersion).getTone(scheme, this);
 
   DynamicColor extendSpecVersion(
     SpecVersion specVersion,
@@ -266,21 +264,20 @@ final class DynamicColor {
       ")";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is DynamicColor &&
-            name == other.name &&
-            palette == other.palette &&
-            tone == other.tone &&
-            isBackground == other.isBackground &&
-            chromaMultiplier == other.chromaMultiplier &&
-            background == other.background &&
-            secondBackground == other.secondBackground &&
-            contrastCurve == other.contrastCurve &&
-            toneDeltaPair == other.toneDeltaPair &&
-            opacity == other.opacity;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is DynamicColor &&
+          name == other.name &&
+          palette == other.palette &&
+          tone == other.tone &&
+          isBackground == other.isBackground &&
+          chromaMultiplier == other.chromaMultiplier &&
+          background == other.background &&
+          secondBackground == other.secondBackground &&
+          contrastCurve == other.contrastCurve &&
+          toneDeltaPair == other.toneDeltaPair &&
+          opacity == other.opacity;
 
   @override
   int get hashCode => Object.hash(
@@ -332,20 +329,14 @@ final class DynamicColor {
     }
   }
 
-  static double enableLightForeground(double tone) {
-    if (tonePrefersLightForeground(tone) && !toneAllowsLightForeground(tone)) {
-      return 49.0;
-    }
-    return tone;
-  }
+  static double enableLightForeground(double tone) =>
+      tonePrefersLightForeground(tone) && !toneAllowsLightForeground(tone)
+      ? 49.0
+      : tone;
 
-  static bool tonePrefersLightForeground(double tone) {
-    return tone.round() < 60;
-  }
+  static bool tonePrefersLightForeground(double tone) => tone.round() < 60.0;
 
-  static bool toneAllowsLightForeground(double tone) {
-    return tone.round() <= 49;
-  }
+  static bool toneAllowsLightForeground(double tone) => tone.round() <= 49.0;
 
   static DynamicSchemeCallback<double> getInitialToneFromBackground([
     DynamicSchemeCallback<DynamicColor?>? background,

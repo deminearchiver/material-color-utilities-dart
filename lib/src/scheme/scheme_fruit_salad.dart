@@ -10,5 +10,5 @@ class SchemeFruitSalad extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromPalettesOrKeyColors(variant: Variant.fruitSalad);
+  }) : super.fromPalettesOrKeyColors(variant: .fruitSalad);
 }

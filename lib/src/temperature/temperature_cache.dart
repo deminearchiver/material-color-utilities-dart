@@ -34,14 +34,14 @@ final class TemperatureCache {
     final endHue = startHueIsColdestToWarmest ? coldestHue : warmestHue;
     final directionOfRotation = 1.0;
 
-    double smallestError = 1000.0;
-    Hct answer = _getHctsByHue()[input.hue.round()];
+    var smallestError = 1000.0;
+    var answer = _getHctsByHue()[input.hue.round()];
 
     final complementRelativeTemp = (1.0 - getRelativeTemperature(input));
 
     // Find the color in the other section, closest to the inverse percentile
     // of the input color. This is the complement.
-    for (double hueAddend = 0.0; hueAddend <= 360.0; hueAddend += 1.0) {
+    for (var hueAddend = 0.0; hueAddend <= 360.0; hueAddend += 1.0) {
       final hue = MathUtils.sanitizeDegreesDouble(
         startHue + directionOfRotation * hueAddend,
       );
@@ -67,22 +67,21 @@ final class TemperatureCache {
     final startHct = _getHctsByHue()[startHue];
     double lastTemp = getRelativeTemperature(startHct);
 
-    final List<Hct> allColors = <Hct>[];
-    allColors.add(startHct);
+    final allColors = <Hct>[startHct];
 
-    double absoluteTotalTempDelta = 0.0;
-    for (int i = 0; i < 360; i++) {
-      int hue = MathUtils.sanitizeDegreesInt(startHue + i);
-      Hct hct = _getHctsByHue()[hue];
-      double temp = getRelativeTemperature(hct);
-      double tempDelta = (temp - lastTemp).abs();
+    var absoluteTotalTempDelta = 0.0;
+    for (var i = 0; i < 360; i++) {
+      final hue = MathUtils.sanitizeDegreesInt(startHue + i);
+      final hct = _getHctsByHue()[hue];
+      final temp = getRelativeTemperature(hct);
+      final tempDelta = (temp - lastTemp).abs();
       lastTemp = temp;
       absoluteTotalTempDelta += tempDelta;
     }
 
-    int hueAddend = 1;
+    var hueAddend = 1;
     final tempStep = absoluteTotalTempDelta / divisions.toDouble();
-    double totalTempDelta = 0.0;
+    var totalTempDelta = 0.0;
     lastTemp = getRelativeTemperature(startHct);
     while (allColors.length < divisions) {
       final hue = MathUtils.sanitizeDegreesInt(startHue + hueAddend);
@@ -91,9 +90,9 @@ final class TemperatureCache {
       final tempDelta = (temp - lastTemp).abs();
       totalTempDelta += tempDelta;
 
-      double desiredTotalTempDeltaForIndex = (allColors.length * tempStep);
-      bool indexSatisfied = totalTempDelta >= desiredTotalTempDeltaForIndex;
-      int indexAddend = 1;
+      var desiredTotalTempDeltaForIndex = (allColors.length * tempStep);
+      var indexSatisfied = totalTempDelta >= desiredTotalTempDeltaForIndex;
+      var indexAddend = 1;
       // Keep adding this hue to the answers until its temperature is
       // insufficient. This ensures consistent behavior when there aren't
       // `divisions` discrete steps between 0 and 360 in hue with `tempStep`
@@ -120,12 +119,11 @@ final class TemperatureCache {
       }
     }
 
-    final List<Hct> answers = <Hct>[];
-    answers.add(input);
+    final answers = <Hct>[input];
 
     final ccwCount = ((count.toDouble() - 1.0) / 2.0).floor();
-    for (int i = 1; i < (ccwCount + 1); i++) {
-      int index = 0 - i;
+    for (var i = 1; i < (ccwCount + 1); i++) {
+      var index = 0 - i;
       while (index < 0) {
         index = allColors.length + index;
       }
@@ -136,8 +134,8 @@ final class TemperatureCache {
     }
 
     final cwCount = count - ccwCount - 1;
-    for (int i = 1; i < (cwCount + 1); i++) {
-      int index = i;
+    for (var i = 1; i < (cwCount + 1); i++) {
+      var index = i;
       while (index < 0) {
         index = allColors.length + index;
       }
@@ -179,7 +177,7 @@ final class TemperatureCache {
       return _precomputedHctsByHue!;
     }
     final hcts = <Hct>[];
-    for (double hue = 0.0; hue <= 360.0; hue += 1.0) {
+    for (var hue = 0.0; hue <= 360.0; hue += 1.0) {
       final colorAtHue = Hct.from(hue, input.chroma, input.tone);
       hcts.add(colorAtHue);
     }
@@ -191,9 +189,9 @@ final class TemperatureCache {
     if (_precomputedHctsByTemp != null) {
       return _precomputedHctsByTemp!;
     }
-    final hcts = List.of(_getHctsByHue());
-    hcts.add(input);
-    hcts.sort((a, b) => _getTempsByHct()[a]!.compareTo(_getTempsByHct()[b]!));
+    final hcts = List.of(_getHctsByHue())
+      ..add(input)
+      ..sort((a, b) => _getTempsByHct()[a]!.compareTo(_getTempsByHct()[b]!));
     _precomputedHctsByTemp = hcts;
     return _precomputedHctsByTemp!;
   }
@@ -203,8 +201,7 @@ final class TemperatureCache {
       return _precomputedTempsByHct!;
     }
 
-    final allHcts = List.of(_getHctsByHue());
-    allHcts.add(input);
+    final allHcts = List.of(_getHctsByHue())..add(input);
 
     final temperaturesByHct = <Hct, double>{};
     for (final hct in allHcts) {

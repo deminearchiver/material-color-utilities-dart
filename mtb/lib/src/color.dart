@@ -149,12 +149,11 @@ class _ColorArgb implements Color {
   String toString() => "Color.argb(0x${argb.toRadixString(16)})";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is _ColorArgb &&
-            argb == other.argb;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is _ColorArgb &&
+          argb == other.argb;
 
   @override
   int get hashCode => Object.hash(runtimeType, argb);
@@ -182,15 +181,14 @@ class _ColorRgba implements Color {
   String toString() => "Color.rgba($red, $green, $blue, $alpha)";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is _ColorRgba &&
-            red == other.red &&
-            green == other.green &&
-            blue == other.blue &&
-            alpha == other.alpha;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is _ColorRgba &&
+          red == other.red &&
+          green == other.green &&
+          blue == other.blue &&
+          alpha == other.alpha;
 
   @override
   int get hashCode => Object.hash(runtimeType, red, green, blue, alpha);
@@ -216,12 +214,11 @@ class _ColorHex implements Color {
   String toString() => "Color.hex(#$hex)";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is _ColorHex &&
-            hex == other.hex;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is _ColorHex &&
+          hex == other.hex;
 
   @override
   int get hashCode => Object.hash(runtimeType, hex);
@@ -244,12 +241,11 @@ class _ColorHct implements Color {
       "Color.hct(${hct.hue.round()}, ${hct.chroma.round()}, ${hct.tone.round()})";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is _ColorHct &&
-            hct == other.hct;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is _ColorHct &&
+          hct == other.hct;
 
   @override
   int get hashCode => Object.hash(runtimeType, hct);

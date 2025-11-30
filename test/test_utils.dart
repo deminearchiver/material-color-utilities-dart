@@ -15,7 +15,7 @@ class _IsCloseToWithPrecision extends FeatureMatcher<num?> {
   final num _precision;
 
   @override
-  bool typedMatches(num? item, Map matchState) {
+  bool typedMatches(num? item, Map<Object?, Object?> matchState) {
     final expected = _expected;
 
     if (expected == null || item == null) {
@@ -43,7 +43,7 @@ class _IsCloseToWithPrecision extends FeatureMatcher<num?> {
   Description describeTypedMismatch(
     num? item,
     Description mismatchDescription,
-    Map matchState,
+    Map<Object?, Object?> matchState,
     bool verbose,
   ) {
     final expected = _expected;

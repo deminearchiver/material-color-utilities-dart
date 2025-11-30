@@ -1,7 +1,5 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'dart:collection';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:material_color_utilities/dynamiccolor.dart';
 import 'package:material_color_utilities/material_color_utilities.dart' as mcu;

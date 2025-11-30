@@ -10,5 +10,5 @@ class SchemeExpressive extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromPalettesOrKeyColors(variant: Variant.expressive);
+  }) : super.fromPalettesOrKeyColors(variant: .expressive);
 }

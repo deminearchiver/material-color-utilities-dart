@@ -10,5 +10,5 @@ class SchemeRainbow extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromPalettesOrKeyColors(variant: Variant.rainbow);
+  }) : super.fromPalettesOrKeyColors(variant: .rainbow);
 }

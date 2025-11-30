@@ -295,7 +295,7 @@ class CreateCommand extends Command<int> {
           );
           line();
           final buffer = StringBuffer();
-          bool firstIteration = true;
+          var firstIteration = true;
           final dynamicColors = const MaterialDynamicColors().allDynamicColors;
           for (final mode in modes) {
             final modePrefix = switch (mode) {
@@ -499,9 +499,9 @@ enum PromptPlatform {
 class DynamicSchemes {
   const DynamicSchemes({
     required this.sourceColor,
-    this.variant = Variant.tonalSpot,
-    this.specVersion = SpecVersion.spec2021,
-    this.platform = Platform.phone,
+    this.variant = .tonalSpot,
+    this.specVersion = .spec2021,
+    this.platform = .phone,
     this.primaryPaletteKeyColor,
     this.secondaryPaletteKeyColor,
     this.tertiaryPaletteKeyColor,
@@ -518,9 +518,9 @@ class DynamicSchemes {
 
   factory DynamicSchemes.fromSourceColor({
     required Color sourceColor,
-    Variant variant = Variant.tonalSpot,
-    SpecVersion specVersion = SpecVersion.spec2021,
-    Platform platform = Platform.phone,
+    Variant variant = .tonalSpot,
+    SpecVersion specVersion = .spec2021,
+    Platform platform = .phone,
   }) {
     final sourceColorHct = sourceColor.hct;
     return DynamicSchemes(
@@ -528,7 +528,7 @@ class DynamicSchemes {
       variant: variant,
       specVersion: specVersion,
       platform: platform,
-      light: DynamicScheme.fromPalettesOrKeyColors(
+      light: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelNormal,
@@ -536,7 +536,7 @@ class DynamicSchemes {
         platform: platform,
         variant: variant,
       ),
-      lightMediumContrast: DynamicScheme.fromPalettesOrKeyColors(
+      lightMediumContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelMedium,
@@ -544,7 +544,7 @@ class DynamicSchemes {
         platform: platform,
         variant: variant,
       ),
-      lightHighContrast: DynamicScheme.fromPalettesOrKeyColors(
+      lightHighContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelHigh,
@@ -552,7 +552,7 @@ class DynamicSchemes {
         platform: platform,
         variant: variant,
       ),
-      dark: DynamicScheme.fromPalettesOrKeyColors(
+      dark: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelNormal,
@@ -560,7 +560,7 @@ class DynamicSchemes {
         platform: platform,
         variant: variant,
       ),
-      darkMediumContrast: DynamicScheme.fromPalettesOrKeyColors(
+      darkMediumContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelMedium,
@@ -568,7 +568,7 @@ class DynamicSchemes {
         platform: platform,
         variant: variant,
       ),
-      darkHighContrast: DynamicScheme.fromPalettesOrKeyColors(
+      darkHighContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelHigh,
@@ -580,9 +580,9 @@ class DynamicSchemes {
   }
   factory DynamicSchemes.fromTonalPalettes({
     required Color sourceColor,
-    Variant variant = Variant.tonalSpot,
-    SpecVersion specVersion = SpecVersion.spec2021,
-    Platform platform = Platform.phone,
+    Variant variant = .tonalSpot,
+    SpecVersion specVersion = .spec2021,
+    Platform platform = .phone,
     TonalPalette? primaryPalette,
     TonalPalette? secondaryPalette,
     TonalPalette? tertiaryPalette,
@@ -614,7 +614,7 @@ class DynamicSchemes {
       errorPaletteKeyColor: errorPalette != null
           ? Color.hct(errorPalette.keyColor)
           : null,
-      light: DynamicScheme.fromPalettesOrKeyColors(
+      light: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelNormal,
@@ -628,7 +628,7 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      lightMediumContrast: DynamicScheme.fromPalettesOrKeyColors(
+      lightMediumContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelMedium,
@@ -642,7 +642,7 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      lightHighContrast: DynamicScheme.fromPalettesOrKeyColors(
+      lightHighContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelHigh,
@@ -656,7 +656,7 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      dark: DynamicScheme.fromPalettesOrKeyColors(
+      dark: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelNormal,
@@ -670,7 +670,7 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      darkMediumContrast: DynamicScheme.fromPalettesOrKeyColors(
+      darkMediumContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelMedium,
@@ -684,7 +684,7 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      darkHighContrast: DynamicScheme.fromPalettesOrKeyColors(
+      darkHighContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelHigh,
@@ -703,9 +703,9 @@ class DynamicSchemes {
 
   factory DynamicSchemes.fromKeyColors({
     required Color sourceColor,
-    Variant variant = Variant.tonalSpot,
-    SpecVersion specVersion = SpecVersion.spec2021,
-    Platform platform = Platform.phone,
+    Variant variant = .tonalSpot,
+    SpecVersion specVersion = .spec2021,
+    Platform platform = .phone,
     Color? primary,
     Color? secondary,
     Color? tertiary,
@@ -731,7 +731,7 @@ class DynamicSchemes {
       neutralPaletteKeyColor: neutral,
       neutralVariantPaletteKeyColor: neutralVariant,
       errorPaletteKeyColor: error,
-      light: DynamicScheme.fromPalettesOrKeyColors(
+      light: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelNormal,
@@ -745,7 +745,7 @@ class DynamicSchemes {
         neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
         errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      lightMediumContrast: DynamicScheme.fromPalettesOrKeyColors(
+      lightMediumContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelMedium,
@@ -759,7 +759,7 @@ class DynamicSchemes {
         neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
         errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      lightHighContrast: DynamicScheme.fromPalettesOrKeyColors(
+      lightHighContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: false,
         contrastLevel: contrastLevelHigh,
@@ -773,7 +773,7 @@ class DynamicSchemes {
         neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
         errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      dark: DynamicScheme.fromPalettesOrKeyColors(
+      dark: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelNormal,
@@ -787,7 +787,7 @@ class DynamicSchemes {
         neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
         errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      darkMediumContrast: DynamicScheme.fromPalettesOrKeyColors(
+      darkMediumContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelMedium,
@@ -801,7 +801,7 @@ class DynamicSchemes {
         neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
         errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      darkHighContrast: DynamicScheme.fromPalettesOrKeyColors(
+      darkHighContrast: .fromPalettesOrKeyColors(
         sourceColorHct: sourceColorHct,
         isDark: true,
         contrastLevel: contrastLevelHigh,
@@ -862,17 +862,16 @@ class DynamicSchemes {
   );
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is DynamicSchemes &&
-            light == other.light &&
-            lightMediumContrast == other.lightMediumContrast &&
-            lightHighContrast == other.lightHighContrast &&
-            dark == other.dark &&
-            darkMediumContrast == other.darkMediumContrast &&
-            darkHighContrast == other.darkHighContrast;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is DynamicSchemes &&
+          light == other.light &&
+          lightMediumContrast == other.lightMediumContrast &&
+          lightHighContrast == other.lightHighContrast &&
+          dark == other.dark &&
+          darkMediumContrast == other.darkMediumContrast &&
+          darkHighContrast == other.darkHighContrast;
 
   @override
   int get hashCode => Object.hash(

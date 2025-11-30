@@ -10,5 +10,5 @@ class SchemeMonochrome extends DynamicScheme {
     required super.contrastLevel,
     super.specVersion = DynamicScheme.defaultSpecVersion,
     super.platform = DynamicScheme.defaultPlatform,
-  }) : super.fromPalettesOrKeyColors(variant: Variant.monochrome);
+  }) : super.fromPalettesOrKeyColors(variant: .monochrome);
 }

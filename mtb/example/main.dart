@@ -1,6 +1,5 @@
 // ignore_for_file: recursive_getters
 
-import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
 import 'package:material_color_utilities/material_color_utilities.dart';
@@ -11,33 +10,28 @@ import 'package:mtb/src/color.dart';
 import 'package:mtb/src/json.dart';
 
 // const Map<SpecVersion, List<double>> _specVersionToContrastLevels = {
-//   SpecVersion.spec2021: [-1.0, 0.0, 0.5, 1.0],
-//   SpecVersion.spec2025: [0.0, 0.5, 1.0],
+//   .spec2021: [-1.0, 0.0, 0.5, 1.0],
+//   .spec2025: [0.0, 0.5, 1.0],
 // };
 
 const Map<SpecVersion, List<Variant>> _specVersionToVariants = {
-  SpecVersion.spec2021: [
-    Variant.monochrome,
-    Variant.neutral,
-    Variant.tonalSpot,
-    Variant.vibrant,
-    Variant.expressive,
-    Variant.fidelity,
-    Variant.content,
-    Variant.rainbow,
-    Variant.fruitSalad,
+  .spec2021: [
+    .monochrome,
+    .neutral,
+    .tonalSpot,
+    .vibrant,
+    .expressive,
+    .fidelity,
+    .content,
+    .rainbow,
+    .fruitSalad,
   ],
-  SpecVersion.spec2025: [
-    Variant.neutral,
-    Variant.tonalSpot,
-    Variant.vibrant,
-    Variant.expressive,
-  ],
+  .spec2025: [.neutral, .tonalSpot, .vibrant, .expressive],
 };
 
 const Map<SpecVersion, List<Platform>> _specVersionToPlatforms = {
-  SpecVersion.spec2021: [Platform.phone],
-  SpecVersion.spec2025: [Platform.phone, Platform.watch],
+  .spec2021: [.phone],
+  .spec2025: [.phone, .watch],
 };
 
 class SeedColors {
@@ -60,19 +54,18 @@ class SeedColors {
   final Color? errorPaletteKeyColor;
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is SeedColors &&
-            sourceColor == other.sourceColor &&
-            primaryPaletteKeyColor == other.primaryPaletteKeyColor &&
-            secondaryPaletteKeyColor == other.secondaryPaletteKeyColor &&
-            tertiaryPaletteKeyColor == other.tertiaryPaletteKeyColor &&
-            neutralPaletteKeyColor == other.neutralPaletteKeyColor &&
-            neutralVariantPaletteKeyColor ==
-                other.neutralVariantPaletteKeyColor &&
-            errorPaletteKeyColor == other.errorPaletteKeyColor;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is SeedColors &&
+          sourceColor == other.sourceColor &&
+          primaryPaletteKeyColor == other.primaryPaletteKeyColor &&
+          secondaryPaletteKeyColor == other.secondaryPaletteKeyColor &&
+          tertiaryPaletteKeyColor == other.tertiaryPaletteKeyColor &&
+          neutralPaletteKeyColor == other.neutralPaletteKeyColor &&
+          neutralVariantPaletteKeyColor ==
+              other.neutralVariantPaletteKeyColor &&
+          errorPaletteKeyColor == other.errorPaletteKeyColor;
 
   @override
   int get hashCode => Object.hash(
@@ -207,7 +200,7 @@ final List<DynamicColor> _allDynamicColors = <DynamicColor>[
 ];
 
 void main() async {
-  final List<Future<File>> futures = <Future<File>>[];
+  final futures = <Future<File>>[];
   for (final entry in seedColorsByName.entries) {
     final name = entry.key;
     final seedColors = entry.value;
@@ -316,28 +309,28 @@ String _buildNamedDescriptor({
 
 extension on Variant {
   String toFlatCase() => switch (this) {
-    Variant.monochrome => "monochrome",
-    Variant.neutral => "neutral",
-    Variant.tonalSpot => "tonalspot",
-    Variant.vibrant => "vibrant",
-    Variant.expressive => "expressive",
-    Variant.fidelity => "fidelity",
-    Variant.content => "content",
-    Variant.rainbow => "rainbow",
-    Variant.fruitSalad => "fruitsalad",
+    .monochrome => "monochrome",
+    .neutral => "neutral",
+    .tonalSpot => "tonalspot",
+    .vibrant => "vibrant",
+    .expressive => "expressive",
+    .fidelity => "fidelity",
+    .content => "content",
+    .rainbow => "rainbow",
+    .fruitSalad => "fruitsalad",
   };
 }
 
 extension on SpecVersion {
   String toFlatCase() => switch (this) {
-    SpecVersion.spec2021 => "2021",
-    SpecVersion.spec2025 => "2025",
+    .spec2021 => "2021",
+    .spec2025 => "2025",
   };
 }
 
 extension on Platform {
   String toFlatCase() => switch (this) {
-    Platform.phone => "phone",
-    Platform.watch => "watch",
+    .phone => "phone",
+    .watch => "watch",
   };
 }

@@ -158,12 +158,11 @@ class _ColorArgb implements Color {
   String toString() => "Color.argb(0x${argb.toRadixString(16)})";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is _ColorArgb &&
-            argb == other.argb;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is _ColorArgb &&
+          argb == other.argb;
 
   @override
   int get hashCode => Object.hash(runtimeType, argb);
@@ -191,15 +190,14 @@ class _ColorRgba implements Color {
   String toString() => "Color.rgba($red, $green, $blue, $alpha)";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is _ColorRgba &&
-            red == other.red &&
-            green == other.green &&
-            blue == other.blue &&
-            alpha == other.alpha;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is _ColorRgba &&
+          red == other.red &&
+          green == other.green &&
+          blue == other.blue &&
+          alpha == other.alpha;
 
   @override
   int get hashCode => Object.hash(runtimeType, red, green, blue, alpha);
@@ -225,12 +223,11 @@ class _ColorHex implements Color {
   String toString() => "Color.hex(#$hex)";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is _ColorHex &&
-            hex == other.hex;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is _ColorHex &&
+          hex == other.hex;
 
   @override
   int get hashCode => Object.hash(runtimeType, hex);
@@ -253,12 +250,11 @@ class _ColorHct implements Color {
       "Color.hct(${hct.hue.round()}, ${hct.chroma.round()}, ${hct.tone.round()})";
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        runtimeType == other.runtimeType &&
-            other is _ColorHct &&
-            hct == other.hct;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      runtimeType == other.runtimeType &&
+          other is _ColorHct &&
+          hct == other.hct;
 
   @override
   int get hashCode => Object.hash(runtimeType, hct);
@@ -301,30 +297,30 @@ class VariantConverter extends JsonConverter<Variant, String> {
 
   @override
   Variant fromJson(String json) => switch (json.toLowerCase()) {
-    "monochrome" => Variant.monochrome,
-    "neutral" => Variant.neutral,
-    "tonal_spot" => Variant.tonalSpot,
-    "vibrant" => Variant.vibrant,
-    "expressive" => Variant.expressive,
-    "fidelity" => Variant.fidelity,
-    "content" => Variant.content,
-    "rainbow" => Variant.rainbow,
-    "fruit_salad" => Variant.fruitSalad,
+    "monochrome" => .monochrome,
+    "neutral" => .neutral,
+    "tonal_spot" => .tonalSpot,
+    "vibrant" => .vibrant,
+    "expressive" => .expressive,
+    "fidelity" => .fidelity,
+    "content" => .content,
+    "rainbow" => .rainbow,
+    "fruit_salad" => .fruitSalad,
     _ when defaultValue != null => defaultValue!,
     _ => throw ArgumentError.value(json),
   };
 
   @override
   String toJson(Variant object) => switch (object) {
-    Variant.monochrome => "monochrome",
-    Variant.neutral => "neutral",
-    Variant.tonalSpot => "tonal_spot",
-    Variant.vibrant => "vibrant",
-    Variant.expressive => "expressive",
-    Variant.fidelity => "fidelity",
-    Variant.content => "content",
-    Variant.rainbow => "rainbow",
-    Variant.fruitSalad => "fruit_salad",
+    .monochrome => "monochrome",
+    .neutral => "neutral",
+    .tonalSpot => "tonal_spot",
+    .vibrant => "vibrant",
+    .expressive => "expressive",
+    .fidelity => "fidelity",
+    .content => "content",
+    .rainbow => "rainbow",
+    .fruitSalad => "fruit_salad",
   };
 }
 
@@ -335,16 +331,16 @@ class SpecVersionConverter extends JsonConverter<SpecVersion, String> {
 
   @override
   SpecVersion fromJson(String json) => switch (json.toLowerCase()) {
-    "spec_2021" => SpecVersion.spec2021,
-    "spec_2025" => SpecVersion.spec2025,
+    "spec_2021" => .spec2021,
+    "spec_2025" => .spec2025,
     _ when defaultValue != null => defaultValue!,
     _ => throw ArgumentError.value(json),
   };
 
   @override
   String toJson(SpecVersion object) => switch (object) {
-    SpecVersion.spec2021 => "spec_2021",
-    SpecVersion.spec2025 => "spec_2025",
+    .spec2021 => "spec_2021",
+    .spec2025 => "spec_2025",
   };
 }
 
@@ -355,16 +351,16 @@ class PlatformConverter extends JsonConverter<Platform, String> {
 
   @override
   Platform fromJson(String json) => switch (json.toLowerCase()) {
-    "phone" => Platform.phone,
-    "watch" => Platform.watch,
+    "phone" => .phone,
+    "watch" => .watch,
     _ when defaultValue != null => defaultValue!,
     _ => throw ArgumentError.value(json),
   };
 
   @override
   String toJson(Platform object) => switch (object) {
-    Platform.phone => "phone",
-    Platform.watch => "watch",
+    .phone => "phone",
+    .watch => "watch",
   };
 }
 
