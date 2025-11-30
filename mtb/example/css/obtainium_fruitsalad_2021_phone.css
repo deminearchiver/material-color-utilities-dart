@@ -70,9 +70,9 @@
   --md-sys-color-clock-hour: #164974;
   --md-sys-color-clock-minute: #005891;
   --md-sys-color-clock-second: #67548E;
-  --md-sys-color-weather-temp: #0062A0;
+  --md-sys-color-weather-temp: #0D6AAB;
   --md-sys-color-theme-app: #D0E4FF;
-  --md-sys-color-on-theme-app: #00497A;
+  --md-sys-color-on-theme-app: #0062A0;
   --md-sys-color-theme-app-ring: #6BB0F5;
   --md-sys-color-theme-notif: #9B86C4;
   --md-sys-color-brand-a: #005F9C;
@@ -163,7 +163,7 @@
   --md-sys-color-clock-second: #000000;
   --md-sys-color-weather-temp: #000000;
   --md-sys-color-theme-app: #D0E4FF;
-  --md-sys-color-on-theme-app: #00497A;
+  --md-sys-color-on-theme-app: #004B7C;
   --md-sys-color-theme-app-ring: #6BB0F5;
   --md-sys-color-theme-notif: #9B86C4;
   --md-sys-color-brand-a: #004472;
@@ -344,7 +344,7 @@
   --md-sys-color-clock-minute: #D0E4FF;
   --md-sys-color-clock-second: #EADDFF;
   --md-sys-color-weather-temp: #9CCAFF;
-  --md-sys-color-theme-app: #003256;
+  --md-sys-color-theme-app: #00497A;
   --md-sys-color-on-theme-app: #9CCAFF;
   --md-sys-color-theme-app-ring: #6BB0F5;
   --md-sys-color-theme-notif: #D2BCFD;
@@ -435,8 +435,8 @@
   --md-sys-color-clock-minute: #D0E4FF;
   --md-sys-color-clock-second: #FFFFFF;
   --md-sys-color-weather-temp: #FFFFFF;
-  --md-sys-color-theme-app: #003256;
-  --md-sys-color-on-theme-app: #9CCAFF;
+  --md-sys-color-theme-app: #00497A;
+  --md-sys-color-on-theme-app: #CCE2FF;
   --md-sys-color-theme-app-ring: #6BB0F5;
   --md-sys-color-theme-notif: #D2BCFD;
   --md-sys-color-brand-a: #C3DEFF;
@@ -526,8 +526,8 @@
   --md-sys-color-clock-minute: #FFFFFF;
   --md-sys-color-clock-second: #F3E8FF;
   --md-sys-color-weather-temp: #E1EDFF;
-  --md-sys-color-theme-app: #003256;
-  --md-sys-color-on-theme-app: #CFE4FF;
+  --md-sys-color-theme-app: #00497A;
+  --md-sys-color-on-theme-app: #FFFFFF;
   --md-sys-color-theme-app-ring: #6BB0F5;
   --md-sys-color-theme-notif: #D2BCFD;
   --md-sys-color-brand-a: #D7E8FF;
