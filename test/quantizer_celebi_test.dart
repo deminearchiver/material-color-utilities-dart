@@ -1,9 +1,9 @@
 import 'package:material_color_utilities/material_color_utilities.dart';
 import 'package:test/test.dart';
 
-const int red = 0xffff0000;
-const int green = 0xff00ff00;
-const int blue = 0xff0000ff;
+const red = 0xffff0000;
+const green = 0xff00ff00;
+const blue = 0xff0000ff;
 void main() {
   group("QuantizerCelebi", () {
     test("1R", () {

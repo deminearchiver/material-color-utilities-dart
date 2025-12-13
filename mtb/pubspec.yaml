@@ -9,14 +9,14 @@ executables:
   mtb:
 
 environment:
-  sdk: ^3.10.1
+  sdk: ^3.10.0
 
 dependencies:
   material_color_utilities:
     path: ..
 
   args: ^2.7.0
-  dcli: ^8.2.0
+  dcli: ^8.2.1
   csslib: ^1.0.2
   json_annotation: ^4.9.0
   freezed_annotation: ^3.1.0
@@ -26,8 +26,8 @@ dependencies:
   change_case: ^2.2.0
 
 dev_dependencies:
-  lints: ^6.0.0
-  build_runner: ^2.10.3
+  build_runner: ^2.10.4
+  deminearchiver_lints: ^1.1.1
   freezed: ^3.2.3
-  json_serializable: ^6.11.1
-  test: ^1.27.0
+  json_serializable: ^6.11.2
+  test: ^1.28.0

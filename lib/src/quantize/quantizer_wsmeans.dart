@@ -61,7 +61,7 @@ final class QuantizerWsmeans implements Quantizer {
     final additionalClustersNeeded = clusterCount - clustersCreated;
     if (additionalClustersNeeded > 0) {
       for (var i = 0; i < additionalClustersNeeded; i++) {
-        // TODO: implement (Java and Kotlin implementation missing)
+        // TODO(deminearchiver): implement (Java and Kotlin implementation missing)
       }
     }
 

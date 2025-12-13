@@ -1,5 +1,4 @@
 import '../dynamiccolor/dynamic_scheme.dart';
-import '../dynamiccolor/variant.dart';
 
 /// A calm theme, sedated colors that aren't particularly chromatic.
 ///

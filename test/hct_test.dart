@@ -3,17 +3,16 @@ import 'package:material_color_utilities/material_color_utilities.dart';
 
 import 'test_utils.dart';
 
-const int red = 0xffff0000;
-const int green = 0xff00ff00;
-const int blue = 0xff0000ff;
-const int white = 0xffffffff;
-const int black = 0xff000000;
+const red = 0xffff0000;
+const green = 0xff00ff00;
+const blue = 0xff0000ff;
+const white = 0xffffffff;
+const black = 0xff000000;
 
 void main() {
   group("CAM to ARGB", () {
     test("red", () {
       final cam = Cam16.fromInt(red);
-
       expect(cam.hue, closeToWithPrecision(27.408, 3));
       expect(cam.chroma, closeToWithPrecision(113.358, 3));
       expect(cam.j, closeToWithPrecision(46.445, 3));
@@ -24,7 +23,6 @@ void main() {
 
     test("green", () {
       final cam = Cam16.fromInt(green);
-
       expect(cam.hue, closeToWithPrecision(142.140, 3));
       expect(cam.chroma, closeToWithPrecision(108.410, 3));
       expect(cam.j, closeToWithPrecision(79.332, 3));
@@ -35,7 +33,6 @@ void main() {
 
     test("blue", () {
       final cam = Cam16.fromInt(blue);
-
       expect(cam.hue, closeToWithPrecision(282.788, 3));
       expect(cam.chroma, closeToWithPrecision(87.231, 3));
       expect(cam.j, closeToWithPrecision(25.466, 3));
@@ -46,7 +43,6 @@ void main() {
 
     test("white", () {
       final cam = Cam16.fromInt(white);
-
       expect(cam.hue, closeToWithPrecision(209.492, 3));
       expect(cam.chroma, closeToWithPrecision(2.869, 3));
       expect(cam.j, closeToWithPrecision(100.0, 3));
@@ -57,7 +53,6 @@ void main() {
 
     test("black", () {
       final cam = Cam16.fromInt(black);
-
       expect(cam.hue, closeToWithPrecision(0.0, 3));
       expect(cam.chroma, closeToWithPrecision(0.0, 3));
       expect(cam.j, closeToWithPrecision(0.0, 3));
@@ -130,16 +125,16 @@ void main() {
 
   group("CamSolver", () {
     test("returns a sufficiently close color", () {
-      for (double hue = 15; hue < 360; hue += 30) {
-        for (double chroma = 0; chroma <= 100; chroma += 10) {
-          for (double tone = 20; tone <= 80; tone += 10) {
+      for (var hue = 15.0; hue < 360.0; hue += 30.0) {
+        for (var chroma = 0.0; chroma <= 100.0; chroma += 10.0) {
+          for (var tone = 20.0; tone <= 80.0; tone += 10.0) {
             final hctColor = Hct.from(hue, chroma, tone);
 
-            if (chroma > 0) {
+            if (chroma > 0.0) {
               expect((hctColor.hue - hue).abs(), lessThanOrEqualTo(4.0));
             }
 
-            expect(hctColor.chroma, greaterThanOrEqualTo(0));
+            expect(hctColor.chroma, greaterThanOrEqualTo(0.0));
             expect(hctColor.chroma, lessThanOrEqualTo(chroma + 2.5));
 
             if (hctColor.chroma < chroma - 2.5) {
@@ -154,11 +149,10 @@ void main() {
   });
 }
 
-bool colorIsOnBoundary(int argb) {
-  return ColorUtils.redFromArgb(argb) == 0 ||
-      ColorUtils.redFromArgb(argb) == 255 ||
-      ColorUtils.greenFromArgb(argb) == 0 ||
-      ColorUtils.greenFromArgb(argb) == 255 ||
-      ColorUtils.blueFromArgb(argb) == 0 ||
-      ColorUtils.blueFromArgb(argb) == 255;
-}
+bool colorIsOnBoundary(int argb) =>
+    ColorUtils.redFromArgb(argb) == 0 ||
+    ColorUtils.redFromArgb(argb) == 255 ||
+    ColorUtils.greenFromArgb(argb) == 0 ||
+    ColorUtils.greenFromArgb(argb) == 255 ||
+    ColorUtils.blueFromArgb(argb) == 0 ||
+    ColorUtils.blueFromArgb(argb) == 255;

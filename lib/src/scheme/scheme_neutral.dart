@@ -1,5 +1,4 @@
 import '../dynamiccolor/dynamic_scheme.dart';
-import '../dynamiccolor/variant.dart';
 
 /// A theme that's slightly more chromatic than monochrome, which is purely black / white / gray.
 @Deprecated("Use DynamicScheme directly instead")

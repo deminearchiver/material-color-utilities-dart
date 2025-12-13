@@ -5,7 +5,7 @@ void main() {
   group("dislike analyzer", () {
     test("likes Monk Skin Tone Scale colors", () {
       // From https://skintone.google#/get-started
-      final monkSkinToneScaleColors = [
+      final monkSkinToneScaleColors = <int>[
         0xfff6ede4,
         0xfff3e7db,
         0xfff7ead0,
@@ -18,12 +18,12 @@ void main() {
         0xff292420,
       ];
       for (final color in monkSkinToneScaleColors) {
-        expect(DislikeAnalyzer.isDisliked(Hct.fromInt(color)), isFalse);
+        expect(DislikeAnalyzer.isDisliked(.fromInt(color)), isFalse);
       }
     });
 
     test("dislikes bile colors", () {
-      const List<int> unlikable = [
+      const unlikable = <int>[
         0xff95884B,
         0xff716B40,
         0xffB08E00,
@@ -31,12 +31,12 @@ void main() {
         0xff464521,
       ];
       for (final color in unlikable) {
-        expect(DislikeAnalyzer.isDisliked(Hct.fromInt(color)), isTrue);
+        expect(DislikeAnalyzer.isDisliked(.fromInt(color)), isTrue);
       }
     });
 
     test("makes bile colors likable", () {
-      const List<int> unlikable = [
+      const unlikable = <int>[
         0xff95884B,
         0xff716B40,
         0xffB08E00,

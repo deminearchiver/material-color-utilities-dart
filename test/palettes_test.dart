@@ -5,7 +5,6 @@ void main() {
   group("TonalPalette", () {
     test("ofBlue", () {
       final blue = TonalPalette.fromInt(0xff0000ff);
-
       expect(blue.tone(100), 0xffffffff);
       expect(blue.tone(95), 0xfff1efff);
       expect(blue.tone(90), 0xffe0e0ff);

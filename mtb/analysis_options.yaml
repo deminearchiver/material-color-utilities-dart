@@ -1,1 +1,1 @@
-include: ../analysis_options.yaml
+include: package:deminearchiver_lints/dart.yaml
