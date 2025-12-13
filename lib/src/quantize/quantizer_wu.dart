@@ -133,7 +133,6 @@ final class QuantizerWu implements Quantizer {
         break;
       }
     }
-
     return _CreateBoxesResult(maxColorCount, generatedColorCount);
   }
 
@@ -180,7 +179,7 @@ final class QuantizerWu implements Quantizer {
 
     final maxRResult = _maximize(
       one,
-      _Direction.red,
+      .red,
       one.r0 + 1,
       one.r1,
       wholeR,
@@ -190,7 +189,7 @@ final class QuantizerWu implements Quantizer {
     );
     final maxGResult = _maximize(
       one,
-      _Direction.green,
+      .green,
       one.g0 + 1,
       one.g1,
       wholeR,
@@ -200,7 +199,7 @@ final class QuantizerWu implements Quantizer {
     );
     final maxBResult = _maximize(
       one,
-      _Direction.blue,
+      .blue,
       one.b0 + 1,
       one.b1,
       wholeR,
@@ -216,11 +215,11 @@ final class QuantizerWu implements Quantizer {
       if (maxRResult.cutLocation < 0) {
         return false;
       }
-      cutDirection = _Direction.red;
+      cutDirection = .red;
     } else if (maxG >= maxR && maxG >= maxB) {
-      cutDirection = _Direction.green;
+      cutDirection = .green;
     } else {
-      cutDirection = _Direction.blue;
+      cutDirection = .blue;
     }
 
     two
@@ -229,19 +228,19 @@ final class QuantizerWu implements Quantizer {
       ..b1 = one.b1;
 
     switch (cutDirection) {
-      case _Direction.red:
+      case .red:
         one.r1 = maxRResult.cutLocation;
         two.r0 = one.r1;
         two.g0 = one.g0;
         two.b0 = one.b0;
         break;
-      case _Direction.green:
+      case .green:
         one.g1 = maxGResult.cutLocation;
         two.r0 = one.r0;
         two.g0 = one.g1;
         two.b0 = one.b0;
         break;
-      case _Direction.blue:
+      case .blue:
         one.b1 = maxBResult.cutLocation;
         two.r0 = one.r0;
         two.g0 = one.g0;
@@ -312,39 +311,37 @@ final class QuantizerWu implements Quantizer {
     return _MaximizeResult(cut, max);
   }
 
-  static int _getIndex(int r, int g, int b) {
-    return (r << (_indexBits * 2)) +
-        (r << (_indexBits + 1)) +
-        r +
-        (g << _indexBits) +
-        g +
-        b;
-  }
+  static int _getIndex(int r, int g, int b) =>
+      (r << (_indexBits * 2)) +
+      (r << (_indexBits + 1)) +
+      r +
+      (g << _indexBits) +
+      g +
+      b;
 
-  static int _volume(_Box cube, List<int> moment) {
-    return (moment[_getIndex(cube.r1, cube.g1, cube.b1)] -
-        moment[_getIndex(cube.r1, cube.g1, cube.b0)] -
-        moment[_getIndex(cube.r1, cube.g0, cube.b1)] +
-        moment[_getIndex(cube.r1, cube.g0, cube.b0)] -
-        moment[_getIndex(cube.r0, cube.g1, cube.b1)] +
-        moment[_getIndex(cube.r0, cube.g1, cube.b0)] +
-        moment[_getIndex(cube.r0, cube.g0, cube.b1)] -
-        moment[_getIndex(cube.r0, cube.g0, cube.b0)]);
-  }
+  static int _volume(_Box cube, List<int> moment) =>
+      (moment[_getIndex(cube.r1, cube.g1, cube.b1)] -
+      moment[_getIndex(cube.r1, cube.g1, cube.b0)] -
+      moment[_getIndex(cube.r1, cube.g0, cube.b1)] +
+      moment[_getIndex(cube.r1, cube.g0, cube.b0)] -
+      moment[_getIndex(cube.r0, cube.g1, cube.b1)] +
+      moment[_getIndex(cube.r0, cube.g1, cube.b0)] +
+      moment[_getIndex(cube.r0, cube.g0, cube.b1)] -
+      moment[_getIndex(cube.r0, cube.g0, cube.b0)]);
 
   static int _bottom(_Box cube, _Direction direction, List<int> moment) =>
       switch (direction) {
-        _Direction.red =>
+        .red =>
           -moment[_getIndex(cube.r0, cube.g1, cube.b1)] +
               moment[_getIndex(cube.r0, cube.g1, cube.b0)] +
               moment[_getIndex(cube.r0, cube.g0, cube.b1)] -
               moment[_getIndex(cube.r0, cube.g0, cube.b0)],
-        _Direction.green =>
+        .green =>
           -moment[_getIndex(cube.r1, cube.g0, cube.b1)] +
               moment[_getIndex(cube.r1, cube.g0, cube.b0)] +
               moment[_getIndex(cube.r0, cube.g0, cube.b1)] -
               moment[_getIndex(cube.r0, cube.g0, cube.b0)],
-        _Direction.blue =>
+        .blue =>
           -moment[_getIndex(cube.r1, cube.g1, cube.b0)] +
               moment[_getIndex(cube.r1, cube.g0, cube.b0)] +
               moment[_getIndex(cube.r0, cube.g1, cube.b0)] -
@@ -357,17 +354,17 @@ final class QuantizerWu implements Quantizer {
     int position,
     List<int> moment,
   ) => switch (direction) {
-    _Direction.red =>
+    .red =>
       (moment[_getIndex(position, cube.g1, cube.b1)] -
           moment[_getIndex(position, cube.g1, cube.b0)] -
           moment[_getIndex(position, cube.g0, cube.b1)] +
           moment[_getIndex(position, cube.g0, cube.b0)]),
-    _Direction.green =>
+    .green =>
       (moment[_getIndex(cube.r1, position, cube.b1)] -
           moment[_getIndex(cube.r1, position, cube.b0)] -
           moment[_getIndex(cube.r0, position, cube.b1)] +
           moment[_getIndex(cube.r0, position, cube.b0)]),
-    _Direction.blue =>
+    .blue =>
       (moment[_getIndex(cube.r1, cube.g1, position)] -
           moment[_getIndex(cube.r1, cube.g0, position)] -
           moment[_getIndex(cube.r0, cube.g1, position)] +

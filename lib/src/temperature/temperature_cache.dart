@@ -15,13 +15,11 @@ final class TemperatureCache {
   TemperatureCache(this.input);
 
   Hct getComplement() {
-    if (_precomputedComplement != null) {
-      return _precomputedComplement!;
+    if (_precomputedComplement case final precomputedComplement?) {
+      return precomputedComplement;
     }
-
     final coldestHue = _getColdest().hue;
     final coldestTemp = _getTempsByHct()[_getColdest()]!;
-
     final warmestHue = _getWarmest().hue;
     final warmestTemp = _getTempsByHct()[_getWarmest()]!;
     final range = warmestTemp - coldestTemp;
@@ -57,8 +55,7 @@ final class TemperatureCache {
         answer = possibleAnswer;
       }
     }
-    _precomputedComplement = answer;
-    return _precomputedComplement!;
+    return _precomputedComplement = answer;
   }
 
   List<Hct> getAnalogousColors([int count = 5, int divisions = 12]) {
@@ -173,49 +170,42 @@ final class TemperatureCache {
   }
 
   List<Hct> _getHctsByHue() {
-    if (_precomputedHctsByHue != null) {
-      return _precomputedHctsByHue!;
+    if (_precomputedHctsByHue case final precomputedHctsByHue?) {
+      return precomputedHctsByHue;
     }
     final hcts = <Hct>[];
     for (var hue = 0.0; hue <= 360.0; hue += 1.0) {
       final colorAtHue = Hct.from(hue, input.chroma, input.tone);
       hcts.add(colorAtHue);
     }
-    _precomputedHctsByHue = UnmodifiableListView(hcts);
-    return _precomputedHctsByHue!;
+    return _precomputedHctsByHue = UnmodifiableListView(hcts);
   }
 
   List<Hct> _getHctsByTemp() {
-    if (_precomputedHctsByTemp != null) {
-      return _precomputedHctsByTemp!;
+    if (_precomputedHctsByTemp case final precomputedHctsByTemp?) {
+      return precomputedHctsByTemp;
     }
     final hcts = List.of(_getHctsByHue())
       ..add(input)
       ..sort((a, b) => _getTempsByHct()[a]!.compareTo(_getTempsByHct()[b]!));
-    _precomputedHctsByTemp = hcts;
-    return _precomputedHctsByTemp!;
+    return _precomputedHctsByTemp = hcts;
   }
 
   Map<Hct, double> _getTempsByHct() {
-    if (_precomputedTempsByHct != null) {
-      return _precomputedTempsByHct!;
+    if (_precomputedTempsByHct case final precomputedTempsByHct?) {
+      return precomputedTempsByHct;
     }
-
     final allHcts = List.of(_getHctsByHue())..add(input);
-
     final temperaturesByHct = <Hct, double>{};
     for (final hct in allHcts) {
       temperaturesByHct[hct] = rawTemperature(hct);
     }
-
-    _precomputedTempsByHct = temperaturesByHct;
-    return _precomputedTempsByHct!;
+    return _precomputedTempsByHct = temperaturesByHct;
   }
 
   Hct _getColdest() => _getHctsByTemp().first;
   Hct _getWarmest() => _getHctsByTemp().last;
 
-  static bool _isBetween(double angle, double a, double b) {
-    return a < b ? a <= angle && angle <= b : a <= angle || angle <= b;
-  }
+  static bool _isBetween(double angle, double a, double b) =>
+      a < b ? a <= angle && angle <= b : a <= angle || angle <= b;
 }

@@ -171,7 +171,6 @@ final class QuantizerWsmeans implements Quantizer {
 
       argbToPopulation[possibleNewCluster] = count;
     }
-
     return QuantizerResult(colorToCount: argbToPopulation);
   }
 }
@@ -183,7 +182,5 @@ class _Distance implements Comparable<_Distance> {
   double distance = -1.0;
 
   @override
-  int compareTo(_Distance other) {
-    return distance.compareTo(other.distance);
-  }
+  int compareTo(_Distance other) => distance.compareTo(other.distance);
 }

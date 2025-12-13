@@ -9,10 +9,8 @@ final class Hct {
     _setInternalState(argb);
   }
 
-  factory Hct.from(double hue, double chroma, double tone) {
-    final argb = HctSolver.solveToInt(hue, chroma, tone);
-    return ._(argb);
-  }
+  factory Hct.from(double hue, double chroma, double tone) =>
+      ._(HctSolver.solveToInt(hue, chroma, tone));
 
   factory Hct.fromInt(int argb) => ._(argb);
 

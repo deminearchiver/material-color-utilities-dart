@@ -46,26 +46,14 @@ abstract final class MathUtils {
   static double differenceDegrees(double a, double b) =>
       180.0 - ((a - b).abs() - 180.0).abs();
 
-  // static T differenceDegrees<T extends num>(T a, T b) {
-  //   final differenceDegrees = 180.0 - ((a - b).abs() - 180.0).abs();
-  //   return differenceDegrees as T;
-  // }
-
-  static List<T> matrixMultiply<T extends num>(
-    List<T> row,
-    List<List<T>> matrix,
-  ) {
-    final a =
-        row[0] * matrix[0][0] + row[1] * matrix[0][1] + row[2] * matrix[0][2]
-            as T;
-    final b =
-        row[0] * matrix[1][0] + row[1] * matrix[1][1] + row[2] * matrix[1][2]
-            as T;
-    final c =
-        row[0] * matrix[2][0] + row[1] * matrix[2][1] + row[2] * matrix[2][2]
-            as T;
-    return [a, b, c];
-  }
+  static List<double> matrixMultiply(
+    List<double> row,
+    List<List<double>> matrix,
+  ) => [
+    row[0] * matrix[0][0] + row[1] * matrix[0][1] + row[2] * matrix[0][2],
+    row[0] * matrix[1][0] + row[1] * matrix[1][1] + row[2] * matrix[1][2],
+    row[0] * matrix[2][0] + row[1] * matrix[2][1] + row[2] * matrix[2][2],
+  ];
 
   static double toRadians(double degrees) => degrees * math.pi / 180.0;
 

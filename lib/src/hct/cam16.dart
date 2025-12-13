@@ -125,7 +125,6 @@ final class Cam16 {
     final mstar = 1.0 / 0.0228 * math.log(1.0 + 0.0228 * m); // log1p
     final astar = mstar * math.cos(hueRadians);
     final bstar = mstar * math.sin(hueRadians);
-
     return ._(hue, c, j, q, m, s, jstar, astar, bstar);
   }
 

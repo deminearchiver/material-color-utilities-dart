@@ -134,33 +134,25 @@ final class DynamicColor {
     DynamicSchemeCallback<TonalPalette>? palette,
     DynamicSchemeCallback<double>? tone,
     bool? isBackground,
-  }) {
-    if (name == null &&
-        palette == null &&
-        tone == null &&
-        isBackground == null) {
-      return this;
-    }
-    return DynamicColor(
-      name: name ?? this.name,
-      palette: palette ?? this.palette,
-      tone: tone ?? this.tone,
-      isBackground: isBackground ?? this.isBackground,
-      chromaMultiplier: chromaMultiplier,
-      background: background,
-      secondBackground: secondBackground,
-      contrastCurve: contrastCurve,
-      toneDeltaPair: toneDeltaPair,
-      opacity: opacity,
-    );
-  }
+  }) => name != null || palette != null || tone != null || isBackground != null
+      ? DynamicColor(
+          name: name ?? this.name,
+          palette: palette ?? this.palette,
+          tone: tone ?? this.tone,
+          isBackground: isBackground ?? this.isBackground,
+          chromaMultiplier: chromaMultiplier,
+          background: background,
+          secondBackground: secondBackground,
+          contrastCurve: contrastCurve,
+          toneDeltaPair: toneDeltaPair,
+          opacity: opacity,
+        )
+      : this;
 
   int getArgb(DynamicScheme scheme) {
     final argb = getHct(scheme).toInt();
     final opacityPercentage = opacity?.call(scheme);
-
     if (opacityPercentage == null) return argb;
-
     final alpha = MathUtils.clampInt(
       0,
       255,

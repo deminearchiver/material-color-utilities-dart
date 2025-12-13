@@ -107,21 +107,14 @@ abstract final class Contrast {
   /// Returns T in HCT, L* in L*a*b* >= tone parameter that ensures ratio with
   /// input T/L*. Returns null if ratio cannot be achieved.
   static double? lighter(double tone, double ratio) {
-    if (tone < 0.0 || tone > 100.0) {
-      return null;
-    }
+    if (tone < 0.0 || tone > 100.0) return null;
     // Invert the contrast ratio equation to determine lighter Y given a ratio and darker Y.
     final darkY = ColorUtils.yFromLstar(tone);
     final lightY = ratio * (darkY + 5.0) - 5.0;
-    if (lightY < 0.0 || lightY > 100.0) {
-      return null;
-    }
+    if (lightY < 0.0 || lightY > 100.0) return null;
     final realContrast = ratioOfYs(lightY, darkY);
     final delta = (realContrast - ratio).abs();
-    if (realContrast < ratio && delta > _contrastRatioEpsilon) {
-      return null;
-    }
-
+    if (realContrast < ratio && delta > _contrastRatioEpsilon) return null;
     final returnValue =
         ColorUtils.lstarFromY(lightY) + _luminanceGamutMapTolerance;
     // NOMUTANTS--important validation step; functions it is calling may change implementation.
@@ -139,21 +132,14 @@ abstract final class Contrast {
   /// Returns T in HCT, L* in L*a*b* <= tone parameter that ensures ratio with
   /// input T/L*. Returns null if ratio cannot be achieved.
   static double? darker(double tone, double ratio) {
-    if (tone < 0.0 || tone > 100.0) {
-      return null;
-    }
+    if (tone < 0.0 || tone > 100.0) return null;
     // Invert the contrast ratio equation to determine darker Y given a ratio and lighter Y.
     final lightY = ColorUtils.yFromLstar(tone);
     final darkY = ((lightY + 5.0) / ratio) - 5.0;
-    if (darkY < 0.0 || darkY > 100.0) {
-      return null;
-    }
+    if (darkY < 0.0 || darkY > 100.0) return null;
     final realContrast = ratioOfYs(lightY, darkY);
     final delta = (realContrast - ratio).abs();
-    if (realContrast < ratio && delta > _contrastRatioEpsilon) {
-      return null;
-    }
-
+    if (realContrast < ratio && delta > _contrastRatioEpsilon) return null;
     // For information on 0.4 constant, see comment in lighter(tone, ratio).
     final returnValue =
         ColorUtils.lstarFromY(darkY) - _luminanceGamutMapTolerance;

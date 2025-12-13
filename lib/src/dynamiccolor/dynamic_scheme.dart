@@ -200,13 +200,9 @@ class DynamicScheme {
   /// The source color of the scheme in ARGB format.
   final int sourceColorArgb;
 
-  Hct getHct(DynamicColor dynamicColor) {
-    return dynamicColor.getHct(this);
-  }
+  Hct getHct(DynamicColor dynamicColor) => dynamicColor.getHct(this);
 
-  int getArgb(DynamicColor dynamicColor) {
-    return dynamicColor.getArgb(this);
-  }
+  int getArgb(DynamicColor dynamicColor) => dynamicColor.getArgb(this);
 
   int get primaryPaletteKeyColor =>
       getArgb(_dynamicColors.primaryPaletteKeyColor);
