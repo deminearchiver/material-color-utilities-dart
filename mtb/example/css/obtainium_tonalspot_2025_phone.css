@@ -71,8 +71,8 @@
   --md-sys-color-clock-minute: #5D4D7D;
   --md-sys-color-clock-second: #7C516E;
   --md-sys-color-weather-temp: #665687;
-  --md-sys-color-theme-app: #EADDFF;
-  --md-sys-color-on-theme-app: #4E3E6E;
+  --md-sys-color-theme-app: #D9C5FF;
+  --md-sys-color-on-theme-app: #433362;
   --md-sys-color-theme-app-ring: #B5A2D9;
   --md-sys-color-theme-notif: #ECB7D8;
   --md-sys-color-brand-a: #645385;
@@ -162,9 +162,9 @@
   --md-sys-color-clock-minute: #403160;
   --md-sys-color-clock-second: #000000;
   --md-sys-color-weather-temp: #000000;
-  --md-sys-color-theme-app: #EADDFF;
-  --md-sys-color-on-theme-app: #4E3E6E;
-  --md-sys-color-theme-app-ring: #B5A2D9;
+  --md-sys-color-theme-app: #D9C5FF;
+  --md-sys-color-on-theme-app: #20113F;
+  --md-sys-color-theme-app-ring: #7D6C9F;
   --md-sys-color-theme-notif: #ECB7D8;
   --md-sys-color-brand-a: #493969;
   --md-sys-color-brand-b: #91889F;
@@ -253,9 +253,9 @@
   --md-sys-color-clock-minute: #221240;
   --md-sys-color-clock-second: #4C2641;
   --md-sys-color-weather-temp: #3A2B59;
-  --md-sys-color-theme-app: #EADDFF;
-  --md-sys-color-on-theme-app: #372856;
-  --md-sys-color-theme-app-ring: #B5A2D9;
+  --md-sys-color-theme-app: #D9C5FF;
+  --md-sys-color-on-theme-app: #000000;
+  --md-sys-color-theme-app-ring: #705F92;
   --md-sys-color-theme-notif: #ECB7D8;
   --md-sys-color-brand-a: #362654;
   --md-sys-color-brand-b: #736B81;
@@ -266,7 +266,7 @@
   --md-sys-color-on-shade-active: #31214F;
   --md-sys-color-on-shade-active-variant: #31214F;
   --md-sys-color-shade-inactive: #322F34;
-  --md-sys-color-on-shade-inactive: #F1E9F6;
+  --md-sys-color-on-shade-inactive: #FFFFFF;
   --md-sys-color-on-shade-inactive-variant: #F1E9F6;
   --md-sys-color-shade-disabled: #0F0D12;
   --md-sys-color-overview-background: #CBC4D0;
@@ -347,7 +347,7 @@
   --md-sys-color-theme-app: #342D40;
   --md-sys-color-on-theme-app: #CFBFEB;
   --md-sys-color-theme-app-ring: #B3A4CF;
-  --md-sys-color-theme-notif: #B382A1;
+  --md-sys-color-theme-notif: #C18FAF;
   --md-sys-color-brand-a: #CFBFEB;
   --md-sys-color-brand-b: #FEF7FF;
   --md-sys-color-brand-c: #9C8DB6;
@@ -357,7 +357,7 @@
   --md-sys-color-on-shade-active: #201537;
   --md-sys-color-on-shade-active-variant: #4D4165;
   --md-sys-color-shade-inactive: #322F34;
-  --md-sys-color-on-shade-inactive: #CBC4D0;
+  --md-sys-color-on-shade-inactive: #AFA9B4;
   --md-sys-color-on-shade-inactive-variant: #CBC4D0;
   --md-sys-color-shade-disabled: #0F0D12;
   --md-sys-color-overview-background: #55515B;
@@ -436,9 +436,9 @@
   --md-sys-color-clock-second: #FFFFFF;
   --md-sys-color-weather-temp: #FFFFFF;
   --md-sys-color-theme-app: #342D40;
-  --md-sys-color-on-theme-app: #CFBFEB;
+  --md-sys-color-on-theme-app: #F3E8FF;
   --md-sys-color-theme-app-ring: #B3A4CF;
-  --md-sys-color-theme-notif: #B382A1;
+  --md-sys-color-theme-notif: #C18FAF;
   --md-sys-color-brand-a: #DACAF6;
   --md-sys-color-brand-b: #FEF7FF;
   --md-sys-color-brand-c: #BEAFDA;
@@ -448,7 +448,7 @@
   --md-sys-color-on-shade-active: #201537;
   --md-sys-color-on-shade-active-variant: #4D4165;
   --md-sys-color-shade-inactive: #322F34;
-  --md-sys-color-on-shade-inactive: #CBC4D0;
+  --md-sys-color-on-shade-inactive: #C3BCC8;
   --md-sys-color-on-shade-inactive-variant: #CBC4D0;
   --md-sys-color-shade-disabled: #0F0D12;
   --md-sys-color-overview-background: #55515B;
@@ -527,9 +527,9 @@
   --md-sys-color-clock-second: #FFE5F3;
   --md-sys-color-weather-temp: #F3E8FF;
   --md-sys-color-theme-app: #342D40;
-  --md-sys-color-on-theme-app: #EADCFF;
+  --md-sys-color-on-theme-app: #FFFFFF;
   --md-sys-color-theme-app-ring: #B3A4CF;
-  --md-sys-color-theme-notif: #B382A1;
+  --md-sys-color-theme-notif: #C18FAF;
   --md-sys-color-brand-a: #E2D2FF;
   --md-sys-color-brand-b: #FEF7FF;
   --md-sys-color-brand-c: #D1C1EE;
