@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:material_color_utilities/material_color_utilities.dart' as mcu;
+import 'package:libmonet/material_color_utilities.dart' as mcu;
 
 sealed class Color {
   const factory Color.argb(int argb) = _ColorArgb;

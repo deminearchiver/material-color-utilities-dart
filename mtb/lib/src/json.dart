@@ -1,9 +1,8 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:material_color_utilities/dynamiccolor.dart';
-import 'package:material_color_utilities/material_color_utilities.dart' as mcu;
-import 'package:mtb/android_dynamic_colors.dart';
+import 'package:libmonet/android_dynamic_colors.dart';
+import 'package:libmonet/material_color_utilities.dart' as mcu;
 
 import 'color.dart';
 
@@ -342,8 +341,8 @@ abstract class FigmaScheme with _$FigmaScheme {
       _$FigmaSchemeFromJson(json);
 
   // ignore: prefer_const_constructors
-  static final MaterialDynamicColors _mdc = MaterialDynamicColors();
-  static final AndroidCustomDynamicColors _adc = AndroidCustomDynamicColors();
+  static final _mdc = mcu.MaterialDynamicColors();
+  static final _adc = AndroidDynamicColors();
 }
 
 @freezed

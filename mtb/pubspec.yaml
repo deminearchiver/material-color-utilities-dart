@@ -12,9 +12,6 @@ environment:
   sdk: ^3.10.0
 
 dependencies:
-  material_color_utilities:
-    path: ..
-
   args: ^2.7.0
   dcli: ^8.2.1
   csslib: ^1.0.2
@@ -24,6 +21,7 @@ dependencies:
   promptly: ^1.0.0-alpha.9
   intl: ^0.20.2
   change_case: ^2.2.0
+  libmonet: ^1.1.2
 
 dev_dependencies:
   build_runner: ^2.10.4

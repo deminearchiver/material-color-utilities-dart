@@ -3,8 +3,8 @@ import 'dart:convert';
 
 import 'package:change_case/change_case.dart';
 import 'package:intl/intl.dart';
-import 'package:material_color_utilities/material_color_utilities.dart';
-import 'package:mtb/android_dynamic_colors.dart';
+import 'package:libmonet/material_color_utilities.dart';
+import 'package:libmonet/android_dynamic_colors.dart';
 import 'package:promptly/promptly.dart';
 import 'package:mtb/src/json.dart';
 
@@ -298,8 +298,8 @@ class CreateCommand extends Command<int> {
           final buffer = StringBuffer();
           var firstIteration = true;
           final dynamicColors = [
-            ...const MaterialDynamicColors().allDynamicColors,
-            ...AndroidCustomDynamicColors().allColors,
+            ...MaterialDynamicColors().allDynamicColors,
+            ...AndroidDynamicColors().allDynamicColors,
           ];
           for (final mode in modes) {
             final modePrefix = switch (mode) {

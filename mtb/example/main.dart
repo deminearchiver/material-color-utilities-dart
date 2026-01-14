@@ -2,9 +2,9 @@
 
 import 'dart:convert';
 import 'dart:io';
-import 'package:material_color_utilities/material_color_utilities.dart';
+import 'package:libmonet/material_color_utilities.dart';
 import 'package:change_case/change_case.dart';
-import 'package:mtb/android_dynamic_colors.dart';
+import 'package:libmonet/android_dynamic_colors.dart';
 import 'package:mtb/src/cli.dart' show DynamicSchemes;
 import 'package:mtb/src/color.dart';
 import 'package:mtb/src/json.dart';
@@ -92,8 +92,8 @@ const Map<String, SeedColors> seedColorsByName = {
   "obtainium": SeedColors(sourceColor: Color.argb(0xFF6438B5)),
 };
 
-final MaterialDynamicColors _mdc = const MaterialDynamicColors();
-final AndroidCustomDynamicColors _adc = AndroidCustomDynamicColors();
+final MaterialDynamicColors _mdc = MaterialDynamicColors();
+final AndroidDynamicColors _adc = AndroidDynamicColors();
 
 final List<DynamicColor> _materialDynamicColors = <DynamicColor>[
   _mdc.primaryPaletteKeyColor,
