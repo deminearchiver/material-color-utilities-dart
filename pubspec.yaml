@@ -8,4 +8,4 @@ workspace:
   - mtb
 
 dev_dependencies:
-  deminearchiver_lints: ^1.1.1
+  deminearchiver_lints: ^2.1.2

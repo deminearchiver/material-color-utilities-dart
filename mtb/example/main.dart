@@ -1,5 +1,7 @@
 // ignore_for_file: recursive_getters
 
+// TODO: FIX ABSENT PALETTE KEY COLORS
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:libmonet/material_color_utilities.dart';
@@ -27,11 +29,13 @@ const Map<SpecVersion, List<Variant>> _specVersionToVariants = {
     .fruitSalad,
   ],
   .spec2025: [.neutral, .tonalSpot, .vibrant, .expressive],
+  .spec2026: [.cmf],
 };
 
 const Map<SpecVersion, List<Platform>> _specVersionToPlatforms = {
   .spec2021: [.phone],
   .spec2025: [.phone, .watch],
+  .spec2026: [.phone, .watch],
 };
 
 class SeedColors {
@@ -318,6 +322,7 @@ extension on Variant {
     .content => "content",
     .rainbow => "rainbow",
     .fruitSalad => "fruitsalad",
+    .cmf => "cmf",
   };
 }
 
@@ -325,6 +330,7 @@ extension on SpecVersion {
   String toFlatCase() => switch (this) {
     .spec2021 => "2021",
     .spec2025 => "2025",
+    .spec2026 => "2026",
   };
 }
 

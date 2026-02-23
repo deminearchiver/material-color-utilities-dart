@@ -314,20 +314,20 @@ class CreateCommand extends Command<int> {
               };
               final className = [modePrefix, ?contrastLevelSuffix].join("-");
               final selector = ".$className";
-              final scheme = DynamicScheme.fromPalettesOrKeyColors(
-                sourceColorHct: sourceColor.hct,
+              final scheme = DynamicScheme.withDefaults(
+                sourceColor: .fromArgb(sourceColor.argb),
                 isDark: mode.isDark,
                 contrastLevel: contrastLevel.value,
                 variant: variant.value,
                 specVersion: specVersion.value,
                 platform: platform.value,
-                primaryPaletteKeyColor: primaryPaletteKeyColor?.hct,
-                secondaryPaletteKeyColor: secondaryPaletteKeyColor?.hct,
-                tertiaryPaletteKeyColor: tertiaryPaletteKeyColor?.hct,
-                neutralPaletteKeyColor: neutralPaletteKeyColor?.hct,
-                neutralVariantPaletteKeyColor:
-                    neutralVariantPaletteKeyColor?.hct,
-                errorPaletteKeyColor: errorPaletteKeyColor?.hct,
+                // primaryPaletteKeyColor: primaryPaletteKeyColor?.hct,
+                // secondaryPaletteKeyColor: secondaryPaletteKeyColor?.hct,
+                // tertiaryPaletteKeyColor: tertiaryPaletteKeyColor?.hct,
+                // neutralPaletteKeyColor: neutralPaletteKeyColor?.hct,
+                // neutralVariantPaletteKeyColor:
+                //     neutralVariantPaletteKeyColor?.hct,
+                // errorPaletteKeyColor: errorPaletteKeyColor?.hct,
               );
               if (!firstIteration) {
                 buffer.write("\n");
@@ -532,48 +532,48 @@ class DynamicSchemes {
       variant: variant,
       specVersion: specVersion,
       platform: platform,
-      light: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      light: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelNormal,
         specVersion: specVersion,
         platform: platform,
         variant: variant,
       ),
-      lightMediumContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      lightMediumContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelMedium,
         specVersion: specVersion,
         platform: platform,
         variant: variant,
       ),
-      lightHighContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      lightHighContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelHigh,
         specVersion: specVersion,
         platform: platform,
         variant: variant,
       ),
-      dark: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      dark: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelNormal,
         specVersion: specVersion,
         platform: platform,
         variant: variant,
       ),
-      darkMediumContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      darkMediumContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelMedium,
         specVersion: specVersion,
         platform: platform,
         variant: variant,
       ),
-      darkHighContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      darkHighContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelHigh,
         specVersion: specVersion,
@@ -618,8 +618,8 @@ class DynamicSchemes {
       errorPaletteKeyColor: errorPalette != null
           ? Color.hct(errorPalette.keyColor)
           : null,
-      light: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      light: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelNormal,
         specVersion: specVersion,
@@ -632,8 +632,8 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      lightMediumContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      lightMediumContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelMedium,
         specVersion: specVersion,
@@ -646,8 +646,8 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      lightHighContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      lightHighContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelHigh,
         specVersion: specVersion,
@@ -660,8 +660,8 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      dark: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      dark: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelNormal,
         specVersion: specVersion,
@@ -674,8 +674,8 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      darkMediumContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      darkMediumContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelMedium,
         specVersion: specVersion,
@@ -688,8 +688,8 @@ class DynamicSchemes {
         neutralVariantPalette: neutralVariantPalette,
         errorPalette: errorPalette,
       ),
-      darkHighContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      darkHighContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelHigh,
         specVersion: specVersion,
@@ -735,89 +735,89 @@ class DynamicSchemes {
       neutralPaletteKeyColor: neutral,
       neutralVariantPaletteKeyColor: neutralVariant,
       errorPaletteKeyColor: error,
-      light: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      light: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelNormal,
         variant: variant,
         specVersion: specVersion,
         platform: platform,
-        primaryPaletteKeyColor: primaryPaletteKeyColor,
-        secondaryPaletteKeyColor: secondaryPaletteKeyColor,
-        tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
-        neutralPaletteKeyColor: neutralPaletteKeyColor,
-        neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
-        errorPaletteKeyColor: errorPaletteKeyColor,
+        // primaryPaletteKeyColor: primaryPaletteKeyColor,
+        // secondaryPaletteKeyColor: secondaryPaletteKeyColor,
+        // tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
+        // neutralPaletteKeyColor: neutralPaletteKeyColor,
+        // neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
+        // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      lightMediumContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      lightMediumContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelMedium,
         variant: variant,
         specVersion: specVersion,
         platform: platform,
-        primaryPaletteKeyColor: primaryPaletteKeyColor,
-        secondaryPaletteKeyColor: secondaryPaletteKeyColor,
-        tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
-        neutralPaletteKeyColor: neutralPaletteKeyColor,
-        neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
-        errorPaletteKeyColor: errorPaletteKeyColor,
+        // primaryPaletteKeyColor: primaryPaletteKeyColor,
+        // secondaryPaletteKeyColor: secondaryPaletteKeyColor,
+        // tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
+        // neutralPaletteKeyColor: neutralPaletteKeyColor,
+        // neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
+        // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      lightHighContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      lightHighContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: false,
         contrastLevel: contrastLevelHigh,
         variant: variant,
         specVersion: specVersion,
         platform: platform,
-        primaryPaletteKeyColor: primaryPaletteKeyColor,
-        secondaryPaletteKeyColor: secondaryPaletteKeyColor,
-        tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
-        neutralPaletteKeyColor: neutralPaletteKeyColor,
-        neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
-        errorPaletteKeyColor: errorPaletteKeyColor,
+        // primaryPaletteKeyColor: primaryPaletteKeyColor,
+        // secondaryPaletteKeyColor: secondaryPaletteKeyColor,
+        // tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
+        // neutralPaletteKeyColor: neutralPaletteKeyColor,
+        // neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
+        // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      dark: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      dark: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelNormal,
         variant: variant,
         specVersion: specVersion,
         platform: platform,
-        primaryPaletteKeyColor: primaryPaletteKeyColor,
-        secondaryPaletteKeyColor: secondaryPaletteKeyColor,
-        tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
-        neutralPaletteKeyColor: neutralPaletteKeyColor,
-        neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
-        errorPaletteKeyColor: errorPaletteKeyColor,
+        // primaryPaletteKeyColor: primaryPaletteKeyColor,
+        // secondaryPaletteKeyColor: secondaryPaletteKeyColor,
+        // tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
+        // neutralPaletteKeyColor: neutralPaletteKeyColor,
+        // neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
+        // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      darkMediumContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      darkMediumContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelMedium,
         variant: variant,
         specVersion: specVersion,
         platform: platform,
-        primaryPaletteKeyColor: primaryPaletteKeyColor,
-        secondaryPaletteKeyColor: secondaryPaletteKeyColor,
-        tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
-        neutralPaletteKeyColor: neutralPaletteKeyColor,
-        neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
-        errorPaletteKeyColor: errorPaletteKeyColor,
+        // primaryPaletteKeyColor: primaryPaletteKeyColor,
+        // secondaryPaletteKeyColor: secondaryPaletteKeyColor,
+        // tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
+        // neutralPaletteKeyColor: neutralPaletteKeyColor,
+        // neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
+        // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
-      darkHighContrast: .fromPalettesOrKeyColors(
-        sourceColorHct: sourceColorHct,
+      darkHighContrast: .withDefaults(
+        sourceColor: .fromHct(sourceColorHct),
         isDark: true,
         contrastLevel: contrastLevelHigh,
         variant: variant,
         specVersion: specVersion,
         platform: platform,
-        primaryPaletteKeyColor: primaryPaletteKeyColor,
-        secondaryPaletteKeyColor: secondaryPaletteKeyColor,
-        tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
-        neutralPaletteKeyColor: neutralPaletteKeyColor,
-        neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
-        errorPaletteKeyColor: errorPaletteKeyColor,
+        // primaryPaletteKeyColor: primaryPaletteKeyColor,
+        // secondaryPaletteKeyColor: secondaryPaletteKeyColor,
+        // tertiaryPaletteKeyColor: tertiaryPaletteKeyColor,
+        // neutralPaletteKeyColor: neutralPaletteKeyColor,
+        // neutralVariantPaletteKeyColor: neutralVariantPaletteKeyColor,
+        // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
     );
   }
