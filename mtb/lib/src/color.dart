@@ -255,12 +255,8 @@ class ColorConverter implements JsonConverter<Color, String> {
   const ColorConverter();
 
   @override
-  Color fromJson(String json) {
-    return Color.parse(json);
-  }
+  Color fromJson(String json) => Color.parse(json);
 
   @override
-  String toJson(Color object) {
-    return "#${object.hex}";
-  }
+  String toJson(Color object) => "#${object.hex}";
 }

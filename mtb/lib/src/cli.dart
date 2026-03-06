@@ -3,8 +3,8 @@ import 'dart:convert';
 
 import 'package:change_case/change_case.dart';
 import 'package:intl/intl.dart';
+import 'package:libmonet/android_system_ui.dart';
 import 'package:libmonet/material_color_utilities.dart';
-import 'package:libmonet/android_dynamic_colors.dart';
 import 'package:promptly/promptly.dart';
 import 'package:mtb/src/json.dart';
 
@@ -337,7 +337,7 @@ class CreateCommand extends Command<int> {
                 final dynamicColor = dynamicColorCallback();
                 final color = Color.argb(dynamicColor.getArgb(scheme));
                 final name = dynamicColor.name.toKebabCase();
-                final prefix = "md-sys-color";
+                const prefix = "md-sys-color";
                 final fullName = "$prefix-$name";
                 final propertyName = "--$fullName";
                 final propertyDeclaration = "$propertyName: #${color.hex};";
@@ -447,15 +447,16 @@ enum PromptFormat {
 }
 
 enum PromptVariant {
-  monochrome(Variant.monochrome),
-  neutral(Variant.neutral),
-  tonalSpot(Variant.tonalSpot),
-  vibrant(Variant.vibrant),
-  expressive(Variant.expressive),
-  fidelity(Variant.fidelity),
-  content(Variant.content),
-  rainbow(Variant.rainbow),
-  fruitSalad(Variant.fruitSalad);
+  monochrome(.monochrome),
+  neutral(.neutral),
+  tonalSpot(.tonalSpot),
+  vibrant(.vibrant),
+  expressive(.expressive),
+  fidelity(.fidelity),
+  content(.content),
+  rainbow(.rainbow),
+  fruitSalad(.fruitSalad),
+  cmf(.cmf);
 
   const PromptVariant(this.value);
 
@@ -471,25 +472,24 @@ enum PromptVariant {
     content => "Content",
     rainbow => "Rainbow",
     fruitSalad => "Fruit salad",
+    cmf => "CMF",
   };
 }
 
 enum PromptSpecVersion {
-  spec2021(SpecVersion.spec2021),
-  spec2025(SpecVersion.spec2025);
+  spec2021(.spec2021),
+  spec2025(.spec2025),
+  spec2026(.spec2026);
 
   const PromptSpecVersion(this.value);
   final SpecVersion value;
 
-  static String display(PromptSpecVersion value) => switch (value) {
-    spec2021 => "2021",
-    spec2025 => "2025",
-  };
+  static String display(PromptSpecVersion value) => "${value.value.year}";
 }
 
 enum PromptPlatform {
-  phone(Platform.phone),
-  watch(Platform.watch);
+  phone(.phone),
+  watch(.watch);
 
   const PromptPlatform(this.value);
   final Platform value;
@@ -718,12 +718,12 @@ class DynamicSchemes {
     Color? error,
   }) {
     final sourceColorHct = sourceColor.hct;
-    final primaryPaletteKeyColor = primary?.hct;
-    final secondaryPaletteKeyColor = secondary?.hct;
-    final tertiaryPaletteKeyColor = tertiary?.hct;
-    final neutralPaletteKeyColor = neutral?.hct;
-    final neutralVariantPaletteKeyColor = neutralVariant?.hct;
-    final errorPaletteKeyColor = error?.hct;
+    // final primaryPaletteKeyColor = primary?.hct;
+    // final secondaryPaletteKeyColor = secondary?.hct;
+    // final tertiaryPaletteKeyColor = tertiary?.hct;
+    // final neutralPaletteKeyColor = neutral?.hct;
+    // final neutralVariantPaletteKeyColor = neutralVariant?.hct;
+    // final errorPaletteKeyColor = error?.hct;
     return DynamicSchemes(
       sourceColor: sourceColor,
       variant: variant,

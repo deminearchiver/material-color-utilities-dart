@@ -1,20 +1,16 @@
-// ignore_for_file: recursive_getters
-
 // TODO: FIX ABSENT PALETTE KEY COLORS
+
+// ignore_for_file: avoid_print
 
 import 'dart:convert';
 import 'dart:io';
+import 'package:libmonet/android_system_ui.dart';
 import 'package:libmonet/material_color_utilities.dart';
 import 'package:change_case/change_case.dart';
-import 'package:libmonet/android_dynamic_colors.dart';
 import 'package:mtb/src/cli.dart' show DynamicSchemes;
 import 'package:mtb/src/color.dart';
 import 'package:mtb/src/json.dart';
-
-// const Map<SpecVersion, List<double>> _specVersionToContrastLevels = {
-//   .spec2021: [-1.0, 0.0, 0.5, 1.0],
-//   .spec2025: [0.0, 0.5, 1.0],
-// };
+import 'package:path/path.dart' as p;
 
 const Map<SpecVersion, List<Variant>> _specVersionToVariants = {
   .spec2021: [
@@ -248,8 +244,7 @@ void main() async {
           final encoded = encoder.convert(json);
           final fileName =
               "${_buildNamedDescriptor(name: name, variant: variant, specVersion: specVersion, platform: platform)}.json";
-
-          final path = "./example/figma/$fileName";
+          final path = p.join("./example/figma", name, fileName);
           final file = File(path);
           print("Writing: $path");
           final future = file
@@ -282,7 +277,7 @@ void main() async {
           final cssContents = css.toString();
           final cssFileName =
               "${_buildNamedDescriptor(name: name, variant: variant, specVersion: specVersion, platform: platform)}.css";
-          final cssPath = "./example/css/$cssFileName";
+          final cssPath = p.join("./example/css", name, cssFileName);
           final cssFile = File(cssPath);
           print("Writing: $cssPath");
           final cssFuture = cssFile
