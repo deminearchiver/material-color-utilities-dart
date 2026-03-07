@@ -45,13 +45,13 @@ class SeedColors {
     this.errorPaletteKeyColor,
   });
 
-  final Color sourceColor;
-  final Color? primaryPaletteKeyColor;
-  final Color? secondaryPaletteKeyColor;
-  final Color? tertiaryPaletteKeyColor;
-  final Color? neutralPaletteKeyColor;
-  final Color? neutralVariantPaletteKeyColor;
-  final Color? errorPaletteKeyColor;
+  final TonalPaletteSourceColor sourceColor;
+  final TonalPaletteSourceColor? primaryPaletteKeyColor;
+  final TonalPaletteSourceColor? secondaryPaletteKeyColor;
+  final TonalPaletteSourceColor? tertiaryPaletteKeyColor;
+  final TonalPaletteSourceColor? neutralPaletteKeyColor;
+  final TonalPaletteSourceColor? neutralVariantPaletteKeyColor;
+  final TonalPaletteSourceColor? errorPaletteKeyColor;
 
   @override
   bool operator ==(Object other) =>
@@ -80,16 +80,16 @@ class SeedColors {
   );
 }
 
-const Map<String, SeedColors> seedColorsByName = {
-  "baseline": SeedColors(sourceColor: Color.argb(0xFF6750A4)),
+final seedColorsByName = <String, SeedColors>{
+  "baseline": SeedColors(sourceColor: .fromArgb(0xFF6750A4)),
   "nowinandroid": SeedColors(
-    sourceColor: Color.argb(0xFF8C4190),
-    primaryPaletteKeyColor: Color.argb(0xFF8C4190),
-    secondaryPaletteKeyColor: Color.argb(0xFFFF8456),
-    tertiaryPaletteKeyColor: Color.argb(0xFFB3E9FF),
-    neutralPaletteKeyColor: Color.argb(0xFF201A1B),
+    sourceColor: .fromArgb(0xFF8C4190),
+    primaryPaletteKeyColor: .fromArgb(0xFF8C4190),
+    secondaryPaletteKeyColor: .fromArgb(0xFFFF8456),
+    tertiaryPaletteKeyColor: .fromArgb(0xFFB3E9FF),
+    neutralPaletteKeyColor: .fromArgb(0xFF201A1B),
   ),
-  "obtainium": SeedColors(sourceColor: Color.argb(0xFF6438B5)),
+  "obtainium": SeedColors(sourceColor: .fromArgb(0xFF6438B5)),
 };
 
 final MaterialDynamicColors _mdc = MaterialDynamicColors();
@@ -225,15 +225,27 @@ void main() async {
             description:
                 "TYPE: CUSTOM\n"
                 "Material Theme Builder export",
-            seed: seedColors.sourceColor,
+            seed: .argb(seedColors.sourceColor.asArgb),
             coreColors: FigmaCoreColors(
-              primary:
-                  seedColors.primaryPaletteKeyColor ?? seedColors.sourceColor,
-              secondary: seedColors.secondaryPaletteKeyColor,
-              tertiary: seedColors.tertiaryPaletteKeyColor,
-              neutral: seedColors.neutralPaletteKeyColor,
-              neutralVariant: seedColors.neutralVariantPaletteKeyColor,
-              error: seedColors.errorPaletteKeyColor,
+              primary: .argb(
+                (seedColors.primaryPaletteKeyColor ?? seedColors.sourceColor)
+                    .asArgb,
+              ),
+              secondary: seedColors.secondaryPaletteKeyColor != null
+                  ? .argb(seedColors.secondaryPaletteKeyColor!.asArgb)
+                  : null,
+              tertiary: seedColors.tertiaryPaletteKeyColor != null
+                  ? .argb(seedColors.tertiaryPaletteKeyColor!.asArgb)
+                  : null,
+              neutral: seedColors.neutralPaletteKeyColor != null
+                  ? .argb(seedColors.neutralPaletteKeyColor!.asArgb)
+                  : null,
+              neutralVariant: seedColors.neutralVariantPaletteKeyColor != null
+                  ? .argb(seedColors.neutralVariantPaletteKeyColor!.asArgb)
+                  : null,
+              error: seedColors.errorPaletteKeyColor != null
+                  ? .argb(seedColors.errorPaletteKeyColor!.asArgb)
+                  : null,
             ),
             extendedColors: const [],
             schemes: schemes.toFigmaSchemes(),

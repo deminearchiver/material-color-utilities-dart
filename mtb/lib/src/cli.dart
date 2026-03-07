@@ -205,16 +205,28 @@ class CreateCommand extends Command<int> {
     line();
 
     final schemes = DynamicSchemes.fromKeyColors(
-      sourceColor: sourceColor,
+      sourceColor: .fromArgb(sourceColor.argb),
       variant: variant.value,
       specVersion: specVersion.value,
       platform: platform.value,
-      primary: primaryPaletteKeyColor,
-      secondary: secondaryPaletteKeyColor,
-      tertiary: tertiaryPaletteKeyColor,
-      neutral: neutralPaletteKeyColor,
-      neutralVariant: neutralVariantPaletteKeyColor,
-      error: errorPaletteKeyColor,
+      primary: primaryPaletteKeyColor != null
+          ? .fromArgb(primaryPaletteKeyColor.argb)
+          : null,
+      secondary: secondaryPaletteKeyColor != null
+          ? .fromArgb(secondaryPaletteKeyColor.argb)
+          : null,
+      tertiary: tertiaryPaletteKeyColor != null
+          ? .fromArgb(tertiaryPaletteKeyColor.argb)
+          : null,
+      neutral: neutralPaletteKeyColor != null
+          ? .fromArgb(neutralPaletteKeyColor.argb)
+          : null,
+      neutralVariant: neutralVariantPaletteKeyColor != null
+          ? .fromArgb(neutralVariantPaletteKeyColor.argb)
+          : null,
+      error: errorPaletteKeyColor != null
+          ? .fromArgb(errorPaletteKeyColor.argb)
+          : null,
     );
     line();
     line();
@@ -521,19 +533,18 @@ class DynamicSchemes {
   });
 
   factory DynamicSchemes.fromSourceColor({
-    required Color sourceColor,
+    required TonalPaletteSourceColor sourceColor,
     Variant variant = .tonalSpot,
     SpecVersion specVersion = .spec2021,
     Platform platform = .phone,
   }) {
-    final sourceColorHct = sourceColor.hct;
     return DynamicSchemes(
       sourceColor: sourceColor,
       variant: variant,
       specVersion: specVersion,
       platform: platform,
       light: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelNormal,
         specVersion: specVersion,
@@ -541,7 +552,7 @@ class DynamicSchemes {
         variant: variant,
       ),
       lightMediumContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelMedium,
         specVersion: specVersion,
@@ -549,7 +560,7 @@ class DynamicSchemes {
         variant: variant,
       ),
       lightHighContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelHigh,
         specVersion: specVersion,
@@ -557,7 +568,7 @@ class DynamicSchemes {
         variant: variant,
       ),
       dark: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelNormal,
         specVersion: specVersion,
@@ -565,7 +576,7 @@ class DynamicSchemes {
         variant: variant,
       ),
       darkMediumContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelMedium,
         specVersion: specVersion,
@@ -573,7 +584,7 @@ class DynamicSchemes {
         variant: variant,
       ),
       darkHighContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelHigh,
         specVersion: specVersion,
@@ -583,7 +594,7 @@ class DynamicSchemes {
     );
   }
   factory DynamicSchemes.fromTonalPalettes({
-    required Color sourceColor,
+    required TonalPaletteSourceColor sourceColor,
     Variant variant = .tonalSpot,
     SpecVersion specVersion = .spec2021,
     Platform platform = .phone,
@@ -594,32 +605,31 @@ class DynamicSchemes {
     TonalPalette? neutralVariantPalette,
     TonalPalette? errorPalette,
   }) {
-    final sourceColorHct = sourceColor.hct;
     return DynamicSchemes(
       sourceColor: sourceColor,
       variant: variant,
       specVersion: specVersion,
       platform: platform,
       primaryPaletteKeyColor: primaryPalette != null
-          ? Color.hct(primaryPalette.keyColor)
+          ? .fromHct(primaryPalette.keyColor)
           : null,
       secondaryPaletteKeyColor: secondaryPalette != null
-          ? Color.hct(secondaryPalette.keyColor)
+          ? .fromHct(secondaryPalette.keyColor)
           : null,
       tertiaryPaletteKeyColor: tertiaryPalette != null
-          ? Color.hct(tertiaryPalette.keyColor)
+          ? .fromHct(tertiaryPalette.keyColor)
           : null,
       neutralPaletteKeyColor: neutralPalette != null
-          ? Color.hct(neutralPalette.keyColor)
+          ? .fromHct(neutralPalette.keyColor)
           : null,
       neutralVariantPaletteKeyColor: neutralVariantPalette != null
-          ? Color.hct(neutralVariantPalette.keyColor)
+          ? .fromHct(neutralVariantPalette.keyColor)
           : null,
       errorPaletteKeyColor: errorPalette != null
-          ? Color.hct(errorPalette.keyColor)
+          ? .fromHct(errorPalette.keyColor)
           : null,
       light: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelNormal,
         specVersion: specVersion,
@@ -633,7 +643,7 @@ class DynamicSchemes {
         errorPalette: errorPalette,
       ),
       lightMediumContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelMedium,
         specVersion: specVersion,
@@ -647,7 +657,7 @@ class DynamicSchemes {
         errorPalette: errorPalette,
       ),
       lightHighContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelHigh,
         specVersion: specVersion,
@@ -661,7 +671,7 @@ class DynamicSchemes {
         errorPalette: errorPalette,
       ),
       dark: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelNormal,
         specVersion: specVersion,
@@ -675,7 +685,7 @@ class DynamicSchemes {
         errorPalette: errorPalette,
       ),
       darkMediumContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelMedium,
         specVersion: specVersion,
@@ -689,7 +699,7 @@ class DynamicSchemes {
         errorPalette: errorPalette,
       ),
       darkHighContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelHigh,
         specVersion: specVersion,
@@ -706,18 +716,17 @@ class DynamicSchemes {
   }
 
   factory DynamicSchemes.fromKeyColors({
-    required Color sourceColor,
+    required TonalPaletteSourceColor sourceColor,
     Variant variant = .tonalSpot,
     SpecVersion specVersion = .spec2021,
     Platform platform = .phone,
-    Color? primary,
-    Color? secondary,
-    Color? tertiary,
-    Color? neutral,
-    Color? neutralVariant,
-    Color? error,
+    TonalPaletteSourceColor? primary,
+    TonalPaletteSourceColor? secondary,
+    TonalPaletteSourceColor? tertiary,
+    TonalPaletteSourceColor? neutral,
+    TonalPaletteSourceColor? neutralVariant,
+    TonalPaletteSourceColor? error,
   }) {
-    final sourceColorHct = sourceColor.hct;
     // final primaryPaletteKeyColor = primary?.hct;
     // final secondaryPaletteKeyColor = secondary?.hct;
     // final tertiaryPaletteKeyColor = tertiary?.hct;
@@ -736,7 +745,7 @@ class DynamicSchemes {
       neutralVariantPaletteKeyColor: neutralVariant,
       errorPaletteKeyColor: error,
       light: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelNormal,
         variant: variant,
@@ -750,7 +759,7 @@ class DynamicSchemes {
         // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
       lightMediumContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelMedium,
         variant: variant,
@@ -764,7 +773,7 @@ class DynamicSchemes {
         // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
       lightHighContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: false,
         contrastLevel: contrastLevelHigh,
         variant: variant,
@@ -778,7 +787,7 @@ class DynamicSchemes {
         // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
       dark: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelNormal,
         variant: variant,
@@ -792,7 +801,7 @@ class DynamicSchemes {
         // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
       darkMediumContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelMedium,
         variant: variant,
@@ -806,7 +815,7 @@ class DynamicSchemes {
         // errorPaletteKeyColor: errorPaletteKeyColor,
       ),
       darkHighContrast: .withDefaults(
-        sourceColor: .fromHct(sourceColorHct),
+        sourceColor: sourceColor,
         isDark: true,
         contrastLevel: contrastLevelHigh,
         variant: variant,
@@ -822,32 +831,31 @@ class DynamicSchemes {
     );
   }
 
-  factory DynamicSchemes.fromDynamicScheme(DynamicScheme scheme) {
-    return DynamicSchemes.fromKeyColors(
-      sourceColor: Color.hct(scheme.sourceColorHct),
-      variant: scheme.variant,
-      specVersion: scheme.specVersion,
-      platform: scheme.platform,
-      primary: Color.hct(scheme.primaryPalette.keyColor),
-      secondary: Color.hct(scheme.secondaryPalette.keyColor),
-      tertiary: Color.hct(scheme.tertiaryPalette.keyColor),
-      neutral: Color.hct(scheme.neutralPalette.keyColor),
-      neutralVariant: Color.hct(scheme.neutralVariantPalette.keyColor),
-      error: Color.hct(scheme.errorPalette.keyColor),
-    );
-  }
+  factory DynamicSchemes.fromDynamicScheme(DynamicScheme scheme) =>
+      .fromKeyColors(
+        sourceColor: .fromHct(scheme.sourceColorHct),
+        variant: scheme.variant,
+        specVersion: scheme.specVersion,
+        platform: scheme.platform,
+        primary: .fromHct(scheme.primaryPalette.keyColor),
+        secondary: .fromHct(scheme.secondaryPalette.keyColor),
+        tertiary: .fromHct(scheme.tertiaryPalette.keyColor),
+        neutral: .fromHct(scheme.neutralPalette.keyColor),
+        neutralVariant: .fromHct(scheme.neutralVariantPalette.keyColor),
+        error: .fromHct(scheme.errorPalette.keyColor),
+      );
 
-  final Color sourceColor;
+  final TonalPaletteSourceColor sourceColor;
   final Variant variant;
   final SpecVersion specVersion;
   final Platform platform;
 
-  final Color? primaryPaletteKeyColor;
-  final Color? secondaryPaletteKeyColor;
-  final Color? tertiaryPaletteKeyColor;
-  final Color? neutralPaletteKeyColor;
-  final Color? neutralVariantPaletteKeyColor;
-  final Color? errorPaletteKeyColor;
+  final TonalPaletteSourceColor? primaryPaletteKeyColor;
+  final TonalPaletteSourceColor? secondaryPaletteKeyColor;
+  final TonalPaletteSourceColor? tertiaryPaletteKeyColor;
+  final TonalPaletteSourceColor? neutralPaletteKeyColor;
+  final TonalPaletteSourceColor? neutralVariantPaletteKeyColor;
+  final TonalPaletteSourceColor? errorPaletteKeyColor;
 
   final DynamicScheme light;
   final DynamicScheme lightMediumContrast;
@@ -856,7 +864,7 @@ class DynamicSchemes {
   final DynamicScheme darkMediumContrast;
   final DynamicScheme darkHighContrast;
 
-  FigmaSchemes toFigmaSchemes() => FigmaSchemes.fromDynamicSchemes(
+  FigmaSchemes toFigmaSchemes() => .fromDynamicSchemes(
     light: light,
     lightMediumContrast: lightMediumContrast,
     lightHighContrast: lightHighContrast,
