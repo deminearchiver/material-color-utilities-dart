@@ -1,7 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:libmonet/android_system_ui.dart';
+import 'package:libmonet/android_color_utilities.dart';
 import 'package:libmonet/material_color_utilities.dart' as mcu;
 
 import 'color.dart';

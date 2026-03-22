@@ -1,15 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:libmonet/material_color_utilities.dart' as mcu;
+import 'package:libmonet/libmonet.dart' as libmonet;
 
 sealed class Color {
   const factory Color.argb(int argb) = _ColorArgb;
   const factory Color.rgba(int r, int g, int b, [int a]) = _ColorRgba;
   const factory Color.hex(String hex) = _ColorHex;
-  const factory Color.hct(mcu.Hct hct) = _ColorHct;
+  const factory Color.hct(libmonet.Hct hct) = _ColorHct;
 
   int get argb;
   String get hex;
-  mcu.Hct get hct;
+  libmonet.Hct get hct;
 
   static (double, bool)? _parsePercentOrFloat(String source) {
     if (source.endsWith("%")) {
@@ -140,10 +140,10 @@ class _ColorArgb implements Color {
   final int argb;
 
   @override
-  String get hex => mcu.StringUtils.hexFromArgb(argb, leadingHashSign: false);
+  String get hex => libmonet.StringUtils.hexFromArgb(argb, leadingHashSign: false);
 
   @override
-  mcu.Hct get hct => mcu.Hct.fromInt(argb);
+  libmonet.Hct get hct => libmonet.Hct.fromInt(argb);
 
   @override
   String toString() => "Color.argb(0x${argb.toRadixString(16)})";
@@ -172,10 +172,10 @@ class _ColorRgba implements Color {
       (alpha << 24) | ((red & 255) << 16) | ((green & 255) << 8) | (blue & 255);
 
   @override
-  String get hex => mcu.StringUtils.hexFromArgb(argb, leadingHashSign: false);
+  String get hex => libmonet.StringUtils.hexFromArgb(argb, leadingHashSign: false);
 
   @override
-  mcu.Hct get hct => mcu.Hct.fromInt(argb);
+  libmonet.Hct get hct => libmonet.Hct.fromInt(argb);
 
   @override
   String toString() => "Color.rgba($red, $green, $blue, $alpha)";
@@ -199,7 +199,7 @@ class _ColorHex implements Color {
 
   @override
   int get argb {
-    final argb = mcu.StringUtils.argbFromHex(hex);
+    final argb = libmonet.StringUtils.argbFromHex(hex);
     assert(argb != null);
     return argb!;
   }
@@ -208,7 +208,7 @@ class _ColorHex implements Color {
   final String hex;
 
   @override
-  mcu.Hct get hct => mcu.Hct.fromInt(argb);
+  libmonet.Hct get hct => libmonet.Hct.fromInt(argb);
 
   @override
   String toString() => "Color.hex(#$hex)";
@@ -231,10 +231,10 @@ class _ColorHct implements Color {
   int get argb => hct.toInt();
 
   @override
-  String get hex => mcu.StringUtils.hexFromArgb(argb, leadingHashSign: false);
+  String get hex => libmonet.StringUtils.hexFromArgb(argb, leadingHashSign: false);
 
   @override
-  final mcu.Hct hct;
+  final libmonet.Hct hct;
 
   @override
   String toString() =>

@@ -4,8 +4,7 @@
 
 import 'dart:convert';
 import 'dart:io';
-import 'package:libmonet/android_system_ui.dart';
-import 'package:libmonet/material_color_utilities.dart';
+import 'package:libmonet/libmonet.dart';
 import 'package:change_case/change_case.dart';
 import 'package:mtb/src/cli.dart' show DynamicSchemes;
 import 'package:mtb/src/color.dart';
